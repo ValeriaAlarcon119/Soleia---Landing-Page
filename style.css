@@ -143,31 +143,30 @@ nav a:hover {
   }
 }
 
-/* Styles for the Hero Section */
+
 .hero {
-  /* top section properties */
+
   display: flex;
-  flex-direction: column; /* Contenido principal (hero-inner) apilado verticalmente con otros posibles elementos de la sección hero */
-  align-items: center; /* Centrar el contenido principal horizontalmente */
-  padding: 40px 70px; /* Padding según Figma */
+  flex-direction: column; 
+  align-items: center; 
+  padding: 40px 70px; 
   gap: 40px;
   isolation: isolate;
-  width: 1440px; /* Ancho del diseño base según Figma */
-  max-width: 100%; /* Asegurar que no se desborde en pantallas más pequeñas */
-  min-height: 943px; /* Cambiado de height fijo a min-height */
-  background: #FAEACD; /* Color de fondo según Figma */
-  position: relative; /* Necesario para posicionar el vector absolutamente dentro de esta sección */
-  overflow: hidden; /* Para contener el vector si se sale */
-  margin: 0 auto; /* Centrar el contenedor principal */
+  width: 1440px; 
+  max-width: 100%; 
+  min-height: 943px; 
+  background: #FAEACD; 
+  position: relative; 
+  overflow: hidden; 
+  margin: 0 auto; 
 }
 
-/* Vector decorativo */
 .hero-vector {
   position: absolute;
   width: 827px;
-  height: 100%; /* Cambiado a 100% para que ocupe toda la altura de la sección */
+  height: 100%; 
   left: 799px;
-  top: 0; /* Ajustado para que empiece desde arriba */
+  top: 0;
   background: rgba(255, 255, 255, 0.3);
   z-index: 0;
   pointer-events: none;
@@ -1330,29 +1329,29 @@ nav a:hover {
 
 .combined-amenities-cta .cta-brochure-right {
     display: flex;
-    flex-direction: column; /* Apilar texto y botón verticalmente */
-    align-items: flex-end; /* Alinear elementos a la derecha */
-    gap: 20px; /* Reducido gap */
-    width: 50%; /* Ocupar la otra mitad del ancho en escritorio */
-    max-width: 500px; /* Ancho máximo del bloque de texto */
-    flex-shrink: 0; /* No encoger */
-    text-align: right; /* Alinear el texto a la derecha */
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 20px;
+    width: 50%;
+    max-width: 500px;
+    flex-shrink: 0;
+    text-align: right;
 }
 
 .combined-amenities-cta .cta-brochure-text {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Reducido gap entre título y descripción */
-    align-items: flex-end; /* Alinear elementos a la derecha dentro del texto */
+    gap: 15px;
+    align-items: flex-end;
 }
 
 .combined-amenities-cta .cta-brochure-title {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 56px; /* Reducido de 80px a 56px */
-    line-height: 1.2em; /* Ajustado line height */
-    color: #FAEACD; /* Color claro */
+    font-size: 56px;
+    line-height: 1.2em;
+    color: #FAEACD;
     margin: 0;
     padding: 0;
 }
@@ -1361,124 +1360,122 @@ nav a:hover {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 18px; /* Reducido de 20px a 18px */
-    line-height: 24px; /* Ajustado line height */
-    color: #FAEACD; /* Color claro */
+    font-size: 18px;
+    line-height: 24px;
+    color: #FAEACD;
     margin: 0;
     padding: 0;
 }
 
 .combined-amenities-cta .cta-brochure-button {
     display: inline-block;
-    padding: 12px 25px; /* Reducido padding */
-    background: #FAEACD; /* Color de fondo claro */
-    color: #000000; /* Color del texto oscuro */
+    padding: 12px 25px;
+    background: #FAEACD;
+    color: #000000;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px; /* Reducido de 18px a 16px */
+          font-size: 16px;
     line-height: normal;
     border-radius: 5px;
     transition: background 0.3s ease;
     border: none;
     cursor: pointer;
-    margin-top: 10px; /* Reducido margen superior */
+    margin-top: 10px;
 }
 
 .combined-amenities-cta .cta-brochure-button:hover {
-    background: #E0D3B8; /* Color de fondo al pasar el mouse */
+    background: #E0D3B8;
 }
 
 /* Ajustes responsive para .combined-amenities-cta */
 @media (max-width: 1024px) {
     .combined-amenities-cta {
         padding: 60px 0;
-        gap: 40px; /* Ajustado gap entre contenedores */
-         background-size: 150px; /* Ajustado tamaño de fondo responsive */
-         background-position: left top; /* Ajustado posicion responsive */
+        gap: 40px;
+         background-size: 150px;
+         background-position: left top;
     }
-     /* Responsive para el primer contenedor (Amenidades) */
      .combined-amenities-cta > .container:nth-child(1) {
          padding: 0 15px;
          gap: 30px;
-          max-width: 960px; /* Ajustado max-width */
-          align-items: center; /* Centrar contenido apilado en tablet */
+          max-width: 960px;
+          align-items: center;
      }
       .combined-amenities-cta .amenities-text {
         width: 100%;
-        text-align: center; /* Centrar texto en responsive */
-        align-items: center; /* Centrar elementos en responsive */
+        text-align: center;
+        align-items: center;
         gap: 15px;
     }
-    .combined-amenities-cta .amenities-title { font-size: 48px; /* Reducido tamaño de fuente */ line-height: 1.1; }
-    .combined-amenities-cta .amenities-description { font-size: 16px; /* Reducido tamaño de fuente */ line-height: 1.3; }
+    .combined-amenities-cta .amenities-title { font-size: 48px; line-height: 1.1; }
+    .combined-amenities-cta .amenities-description { font-size: 16px; line-height: 1.3; }
 
     .combined-amenities-cta .amenities-gallery {
-        gap: 15px; /* Reducido gap */
+        gap: 15px;
         align-items: center;
-         max-width: 900px; /* Ajustado max-width */
-          padding: 0 40px; /* Ajustado padding */
+         max-width: 900px; 
+          padding: 0 40px; 
     }
     .combined-amenities-cta .gallery-images {
-        gap: 15px; /* Reducido gap */
+        gap: 15px; 
         padding-left: 0;
         padding-right: 0;
-        height: auto; /* Altura automática */
-        padding-bottom: 0; /* Eliminado padding */
-         justify-content: center; /* Centrar imágenes en tablet si no llenan el ancho */
+        height: auto; 
+        padding-bottom: 0; 
+         justify-content: center; 
     }
     .combined-amenities-cta .gallery-item {
-        width: 180px; /* Reducido ancho del item */
-        align-self: auto; /* Permitir que flexbox controle la alineación */
+        width: 180px; 
+        align-self: auto; 
     }
     .combined-amenities-cta .gallery-item-short {
-        height: 180px; /* Ajustado altura (cuadrada) */
+        height: 180px; 
          align-self: flex-start;
     }
     .combined-amenities-cta .gallery-item-tall {
-        height: 280px; /* Ajustado altura */
+        height: 280px; 
          align-self: flex-end;
     }
-    .combined-amenities-cta .gallery-dots { gap: 8px; /* Reducido gap */ }
-    .combined-amenities-cta .gallery-dots .dot { width: 8px; height: 8px; /* Reducido tamaño del punto */ }
+    .combined-amenities-cta .gallery-dots { gap: 8px; }
+    .combined-amenities-cta .gallery-dots .dot { width: 8px; height: 8px; }
     .combined-amenities-cta .gallery-button {
-       width: 30px; /* Reducido ancho */
+       width: 30px; 
        height: 30px;
        top: 50%;
        transform: translateY(-50%);
         background-size: 50%;
     }
   .combined-amenities-cta .gallery-button.left-button {
-      left: 0; /* Ajustado posicion */
+      left: 0; 
   }
   .combined-amenities-cta .gallery-button.right-button {
-      right: 0; /* Ajustado posicion */
+      right: 0; 
   }
 
-     /* Responsive para el segundo contenedor (CTA Brochure) */
       .combined-amenities-cta > .container:nth-child(2) { 
-        flex-direction: column; /* Apilar en tablet */
+        flex-direction: column; 
         gap: 30px;
         padding: 0 20px;
-        align-items: center; /* Centrar contenido apilado */
+        align-items: center; 
     }
    .combined-amenities-cta .cta-brochure-left, 
    .combined-amenities-cta .cta-brochure-right {
-        width: 100%; /* Ocupar todo el ancho en tablet */
-        max-width: 600px; /* Ancho máximo en tablet */
-        text-align: center; /* Centrar texto */
-        align-items: center; /* Centrar elementos */
+        width: 100%; 
+        max-width: 600px; 
+        text-align: center; 
+        align-items: center; 
    }
     .combined-amenities-cta .cta-brochure-image-placeholder {
-        height: 250px; /* Reducido altura */
+          height: 250px; 
     }
     .combined-amenities-cta .cta-brochure-text {
         gap: 10px;
-        align-items: center; /* Centrar elementos */
+        align-items: center; 
     }
-    .combined-amenities-cta .cta-brochure-title { font-size: 48px; line-height: 1.1; /* Reducido tamaño */ }
-    .combined-amenities-cta .cta-brochure-description { font-size: 16px; line-height: 1.3; /* Reducido tamaño */ }
+    .combined-amenities-cta .cta-brochure-title { font-size: 48px; line-height: 1.1; }
+    .combined-amenities-cta .cta-brochure-description { font-size: 16px; line-height: 1.3; }
     .combined-amenities-cta .cta-brochure-button { padding: 12px 25px; font-size: 16px; margin-top: 15px; }
 
 }
@@ -1486,33 +1483,32 @@ nav a:hover {
 @media (max-width: 768px) {
     .combined-amenities-cta {
         padding: 40px 0;
-        gap: 30px; /* Ajustado gap entre contenedores */
-        background-size: 100px; /* Ajustado tamaño de fondo responsive */
-        background-position: left top; /* Ajustado posicion responsive */
+        gap: 30px; 
+            background-size: 100px; 
+        background-position: left top; 
     }
-     /* Responsive para el primer contenedor (Amenidades) */
      .combined-amenities-cta > .container:nth-child(1) {
          padding: 0 10px;
          gap: 20px;
      }
       .combined-amenities-cta .amenities-text {
-        text-align: center; /* Centrar texto en responsive */
-         align-items: center; /* Centrar elementos en responsive */
+        text-align: center; 
+         align-items: center; 
          gap: 10px;
      }
-    .combined-amenities-cta .amenities-title { font-size: 36px; /* Reducido tamaño de fuente */}
-    .combined-amenities-cta .amenities-description { font-size: 15px; /* Reducido tamaño de fuente */}
+    .combined-amenities-cta .amenities-title { font-size: 36px; }
+    .combined-amenities-cta .amenities-description { font-size: 15px; }
 
     .combined-amenities-cta .amenities-gallery {
-         max-width: 400px; /* Ajustar ancho máximo en móvil */
+         max-width: 400px; 
     }
      .combined-amenities-cta .gallery-images {
-         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+         grid-template-columns: repeat(2, 1fr); 
          gap: 8px;
           max-width: 400px;
-          grid-auto-rows: auto; /* Altura automática en móvil */
+          grid-auto-rows: auto; 
      }
-     /* Reorganizar grid en móvil (2 columnas) */
+
     .combined-amenities-cta .gallery-images .needs-item-tall:nth-child(1) { grid-column: span 1; grid-row: span 2; }
     .combined-amenities-cta .gallery-images .needs-item-short:nth-child(2) { grid-column: span 1; grid-row: span 1; }
     .combined-amenities-cta .gallery-images .needs-item-tall:nth-child(3) { grid-column: span 1; grid-row: span 2; }
@@ -1525,13 +1521,12 @@ nav a:hover {
     .combined-amenities-cta .needs-button { padding: 10px 20px; font-size: 14px; margin-top: 10px; }
 }
 
-/* Styles for the Needs Section */
 .needs-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 20px; /* Ajustar padding según sea necesario */
-  background: #F8ECD7; /* Color de fondo según la imagen de referencia */
+  padding: 80px 20px; 
+  background: #F8ECD7; 
   width: 100vw;
   max-width: none;
   height: auto;
@@ -1543,30 +1538,30 @@ nav a:hover {
 .needs-section .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centrar contenido horizontalmente */
+    align-items: center; 
     width: 100%;
-  max-width: 1200px; /* Ajustar max-width según la referencia */
+  max-width: 1200px; 
     margin: 0 auto;
-  gap: 40px; /* Espacio entre texto, galería y botón */
+  gap: 40px; 
 }
 
 .needs-section .needs-text {
     display: flex;
     flex-direction: column;
-  align-items: center; /* Centrar texto y elementos */
-  text-align: center; /* Centrar el texto */
-  gap: 20px; /* Espacio entre título y descripción */
+  align-items: center; 
+  text-align: center; 
+  gap: 20px; 
   width: 100%;
-  max-width: 800px; /* Ajustar ancho máximo del texto */
+  max-width: 800px; 
 }
 
 .needs-section .needs-title {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
     font-weight: 400;
-  font-size: 60px; /* Ajustar tamaño de fuente según la referencia */
-    line-height: 1.1em; /* Ajustar line-height */
-  color: #23412d; /* Color del texto según la referencia */
+  font-size: 60px; 
+    line-height: 1.1em; 
+  color: #23412d; 
     margin: 0;
     padding: 0;
 }
@@ -1574,35 +1569,34 @@ nav a:hover {
 .needs-section .needs-description {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
-  font-weight: normal; /* Asegurar peso normal */
-  font-size: 18px; /* Ajustar tamaño de fuente según la referencia */
-  line-height: 1.4em; /* Ajustar line-height */
-  color: #000000; /* Color del texto según la referencia */
+  font-weight: normal; 
+  font-size: 18px; 
+  line-height: 1.4em; 
+  color: #000000; 
   margin: 0;
   padding: 0;
 }
 
 .needs-section .needs-gallery {
-  display: flex; /* Contenedor flex para centrar la cuadrícula si es necesario */
+  display: flex; 
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 1000px; /* Ancho máximo para la cuadrícula de imágenes */
+  max-width: 1000px; 
   height: auto;
 }
 
 .needs-section .gallery-images {
-  display: grid; /* Usar Grid para el layout de mosaico */
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho */
-  grid-auto-rows: auto; /* Altura automática para filas */
-  gap: 10px; /* Espacio entre las imágenes */
+    display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  grid-auto-rows: auto; 
+  gap: 10px; 
     width: 100%;
-  max-width: 1000px; /* Asegurar que la cuadrícula no se desborde */
+  max-width: 1000px; 
 }
 
 .needs-section .gallery-item {
-  /* Estilos base para los items de la galería */
-  background: #D9D9D9; /* Color de placeholder */
+  background: #D9D9D9; 
   overflow: hidden;
     display: flex;
     justify-content: center;
@@ -1616,43 +1610,42 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* Definir tamaños y posiciones en el grid para desktop (4 columnas) */
-.needs-section .gallery-images .needs-item-tall:nth-child(1) { /* Primera imagen (alta) */
+.needs-section .gallery-images .needs-item-tall:nth-child(1) { 
     grid-column: span 1; /* Ocupa 1 columna */
     grid-row: span 2; /* Ocupa 2 filas */
 }
 
-.needs-section .gallery-images .needs-item-short:nth-child(2) { /* Segunda imagen (corta) */
+.needs-section .gallery-images .needs-item-short:nth-child(2) { 
     grid-column: span 1; /* Ocupa 1 columna */
     grid-row: span 1; /* Ocupa 1 fila */
 }
 
-.needs-section .gallery-images .needs-item-tall:nth-child(3) { /* Tercera imagen (alta) */
+.needs-section .gallery-images .needs-item-tall:nth-child(3) { 
      grid-column: span 1;
      grid-row: span 2;
 }
 
-.needs-section .gallery-images .needs-item-short:nth-child(4) { /* Cuarta imagen (corta) */
+.needs-section .gallery-images .needs-item-short:nth-child(4) { 
     grid-column: span 1;
     grid-row: span 1;
 }
 
-.needs-section .gallery-images .needs-item-tall:nth-child(5) { /* Quinta imagen (alta) */
+.needs-section .gallery-images .needs-item-tall:nth-child(5) { 
     grid-column: span 1;
     grid-row: span 2;
 }
 
-.needs-section .gallery-images .needs-item-short:nth-child(6) { /* Sexta imagen (corta) */
+.needs-section .gallery-images .needs-item-short:nth-child(6) { 
     grid-column: span 1;
     grid-row: span 1;
 }
 
-.needs-section .gallery-images .needs-item-tall:nth-child(7) { /* Séptima imagen (alta) */
+.needs-section .gallery-images .needs-item-tall:nth-child(7) { 
     grid-column: span 1;
     grid-row: span 2;
 }
 
-.needs-section .gallery-images .needs-item-short:nth-child(8) { /* Octava imagen (corta) */
+.needs-section .gallery-images .needs-item-short:nth-child(8) {     
      grid-column: span 1;
      grid-row: span 1;
 }
@@ -1660,25 +1653,25 @@ nav a:hover {
 
 .needs-section .needs-button {
     display: inline-block;
-  padding: 15px 30px; /* Ajustar padding según la referencia */
-  background: #C14D35; /* Color de fondo del botón */
+  padding: 15px 30px; 
+  background: #C14D35; 
   color: #FFFFFF;
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
-  font-size: 18px; /* Ajustar tamaño de fuente */
+  font-size: 18px; 
     line-height: normal;
   border-radius: 5px;
-  transition: background 0.3s ease;
-  margin-top: 20px; /* Espacio entre la galería y el botón */
+  transition: background 0.3s ease; 
+  margin-top: 20px; 
 }
 
 .needs-section .needs-button:hover {
-    background: #A03D2A; /* Color al pasar el mouse */
+    background: #A03D2A; 
 }
 
-/* Ajustes Responsive para Needs Section */
+
 @media (max-width: 1024px) {
   .needs-section {
     padding: 60px 15px;
@@ -1693,15 +1686,15 @@ nav a:hover {
    .needs-section .needs-description { font-size: 16px; line-height: 1.3; }
 
    .needs-section .needs-gallery {
-      max-width: 700px; /* Ajustar ancho máximo en tablet */
+      max-width: 700px; 
    }
    .needs-section .gallery-images {
-      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+      grid-template-columns: repeat(2, 1fr); 
       gap: 10px;
        max-width: 700px;
-       grid-auto-rows: auto; /* Altura automática en tablet */
+       grid-auto-rows: auto; 
    }
-    /* Reorganizar grid en tablet (2 columnas) */
+
     .needs-section .gallery-images .needs-item-tall:nth-child(1) { grid-column: span 1; grid-row: span 2; }
     .needs-section .gallery-images .needs-item-short:nth-child(2) { grid-column: span 1; grid-row: span 1; }
     .needs-section .gallery-images .needs-item-tall:nth-child(3) { grid-column: span 1; grid-row: span 2; }
@@ -1728,15 +1721,15 @@ nav a:hover {
     .needs-section .needs-description { font-size: 15px; line-height: 1.3; }
 
     .needs-section .needs-gallery {
-         max-width: 400px; /* Ajustar ancho máximo en móvil */
+         max-width: 400px; 
     }
      .needs-section .gallery-images {
-         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+         grid-template-columns: repeat(2, 1fr);
          gap: 8px;
           max-width: 400px;
-          grid-auto-rows: auto; /* Altura automática en móvil */
+          grid-auto-rows: auto; 
      }
-     /* Reorganizar grid en móvil (2 columnas) */
+     
     .needs-section .gallery-images .needs-item-tall:nth-child(1) { grid-column: span 1; grid-row: span 2; }
     .needs-section .gallery-images .needs-item-short:nth-child(2) { grid-column: span 1; grid-row: span 1; }
     .needs-section .gallery-images .needs-item-tall:nth-child(3) { grid-column: span 1; grid-row: span 2; }
@@ -1749,13 +1742,12 @@ nav a:hover {
     .needs-section .needs-button { padding: 10px 20px; font-size: 14px; margin-top: 10px; }
 }
 
-/* Styles for the Features Section */
 .features-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0; /* Reducido padding superior/inferior */
-  background: #F8ECD7; /* Color de fondo según la referencia */
+  padding: 60px 0; 
+  background: #F8ECD7; 
   width: 100vw;
   max-width: none;
   height: auto;
@@ -1766,52 +1758,51 @@ nav a:hover {
 
 .features-section .container {
     display: flex;
-  flex-direction: column; /* Asegurar que el contenido principal (si hubiera título + grid) se apile */
-    align-items: center; /* Centrar contenido horizontalmente */
+  flex-direction: column; 
+    align-items: center; 
     width: 100%;
-  max-width: 1100px; /* Reducido max-width del contenedor principal */
-  margin: 0 auto; /* Centrar el contenedor principal */
-  padding: 0 30px; /* Ajustado padding lateral al contenedor */
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 0 30px; 
   box-sizing: border-sizing;
-  gap: 30px; /* Ajustado espacio entre elementos dentro del contenedor */
+  gap: 30px; 
 }
 
 .features-section .features-grid {
-  display: grid; /* Usar Grid para la cuadrícula de tarjetas */
-  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho en escritorio */
-  gap: 40px; /* Aumentado el espacio entre las tarjetas */
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 40px; 
     width: 100%;
-  max-width: 900px; /* Reducido ligeramente el ancho máximo de la cuadrícula para hacer las tarjetas más pequeñas */
-  margin: 0 auto; /* Centrar la cuadrícula */
+  max-width: 900px; 
+  margin: 0 auto; 
 }
 
 .features-section .feature-card {
   display: flex;
-  flex-direction: column; /* Apilar ícono y texto */
-  justify-content: center; /* Centrar contenido verticalmente */
-  align-items: center; /* Centrar contenido horizontalmente */
-  text-align: center; /* Centrar texto */
-  padding: 15px; /* Reducido padding interno de la tarjeta para dar más espacio a la imagen */
-  background: #FFFFFF; /* Fondo blanco de la tarjeta */
-  border-radius: 10px; /* Bordes redondeados */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  height: auto; /* Altura automática */
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  padding: 15px; 
+  background: #FFFFFF; 
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  height: auto;
 }
 
 .features-section .feature-card .feature-icon {
   display: block;
-  width: 100%; /* Ocupa el 100% del ancho del padre */
-  height: auto; /* Altura automática para mantener proporción */
-  max-height: 200px; /* Aumentado muchísimo la altura máxima para que ocupe casi toda la tarjeta */
-  object-fit: contain; /* Asegurar que el ícono se ajuste sin cortarse */
-  margin-bottom: 10px; /* Espacio entre ícono y texto */
+  width: 100%; 
+  height: auto; 
+  max-height: 200px; 
+  object-fit: contain;
+  margin-bottom: 10px; 
 }
 
-/* Si las tarjetas tienen texto, agregar estilos */
+
 .features-section .feature-card p {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
-  font-weight: normal; /* Asegurar peso normal */
+  font-weight: normal; 
   font-size: 16px;
   line-height: 1.3em;
   color: #000000;
@@ -1819,7 +1810,6 @@ nav a:hover {
     padding: 0;
 }
 
-/* Ajustes Responsive para Features Section */
 @media (max-width: 1024px) {
   .features-section {
     padding: 50px 0;
@@ -1827,18 +1817,18 @@ nav a:hover {
   .features-section .container {
       padding: 0 20px;
       gap: 25px;
-       max-width: 900px; /* Ajustado max-width responsive */
+       max-width: 900px; 
   }
   .features-section .features-grid {
-      grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
-      gap: 30px; /* Aumentado el espacio en tablet */
-      max-width: 600px; /* Reducido ligeramente el ancho máximo */
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 30px; 
+      max-width: 600px; 
   }
    .features-section .feature-card {
        padding: 12px;
    }
    .features-section .feature-card .feature-icon {
-       max-height: 150px; /* Aumentado muchísimo max-height responsive para tablet */
+       max-height: 150px; 
        margin-bottom: 8px;
    }
     .features-section .feature-card p { font-size: 14px; }
@@ -1851,50 +1841,50 @@ nav a:hover {
     .features-section .container {
          padding: 0 15px;
         gap: 20px;
-        max-width: 600px; /* Ajustado max-width responsive */
+        max-width: 600px; 
     }
     .features-section .features-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
-        gap: 25px; /* Aumentado el espacio en móvil */
-         max-width: 300px; /* Reducido ligeramente el ancho máximo */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 25px; 
+         max-width: 300px; 
     }
     .features-section .feature-card {
         padding: 8px;
     }
     .features-section .feature-card .feature-icon {
-       max-height: 120px; /* Aumentado muchísimo max-height responsive para móvil */
+       max-height: 120px; 
        margin-bottom: 5px;
    }
      .features-section .feature-card p { font-size: 12px; }
 }
-/* Styles for the living section */
+
 
 .features-section .feature-card .feature-icon {
-       max-height: 65px; /* Aumentado max-height responsive para tablet */
+       max-height: 65px; 
        margin-bottom: 8px;
    }
 
    .features-section .feature-card .feature-icon {
-       max-height: 90px; /* Aumentado significativamente max-height responsive para tablet */
+       max-height: 90px; 
        margin-bottom: 8px;
    }
 
    .features-section .feature-card .feature-icon {
-       max-height: 150px; /* Aumentado muchísimo max-height responsive para tablet */
+       max-height: 150px; 
        margin-bottom: 8px;
    }
 
-/* Styles for the Living Section */
+
 .living-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0; /* Padding superior e inferior */
-  background: #C14D35; /* Color de fondo naranja/rojizo según la referencia */
-  background-image: url('Vector (1).png'); /* Imagen de vector en el fondo */
-  background-repeat: no-repeat; /* No repetir la imagen */
-  background-size: auto; /* Tamaño automático de la imagen de fondo */
-  background-position: right center; /* Posicionada a la derecha y centrada verticalmente */
+  padding: 80px 0; 
+  background: #C14D35; 
+  background-image: url('Vector (1).png'); 
+  background-repeat: no-repeat; 
+  background-size: auto; 
+  background-position: right center; 
   width: 100vw;
   max-width: none;
   height: auto;
@@ -1903,7 +1893,7 @@ nav a:hover {
   overflow: hidden;
 }
 
-/* Añadir un pseudo-elemento para aumentar la opacidad del vector de fondo */
+
 .living-section::before {
   content: '';
   position: absolute;
@@ -1915,32 +1905,32 @@ nav a:hover {
   background-repeat: no-repeat;
   background-size: auto;
   background-position: right center;
-  opacity: 0.15; /* Aumentar ligeramente la opacidad del vector */
+  opacity: 0.15; 
   pointer-events: none;
   z-index: 0;
 }
 
 .living-section .container {
      display: flex;
-  flex-direction: row; /* Layout horizontal: izquierda (título+botón) y derecha (imagen) */
-  justify-content: space-between; /* Espacio entre los elementos */
-  align-items: center; /* Centrar verticalmente */
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
      width: 100%;
-  max-width: 1200px; /* Ajustar max-width */
+  max-width: 1200px; 
      margin: 0 auto;
-  padding: 0 40px; /* Padding lateral */
+  padding: 0 40px; 
      box-sizing: border-box;
-  gap: 50px; /* Espacio entre izquierda y derecha */
-  position: relative; /* Para que el pseudo-elemento se posicione respecto a este contenedor */
-  z-index: 1; /* Asegurar que el contenido esté encima del vector */
+  gap: 50px; 
+  position: relative; 
+            z-index: 1; 
 }
 
 .living-section .living-left {
     display: flex;
     flex-direction: column;
-  align-items: flex-start; /* Alinear contenido a la izquierda */
-  gap: 30px; /* Espacio entre título y botón */
-    width: 50%; /* Ocupar la mitad del ancho */
+  align-items: flex-start; 
+  gap: 30px; 
+    width: 50%; 
   max-width: 500px;
 }
 
@@ -1948,18 +1938,18 @@ nav a:hover {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
     font-weight: 400;
-  font-size: 60px; /* Tamaño grande según la referencia */
+  font-size: 60px; 
   line-height: 1.1em;
-  color: #FAEACD; /* Color claro según la referencia */
+  color: #FAEACD; 
     margin: 0;
     padding: 0;
 }
 
 .living-section .living-button {
     display: inline-block;
-  padding: 15px 25px; /* Padding del botón */
-  background: #FAEACD; /* Fondo claro del botón */
-  color: #000000; /* Texto oscuro del botón */
+  padding: 15px 25px; 
+  background: #FAEACD; 
+  color: #000000; 
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
@@ -1973,26 +1963,26 @@ nav a:hover {
 }
 
 .living-section .living-button:hover {
-  background: #E0D3B8; /* Color al pasar el mouse */
+  background: #E0D3B8; 
 }
 
 .living-section .living-right {
      display: flex;
     justify-content: center;
     align-items: center;
-  width: 50%; /* Ocupar la otra mitad del ancho */
+          width: 50%; 
   max-width: 500px;
 }
 
 .living-section .living-image-placeholder {
     width: 100%;
-  height: 300px; /* Altura fija para la imagen */
-  background: #D9D9D9; /* Color de placeholder gris */
+  height: 300px; 
+  background: #D9D9D9; 
      display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-  border-radius: 10px; /* Bordes redondeados si es necesario */
+  border-radius: 10px; 
 }
 
 .living-section .living-image-placeholder img {
@@ -2002,7 +1992,7 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* Estilos para los bloques de texto inferiores - Layout de 2 columnas con 3 filas */
+
 .living-section .living-text-blocks {
     display: flex;
   flex-direction: column; /* Cambiar a columna para apilar las filas */
@@ -2016,7 +2006,7 @@ nav a:hover {
   gap: 0; /* Sin gap entre filas */
 }
 
-/* Cada fila individual */
+
 .living-section .living-text-blocks .text-row {
     display: flex;
   flex-direction: row; /* Título a la izquierda, descripción a la derecha */
@@ -2026,24 +2016,24 @@ nav a:hover {
   border-bottom: 1px solid #FAEACD; /* Línea continua debajo de cada fila */
 }
 
-/* Quitar línea de la última fila */
+
 .living-section .living-text-blocks .text-row:last-child {
   border-bottom: none;
 }
 
-/* Columna de título dentro de cada fila */
+
 .living-section .living-text-blocks .text-row .row-title {
   width: 35%; /* Misma proporción que antes */
     flex-shrink: 0;
 }
 
-/* Columna de descripción dentro de cada fila */
+
 .living-section .living-text-blocks .text-row .row-description {
   width: 65%; /* Misma proporción que antes */
   flex-shrink: 0;
 }
 
-/* Estilos para los títulos */
+
 .living-section .living-text-blocks .text-row .row-title h3 {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
@@ -2055,7 +2045,7 @@ nav a:hover {
     padding: 0;
 }
 
-/* Estilos para las descripciones */
+
 .living-section .living-text-blocks .text-row .row-description p {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
@@ -2067,25 +2057,25 @@ nav a:hover {
     padding: 0;
 }
 
-/* Ocultar las columnas antiguas ya que usaremos la nueva estructura */
+
 .living-section .living-text-blocks .titles-column,
 .living-section .living-text-blocks .descriptions-column {
   display: none;
 }
 
-/* Ajustes Responsive para Living Section */
+
 @media (max-width: 1024px) {
   .living-section {
     padding: 60px 0;
   }
   .living-section::before {
-    opacity: 0.1; /* Reducir opacidad en responsive */
+    opacity: 0.1; 
   }
   .living-section .container {
-    flex-direction: column; /* Apilar en tablet */
+    flex-direction: column; 
     gap: 40px;
     padding: 0 30px;
-    text-align: center; /* Centrar contenido en tablet */
+    text-align: center; 
   }
   .living-section .living-left,
   .living-section .living-right {
@@ -2101,11 +2091,11 @@ nav a:hover {
     gap: 0;
     margin: 40px auto 0;
     padding: 0 30px;
-    text-align: center; /* Centrar texto en tablet */
+                text-align: center; 
   }
   
   .living-section .living-text-blocks .text-row {
-    flex-direction: column; /* Apilar título sobre descripción en tablet */
+    flex-direction: column; 
     gap: 15px;
     padding: 25px 0;
   }
@@ -2124,7 +2114,7 @@ nav a:hover {
     padding: 40px 0;
   }
   .living-section::before {
-    opacity: 0.08; /* Reducir más la opacidad en móvil */
+          opacity: 0.08; 
   }
   .living-section .container {
     gap: 30px;
@@ -2153,13 +2143,13 @@ nav a:hover {
   .living-section .living-text-blocks .text-row .row-description p { font-size: 14px; }
 }
 
-/* Styles for the FAQ Section */
+
 .faq-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 0; /* Padding superior e inferior */
-  background: #FFFFFF; /* Fondo blanco como en la imagen */
+  padding: 80px 0; 
+  background: #FFFFFF; 
   width: 100vw;
   max-width: none;
   height: auto;
@@ -2170,23 +2160,23 @@ nav a:hover {
 
 .faq-section .container {
     display: flex;
-  flex-direction: row; /* Layout horizontal: título a la izquierda, preguntas a la derecha */
-  justify-content: space-between; /* Espacio entre los elementos */
-  align-items: flex-start; /* Alinear en la parte superior */
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: flex-start; 
     width: 100%;
-  max-width: 1200px; /* Ajustar max-width */
+  max-width: 1200px; 
     margin: 0 auto;
-  padding: 0 40px; /* Padding lateral */
+  padding: 0 40px; 
   box-sizing: border-box;
-  gap: 80px; /* Espacio generoso entre título y preguntas */
+  gap: 80px; 
 }
 
-/* Columna izquierda: Título */
+
 .faq-section .faq-left {
     display: flex;
     flex-direction: column;
-  align-items: flex-start; /* Alinear contenido a la izquierda */
-  width: 35%; /* Columna más pequeña para el título */
+  align-items: flex-start; 
+  width: 35%; 
   max-width: 400px;
   flex-shrink: 0;
 }
@@ -2195,34 +2185,34 @@ nav a:hover {
     font-family: 'Cormorant Garamond', serif;
     font-style: normal;
     font-weight: 400;
-  font-size: 60px; /* Tamaño grande según la referencia */
+      font-size: 60px; 
   line-height: 1.1em;
-  color: #000000; /* Color negro según la referencia */
+  color: #000000; 
     margin: 0;
     padding: 0;
   text-align: left;
 }
 
-/* Columna derecha: Preguntas y respuestas */
+
 .faq-section .faq-right {
     display: flex;
     flex-direction: column;
-  width: 65%; /* Columna más grande para las preguntas */
+  width: 65%; 
   max-width: 700px;
   flex-shrink: 0;
 }
 
-/* Cada item de pregunta/respuesta */
+
 .faq-section .faq-item {
     display: flex;
     flex-direction: column;
   width: 100%;
-  padding: 30px 0; /* Padding vertical para cada item */
-  border-bottom: none; /* Quitar línea del contenedor principal */
-  gap: 20px; /* Espacio entre pregunta y respuesta */
+  padding: 30px 0; 
+  border-bottom: none; 
+  gap: 20px; 
 }
 
-/* Quitar línea del último item */
+
 .faq-section .faq-item:last-child {
   border-bottom: none;
 }
@@ -2231,15 +2221,15 @@ nav a:hover {
 .faq-section .faq-question {
     display: flex;
   flex-direction: row;
-  justify-content: space-between; /* Pregunta a la izquierda, flecha a la derecha */
+  justify-content: space-between; 
     align-items: center;
   width: 100%;
-  cursor: pointer; /* Cursor pointer aunque no sea funcional */
-  padding-bottom: 15px; /* Espacio antes de la línea */
-  border-bottom: 1px solid #CCCCCC; /* Línea separadora gris debajo de la pregunta */
+  cursor: pointer; 
+  padding-bottom: 15px; 
+  border-bottom: 1px solid #CCCCCC; 
 }
 
-/* Texto de la pregunta */
+
 .faq-section .faq-question span:first-child {
   font-family: 'Cormorant Garamond', serif;
     font-style: normal;
@@ -2249,59 +2239,59 @@ nav a:hover {
   color: #000000; /* Color negro */
   margin: 0;
   padding: 0;
-  flex-grow: 1; /* Ocupar el espacio disponible */
+  flex-grow: 1; 
 }
 
-/* Flecha de la pregunta */
+
 .faq-section .faq-arrow {
-    font-size: 24px; /* Tamaño de la flecha */
-  color: #000000; /* Color negro */
+    font-size: 24px; 
+  color: #000000; 
   font-weight: bold;
-  flex-shrink: 0; /* No encoger */
-  margin-left: 20px; /* Espacio entre pregunta y flecha */
-  transform: rotate(0deg); /* Flecha hacia abajo */
+  flex-shrink: 0; 
+  margin-left: 20px; 
+  transform: rotate(0deg); 
 }
 
-/* Contenedor de la respuesta */
+
 .faq-section .faq-answer {
-  display: block; /* Siempre visible */
+  display: block; 
   width: 100%;
 }
 
-/* Texto de la respuesta */
+
 .faq-section .faq-answer p {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
-  font-size: 16px; /* Tamaño más pequeño para las respuestas */
+  font-size: 16px;
   line-height: 1.4em;
-  color: #000000; /* Color negro */
+  color: #000000; 
   margin: 0;
   padding: 0;
-  padding-right: 44px; /* Padding derecho para alinear con el texto de la pregunta (sin llegar hasta la flecha) */
+  padding-right: 44px; 
 }
 
-/* Ajustes Responsive para FAQ Section */
+
 @media (max-width: 1024px) {
   .faq-section {
     padding: 60px 0;
   }
   .faq-section .container {
-    flex-direction: column; /* Apilar en tablet */
+      flex-direction: column; 
     gap: 40px;
     padding: 0 30px;
-    text-align: center; /* Centrar contenido en tablet */
+    text-align: center; 
   }
   .faq-section .faq-left,
   .faq-section .faq-right {
-    width: 100%; /* Ocupar todo el ancho en tablet */
+    width: 100%; 
     max-width: 700px;
-    align-items: center; /* Centrar elementos */
+    align-items: center; 
   }
   .faq-section .faq-title { 
     font-size: 48px; 
     line-height: 1.1; 
-    text-align: center; /* Centrar título en tablet */
+    text-align: center; 
   }
   .faq-section .faq-item {
     padding: 25px 0;
@@ -2349,18 +2339,17 @@ nav a:hover {
   }
 }
 
-/* Styles for the Contact section */
 .contact-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 100px 0; /* Ajustar padding superior e inferior */
-  background: #F8ECD7; /* Fondo beige como en la imagen */
-  background-image: url('2653b0e0f4fb2e200ab653c625a39ccacd3f4655.jpg'); /* Imagen de fondo de playa */
+  padding: 100px 0; 
+  background: #F8ECD7;
+  background-image: url('2653b0e0f4fb2e200ab653c625a39ccacd3f4655.jpg');
   background-repeat: no-repeat;
-  background-size: cover; /* Cubrir toda la sección */
-  background-position: center; /* Centrar la imagen */
+  background-size: cover; 
+  background-position: center; 
   width: 100vw;
   max-width: none;
   height: auto;
@@ -2370,7 +2359,6 @@ nav a:hover {
   position: relative;
 }
 
-/* Overlay transparente para la imagen de fondo */
 .contact-section::before {
   content: '';
   position: absolute;
@@ -2378,7 +2366,7 @@ nav a:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(248, 236, 215, 0.7); /* Overlay beige transparente */
+  background: rgba(248, 236, 215, 0.7); 
   z-index: 1;
   pointer-events: none;
 }
@@ -2389,132 +2377,123 @@ nav a:hover {
   align-items: center;
   justify-content: center;
     width: 100%;
-  max-width: 800px; /* Ajustar max-width para centrar el formulario */
+  max-width: 800px; 
     margin: 0 auto;
-  padding: 0 40px; /* Padding lateral */
+  padding: 0 40px;
     box-sizing: border-box;
   position: relative;
-  z-index: 2; /* Encima del overlay */
-  gap: 40px; /* Espacio entre formulario e imagen */
+  z-index: 2; 
+  gap: 40px;
 }
 
-/* Contenedor del formulario con fondo oscuro */
 .contact-section .contact-form-block {
     display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px; /* Padding generoso interno */
-  background: #4A5D5F; /* Fondo azul-verde oscuro como en la imagen */
-    border-radius: 10px; /* Bordes redondeados */
+  padding: 40px;
+  background: #4A5D5F; 
+    border-radius: 10px; 
   width: 100%;
   max-width: 700px;
     box-sizing: border-box;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
 }
 
-/* Título del formulario */
+
 .contact-section .contact-title {
   font-family: 'Cormorant Garamond', serif;
     font-style: normal;
   font-weight: 400;
-  font-size: 48px; /* Tamaño grande */
+  font-size: 48px; 
   line-height: 1.2em;
-  color: #FFFFFF; /* Color blanco como en la imagen */
-  margin: 0 0 30px 0; /* Margen inferior */
+  color: #FFFFFF; 
+  margin: 0 0 30px 0;
     padding: 0;
   text-align: center;
 }
 
-/* Formulario principal */
 .contact-section .contact-form {
     display: flex;
   flex-direction: column;
   width: 100%;
-    gap: 20px; /* Espacio entre filas */
+    gap: 20px; 
 }
 
-/* Fila del formulario */
 .contact-section .form-row {
     display: flex;
   flex-direction: row;
-  gap: 20px; /* Espacio entre campos en la misma fila */
+  gap: 20px; 
   width: 100%;
 }
 
-/* Campo individual */
 .contact-section .form-field {
     display: flex;
   flex-direction: column;
-  gap: 10px; /* Espacio entre label e input */
-  flex: 1; /* Ocupar espacio disponible */
+  gap: 10px; 
+  flex: 1; 
 }
 
-/* Campo de ancho completo */
 .contact-section .form-field.full-width {
   width: 100%;
 }
 
-/* Labels de los campos */
 .contact-section .form-field label {
   font-family: 'DM Sans', sans-serif;
     font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.3em;
-  color: #FFFFFF; /* Color blanco para las labels */
+  color: #FFFFFF; 
     margin: 0;
     padding: 0;
 }
 
-/* Inputs del formulario */
 .contact-section .form-field input,
 .contact-section .form-field textarea {
     width: 100%;
-  height: 30px; /* Altura reducida de 45px a 30px */
-  background: #FFFFFF; /* Fondo blanco para los campos */
-  border: none; /* Sin borde */
-  border-radius: 5px; /* Bordes ligeramente redondeados */
-  padding: 8px 15px; /* Padding reducido */
+  height: 30px; 
+  background: #FFFFFF;
+  border: none; 
+  border-radius: 5px; 
+  padding: 8px 15px;
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
   line-height: 1.3em;
-  color: #000000; /* Texto negro en los campos */
+  color: #000000; 
   box-sizing: border-box;
-  outline: none; /* Quitar outline al hacer focus */
+  outline: none; 
 }
 
-/* Textarea específico (si lo hay) */
 .contact-section .form-field textarea {
-  height: 70px; /* Altura reducida de 100px a 70px */
-  resize: vertical; /* Permitir redimensionar solo verticalmente */
+  height: 70px;
+  resize: vertical; 
 }
 
-/* Botón de envío */
+
 .contact-section .submit-button {
     display: inline-block;
-  padding: 15px 30px; /* Padding del botón */
-  background: #F8ECD7; /* Fondo beige claro como en la imagen */
-  color: #000000; /* Texto negro del botón */
+  padding: 15px 30px; 
+  background: #F8ECD7; 
+  color: #000000; 
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
-  font-weight: 600; /* Peso medium para el botón */
+  font-weight: 600;
   font-size: 16px;
     line-height: normal;
     border: none;
-  border-radius: 10px; /* Bordes redondeados */
+  border-radius: 10px; 
     cursor: pointer;
   transition: background 0.3s ease;
-  margin-top: 20px; /* Espacio arriba del botón */
-  align-self: center; /* Centrar el botón */
-  min-width: 120px; /* Ancho mínimo */
+  margin-top: 20px;
+  align-self: center; 
+  min-width: 120px; 
 }
 
 .contact-section .submit-button:hover {
-  background: #E0D3B8; /* Color ligeramente más oscuro al hover */
+  background: #E0D3B8; 
 }
 
-/* Restaurar la imagen de abajo */
 .contact-section .contact-image-placeholder {
     display: flex;
     justify-content: center;
@@ -2525,7 +2504,7 @@ nav a:hover {
   background: #D9D9D9;
   border-radius: 10px;
     overflow: hidden;
-  margin-top: 0; /* Sin margin ya que hay gap en el container */
+  margin-top: 0; 
 }
 
 .contact-section .contact-image-placeholder img {
@@ -2535,7 +2514,6 @@ nav a:hover {
     object-fit: cover;
 }
 
-/* Ajustes Responsive para Contact Section */
 @media (max-width: 1024px) {
     .contact-section {
     padding: 80px 0;
@@ -2551,15 +2529,15 @@ nav a:hover {
     font-size: 42px;
   }
   .contact-section .form-row {
-    flex-direction: column; /* Apilar campos verticalmente en tablet */
+    flex-direction: column; 
     gap: 15px;
   }
   .contact-section .form-field input,
   .contact-section .form-field textarea {
-    height: 28px; /* Altura reducida también en tablet */
+    height: 28px; 
   }
   .contact-section .form-field textarea {
-    height: 60px; /* Textarea reducida también en tablet */
+    height: 60px; 
   }
 }
 
@@ -2582,11 +2560,11 @@ nav a:hover {
   }
   .contact-section .form-field input,
   .contact-section .form-field textarea {
-    height: 26px; /* Altura reducida también en móvil */
-    padding: 6px 12px; /* Padding ajustado */
+    height: 26px; 
+    padding: 6px 12px; 
   }
   .contact-section .form-field textarea {
-    height: 50px; /* Textarea reducida también en móvil */
+    height: 50px; 
   }
   .contact-section .submit-button {
     padding: 12px 25px;
@@ -2594,21 +2572,17 @@ nav a:hover {
   }
 }
 
-/* ==========================================
-   ESTILOS PARA COTIZADOR.HTML
-   ========================================== */
 
-/* Sección Principal del Cotizador */
 .cotizador-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 100px 0;
-  background: #234457; /* Fondo azul oscuro como en la imagen */
+  background: #234457; 
   width: 100vw;
   max-width: none;
-  min-height: 70vh; /* Altura mínima para que se vea como en la referencia */
+  min-height: 70vh; 
   margin: 0;
   box-sizing: border-box;
   overflow: hidden;
@@ -2624,23 +2598,21 @@ nav a:hover {
   margin: 0 auto;
   padding: 0 40px;
   box-sizing: border-box;
-  gap: 60px; /* Espacio entre título y área gris */
+  gap: 60px; 
 }
 
-/* Título principal del cotizador */
 .cotizador-title {
   font-family: 'Cormorant Garamond', serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 64px; /* Tamaño grande como en la imagen */
+  font-size: 64px; 
   line-height: 1.1em;
-  color: #FFFFFF; /* Título blanco sobre fondo azul */
+  color: #FFFFFF; 
   margin: 0;
   padding: 0;
   text-align: center;
 }
 
-/* Contenedor del área principal */
 .cotizador-content {
   display: flex;
   flex-direction: column;
@@ -2649,25 +2621,23 @@ nav a:hover {
   max-width: 800px;
 }
 
-/* Área gris del formulario/contenido */
 .cotizador-form-area {
   width: 100%;
-  height: 400px; /* Altura como en la imagen */
-  background: #E5E5E5; /* Fondo gris claro */
-  border-radius: 12px; /* Bordes redondeados */
+  height: 400px; 
+  background: #E5E5E5; 
+  border-radius: 12px; 
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-/* Footer del Cotizador */
 .cotizador-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 0;
-  background: #1E3427; /* Fondo verde oscuro como en la imagen de referencia */
+  background: #1E3427; 
   width: 100vw;
   max-width: none;
   margin: 0;
@@ -2685,17 +2655,15 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-/* Sección del logo y links */
 .footer-logo-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  gap: 120px; /* Aumentado de 80px a 120px */
+  gap: 120px; 
 }
 
-/* Logo del cotizador */
 .cotizador-logo {
   display: block;
   max-height: 120px; /* Tamaño del logo */
@@ -2703,55 +2671,48 @@ nav a:hover {
   flex-shrink: 0;
 }
 
-/* Grid de links del footer */
 .footer-links-grid {
   display: flex;
   flex-direction: row;
-  gap: 100px; /* Aumentado de 60px a 100px */
+  gap: 100px; 
   flex-grow: 1;
-  justify-content: flex-end; /* Alinear columnas a la derecha */
+  justify-content: flex-end; 
 }
 
-/* Columnas de links */
 .footer-column {
   display: flex;
   flex-direction: column;
   gap: 30px; /* Espacio entre grupos de links */
 }
 
-/* Grupos de links */
 .link-group {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Espacio entre título y subtítulo */
+  gap: 8px; 
 }
 
-/* Títulos de los links */
 .link-title {
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.3em;
-  color: #FAEACD; /* Color claro sobre fondo verde */
+  color: #FAEACD; 
   margin: 0;
   padding: 0;
 }
 
-/* Subtítulos de los links */
 .link-subtitle {
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.3em;
-  color: #FAEACD; /* Color claro sobre fondo verde */
-  margin: 0;
+  color: #FAEACD;
   padding: 0;
-  opacity: 0.8; /* Ligeramente más transparente */
+  opacity: 0.8; 
 }
 
-/* Responsive para Cotizador */
 @media (max-width: 1024px) {
   .cotizador-hero {
     padding: 80px 0;
@@ -2813,11 +2774,8 @@ nav a:hover {
   }
 }
 
-/* ==========================================
-   ESTILOS PARA COTIZADOR.HTML - RÉPLICA EXACTA KIKTEIL
-   ========================================== */
 
-/* Sección Principal del Cotizador */
+
 .cotizador-section {
   background-color: #224457;
   padding: 40px 0;
@@ -2843,7 +2801,6 @@ nav a:hover {
   margin: 0 0 30px 0;
 }
 
-/* Leyenda de estados */
 .status-legend {
   display: flex;
   justify-content: center;
@@ -2867,18 +2824,17 @@ nav a:hover {
 }
 
 .status-dot.disponible {
-  background-color: #28a745; /* Verde */
+  background-color: #28a745; 
 }
 
 .status-dot.apartado {
-  background-color: #ffc107; /* Amarillo */
+  background-color: #ffc107; 
 }
 
 .status-dot.vendido {
-  background-color: #dc3545; /* Rojo */
+  background-color: #dc3545; 
 }
 
-/* Mapa SVG */
 .map-main-container {
   background-color: white;
   border-radius: 10px;
@@ -2900,10 +2856,9 @@ nav a:hover {
   will-change: auto;
 }
 
-/* Estados de los lotes */
 .batch.disponible .lot-path,
 .batch.disponible polygon {
-  fill: #28a745 !important; /* Verde para disponible */
+  fill: #28a745 !important; 
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
@@ -2912,7 +2867,7 @@ nav a:hover {
 
 .batch.apartado .lot-path,
 .batch.apartado polygon {
-  fill: #ffc107 !important; /* Amarillo para apartado */
+  fill: #ffc107 !important; 
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
@@ -2921,14 +2876,13 @@ nav a:hover {
 
 .batch.vendido .lot-path,
 .batch.vendido polygon {
-  fill: #dc3545 !important; /* Rojo para vendido */
+  fill: #dc3545 !important; 
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
-  cursor: pointer !important; /* Cambiar a pointer para que sea clickeable */
+  cursor: pointer !important; 
 }
 
-/* Hover específicos para cada estado */
 .batch.disponible:hover .lot-path,
 .batch.disponible:hover polygon {
   opacity: 1 !important;
@@ -2946,12 +2900,11 @@ nav a:hover {
 .batch.vendido:hover .lot-path,
 .batch.vendido:hover polygon {
   opacity: 0.8 !important;
-  fill: #dc3545 !important; /* Mantener rojo en hover */
+  fill: #dc3545 !important; 
   stroke: #fff !important;
   stroke-width: 3 !important;
 }
 
-/* Números de lotes */
 .lot-number {
   fill: white;
   font-family: 'Montserrat', sans-serif;
@@ -2962,7 +2915,6 @@ nav a:hover {
   pointer-events: none;
 }
 
-/* Modal */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -3171,7 +3123,6 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-/* Botón Ver plano en modal */
 .view-plan-btn {
   width: 100%;
   padding: 12px;
@@ -3191,7 +3142,6 @@ nav a:hover {
   background: #C0392B;
 }
 
-/* Sección de cotización en modal */
 .quote-section {
   margin-top: 30px;
   padding-top: 25px;
@@ -3245,13 +3195,12 @@ nav a:hover {
   background: #229954;
 }
 
-/* Footer del Cotizador */
 .cotizador-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 60px 0;
-  background: #1E3427; /* Fondo verde oscuro como en la imagen de referencia */
+  background: #1E3427; 
   width: 100vw;
   max-width: none;
   margin: 0;
@@ -3269,17 +3218,15 @@ nav a:hover {
   box-sizing: border-box;
 }
 
-/* Sección del logo y links */
 .footer-logo-section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
-  gap: 120px; /* Aumentado de 80px a 120px */
+  gap: 120px; 
 }
 
-/* Logo del cotizador */
 .cotizador-logo {
   display: block;
   max-height: 120px; /* Tamaño del logo */
@@ -3287,55 +3234,49 @@ nav a:hover {
   flex-shrink: 0;
 }
 
-/* Grid de links del footer */
 .footer-links-grid {
   display: flex;
   flex-direction: row;
-  gap: 100px; /* Aumentado de 60px a 100px */
+  gap: 100px; 
   flex-grow: 1;
-  justify-content: flex-end; /* Alinear columnas a la derecha */
+  justify-content: flex-end; 
 }
 
-/* Columnas de links */
 .footer-column {
   display: flex;
   flex-direction: column;
   gap: 30px; /* Espacio entre grupos de links */
 }
 
-/* Grupos de links */
 .link-group {
   display: flex;
   flex-direction: column;
-  gap: 8px; /* Espacio entre título y subtítulo */
+  gap: 8px; 
 }
 
-/* Títulos de los links */
 .link-title {
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 1.3em;
-  color: #FAEACD; /* Color claro sobre fondo verde */
+  color: #FAEACD; 
   margin: 0;
   padding: 0;
 }
 
-/* Subtítulos de los links */
 .link-subtitle {
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.3em;
-  color: #FAEACD; /* Color claro sobre fondo verde */
+  color: #FAEACD; 
   margin: 0;
   padding: 0;
-  opacity: 0.8; /* Ligeramente más transparente */
+  opacity: 0.8; 
 }
 
-/* Responsive para Cotizador */
 @media (max-width: 1024px) {
   .cotizador-section {
     padding: 20px 10px;
@@ -3422,7 +3363,7 @@ nav a:hover {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 120px; /* Aumentado de 80px a 120px */
+  gap: 120px; 
 }
 
 .footer-logo {
@@ -3436,7 +3377,7 @@ nav a:hover {
 
 .footer-links {
   display: flex;
-  gap: 100px; /* Aumentado de 60px a 100px */
+  gap: 100px; 
   flex: 1;
 }
 
@@ -3559,12 +3500,11 @@ nav a:hover {
   }
 }
 
-/* Reglas súper específicas para forzar colores */
 a.batch.vendido .lot-path,
 a.batch.vendido polygon,
 .batch.vendido path,
 .batch.vendido polygon {
-  fill: #dc3545 !important; /* Rojo para vendido - FORZADO */
+  fill: #dc3545 !important; 
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
@@ -3575,7 +3515,7 @@ a.batch.disponible .lot-path,
 a.batch.disponible polygon,
 .batch.disponible path,
 .batch.disponible polygon {
-  fill: #28a745 !important; /* Verde para disponible - FORZADO */
+  fill: #28a745 !important; 
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
@@ -3586,25 +3526,23 @@ a.batch.apartado .lot-path,
 a.batch.apartado polygon,
 .batch.apartado path,
 .batch.apartado polygon {
-  fill: #ffc107 !important; /* Amarillo para apartado - FORZADO */
+  fill: #ffc107 !important;
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
   cursor: pointer !important;
 }
 
-/* Hover súper específico */
 a.batch.vendido:hover .lot-path,
 a.batch.vendido:hover polygon,
 .batch.vendido:hover path,
 .batch.vendido:hover polygon {
-  fill: #dc3545 !important; /* Mantener rojo en hover */
+  fill: #dc3545 !important; 
   stroke: #fff !important;
   stroke-width: 3 !important;
   opacity: 1 !important;
 }
 
-/* Estados de los lotes */
 .lot-path {
   fill: rgba(255, 255, 255, 0.2);
   stroke: #ffffff;
