@@ -1,0 +1,3626 @@
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  background: #f8ecd7;
+  color: #2d2d2d;
+  background-image: none;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.language-bar {
+  width: 100%;
+  margin: 0 auto;
+  background: #202020;
+  color: #FFFFFF;
+  font-family: 'DM Sans', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+  padding: 20px 2cm;
+  height: 61px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+}
+
+.language-bar span {
+  cursor: pointer;
+  margin: 0;
+}
+
+.language-bar .separator {
+  width: 1px;
+  height: 21px;
+  background-color: #FFFFFF;
+}
+
+.language-bar span:hover {
+  text-decoration: underline;
+}
+
+header {
+  background: #f8ecd7;
+  border-bottom: 1px solid #e0d3b8;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.navbar-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  max-width: 1440px;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+  margin: 0 auto;
+}
+
+.logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  margin-left: 2cm;
+  img {
+    display: block;
+    max-height: 66px;
+    width: auto;
+    vertical-align: middle;
+  }
+  font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #23412d;
+  letter-spacing: 2px;
+}
+
+nav {
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: auto;
+  padding-right: 2cm;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 38px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  height: auto;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 900;
+  font-size: 24px;
+  font-family: 'DM Sans', Arial, sans-serif;
+  letter-spacing: 0;
+  line-height: normal;
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+}
+
+nav a:hover {
+  color: #23412d;
+}
+
+@media (max-width: 768px) {
+  .navbar-flex {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 10px 0.5cm;
+    gap: 10px;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+  nav a {
+    font-size: 18px;
+    vertical-align: auto;
+    display: block;
+    align-items: flex-start;
+  }
+}
+
+/* Styles for the Hero Section */
+.hero {
+  /* top section properties */
+  display: flex;
+  flex-direction: column; /* Contenido principal (hero-inner) apilado verticalmente con otros posibles elementos de la sección hero */
+  align-items: center; /* Centrar el contenido principal horizontalmente */
+  padding: 40px 70px; /* Padding según Figma */
+  gap: 40px;
+  isolation: isolate;
+  width: 1440px; /* Ancho del diseño base según Figma */
+  max-width: 100%; /* Asegurar que no se desborde en pantallas más pequeñas */
+  min-height: 943px; /* Cambiado de height fijo a min-height */
+  background: #FAEACD; /* Color de fondo según Figma */
+  position: relative; /* Necesario para posicionar el vector absolutamente dentro de esta sección */
+  overflow: hidden; /* Para contener el vector si se sale */
+  margin: 0 auto; /* Centrar el contenedor principal */
+}
+
+/* Vector decorativo */
+.hero-vector {
+  position: absolute;
+  width: 827px;
+  height: 100%; /* Cambiado a 100% para que ocupe toda la altura de la sección */
+  left: 799px;
+  top: 0; /* Ajustado para que empiece desde arriba */
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 0;
+  pointer-events: none;
+  object-fit: cover; /* Asegurar que la imagen cubra todo el espacio */
+  opacity: 0.9; /* Aumentar opacidad para que sea menos transparente */
+}
+
+/* Contenedor interno para el layout principal (lado izquierdo y lado derecho) */
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 2cm;
+  gap: 50px;
+  width: 100%;
+  max-width: 1440px;
+  height: auto;
+  z-index: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
+  align-self: center;
+  box-sizing: border-box;
+}
+
+/* Lado izquierdo: Contenedor para el título y la descripción */
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 20px;
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  z-index: 1;
+  position: relative;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-self: flex-start; /* Mantener alineación con navbar */
+}
+
+/* Contenedor del título y la descripción */
+.hero-title-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  overflow: visible;
+}
+
+/* Título principal */
+.hero-title {
+  width: 100%; /* Asegurar que ocupe el ancho completo del padre (.hero-title-block) */
+  max-width: 860px; /* Mantener el max-width original de Figma */
+  height: auto; /* Altura automática */
+  font-family: 'Cormorant Garamond', serif; /* Usar Cormorant Garamond como alternativa a Avocado */
+  font-style: normal; /* Asegurar estilo normal */
+  font-weight: 400; /* Peso de fuente 400 (normal) */
+  font-size: 80px;
+  line-height: 84px;
+  color: #000000; /* Color negro según Figma */
+  margin: 0;
+  padding: 0;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  flex-shrink: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Descripción */
+.hero-desc {
+  width: 100%; /* Asegurar que ocupe el ancho completo del padre (.hero-title-block) */
+  max-width: 860px; /* Mantener el max-width original de Figma */
+  height: auto; /* Altura automática */
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal; /* Asegurar estilo normal */
+  font-weight: normal; /* Cambiado a 'normal' para asegurar que no sea negrilla */
+  font-size: 20px;
+  line-height: 26px;
+  color: #000000; /* Color negro según Figma */
+  margin: 0;
+  padding: 0;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  flex-shrink: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Lado derecho: Contenedor para el formulario y la imagen */
+.hero-right-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start; /* Mantener alineación con navbar */
+  align-items: flex-end;
+  padding: 0;
+  gap: 10px;
+  width: 100%;
+  max-width: 1260px; /* Restaurar ancho máximo original */
+  flex-grow: 0;
+  flex-shrink: 1;
+  align-self: flex-start; /* Mantener alineación con navbar */
+}
+
+/* Formulario - Restaurar dimensiones originales */
+.hero-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  gap: 20px;
+  width: 625px; /* Restaurar ancho original */
+  max-width: 100%;
+  height: 473px; /* Restaurar altura original */
+  background: #C14D35;
+  border-radius: 10px;
+  box-sizing: border-box;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Contenedor de fila dentro del formulario - Restaurar dimensiones originales */
+.hero-form .row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0;
+  gap: 50px; /* Restaurar gap original */
+  width: 545px; /* Restaurar ancho original */
+  max-width: 100%;
+  height: auto;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Ajuste específico para la fila con gap de 20px y justify-content */
+.hero-form .row.row-gap-20 {
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Contenedor de un campo individual (etiqueta + input) */
+.hero-form .field-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 10px;
+  width: 247.5px; /* Ancho del campo div (ejemplo de Nombre/Apellido) */
+  max-width: 100%;
+  height: auto;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+}
+
+/* Ancho específico para el campo de Correo (fila solitaria) */
+.hero-form .row .field-div.field-correo {
+    width: 100%;
+}
+
+/* Estilos para las etiquetas de los campos */
+.hero-form label {
+  width: auto;
+  height: auto;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 26px;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Estilos específicos para la etiqueta 'Nombre' si su fuente es diferente (Inter) */
+.hero-form label.label-inter {
+    font-family: 'Inter', sans-serif;
+    line-height: 24px;
+}
+
+/* Estilos para los campos de entrada (inputs) */
+.hero-form input[type="text"],
+.hero-form input[type="email"],
+.hero-form input[type="tel"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 30px;
+  background: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  border-radius: 0;
+  padding: 0 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  color: #000000;
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Estilos para el botón */
+.hero-form button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 10px;
+  width: 96px;
+  height: 49px;
+  background: #FAEACD;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  flex: none;
+  order: 4;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 29px;
+  color: #000000;
+}
+
+/* Contenedor de la imagen derecha - Restaurar dimensiones originales */
+.hero-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 0;
+  gap: 10px;
+  width: 625px; /* Restaurar ancho original */
+  max-width: 100%;
+  height: 472px; /* Restaurar altura original */
+  background: #D6D6D6;
+  border-radius: 10px;
+  overflow: hidden;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Imagen dentro del contenedor derecho - Restaurar dimensiones originales */
+.hero-right img {
+  display: block;
+  width: 625px; /* Restaurar ancho original */
+  max-width: 100%;
+  height: 472px; /* Restaurar altura original */
+  object-fit: cover;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 1460px) {
+  .hero {
+      width: 100%;
+      height: auto;
+      padding: 40px 1cm;
+  }
+  .hero-inner {
+    padding: 0 1cm;
+  }
+  .hero-right-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .hero-form,
+  .hero-right {
+    width: 100%;
+    max-width: 625px; /* Restaurar ancho máximo original */
+  }
+  .hero-title-block,
+  .hero-title,
+  .hero-desc,
+  .hero-form,
+  .hero-right {
+      width: 100%; /* Ocupar todo el ancho del contenedor padre (hero-left o hero-right-content) */
+      max-width: 100%; /* Asegurar que no excedan el 100% en responsive */
+      height: auto;
+      /* Asegurar que los elementos flexibles hijos se ajusten */
+      flex-shrink: 1;
+      flex-grow: 0; /* O ajustar a 1 si deben crecer */
+  }
+   .hero-form .row {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+   }
+    .hero-form .field-div {
+        width: 100%;
+        max-width: 100%;
+         /* Centrar el contenido dentro de field-div */
+        align-items: center;
+    }
+   .hero-form label,
+   .hero-form input[type="text"],
+   .hero-form input[type="email"],
+   .hero-form input[type="tel"] {
+       width: 100% !important;
+       max-width: 100% !important;
+       text-align: center; /* Centrar texto en inputs si se desea */
+   }
+   .hero-right img {
+        width: 100%;
+        height: auto;
+   }
+  .hero-vector {
+      width: 90%;
+      left: 5%;
+      opacity: 0.5;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+     padding: 20px 0.5cm;
+     height: auto;
+  }
+   .hero-title-block .hero-title { font-size: 48px; line-height: 1.2; }
+   .hero-desc { font-size: 18px; line-height: 1.3; }
+    .hero-form { padding: 20px; gap: 15px; height: auto; flex-shrink: 1; }
+     .hero-form label, .hero-form input, .hero-form button { font-size: 16px; line-height: normal; }
+     .hero-form input[type="text"],
+     .hero-form input[type="email"],
+     .hero-form input[type="tel"] {
+         height: 35px;
+     }
+      .hero-form button { padding: 10px 15px; }
+   .hero-right { height: auto; flex-shrink: 1; }
+   .hero-vector {
+       left: 2%;
+       top: 5%;
+       width: 100%;
+   }
+  .hero-inner {
+    padding: 0 0.5cm;
+  }
+  .hero-form,
+  .hero-right {
+    max-width: 100%;
+  }
+}
+
+/* Ajustes para responsive */
+@media (max-width: 1460px) {
+  .container,
+  .navbar-flex {
+    max-width: 100%;
+    padding: 10px 0 10px 1cm;
+  }
+  
+  .language-bar {
+    padding: 20px 1cm;
+  }
+  
+  nav {
+    padding-right: 1cm;
+  }
+}
+
+@media (max-width: 768px) {
+  .container,
+  .navbar-flex {
+    padding: 10px 0 10px 0.5cm;
+  }
+  
+  .language-bar {
+    padding: 20px 0.5cm;
+  }
+  
+  nav {
+    padding-right: 0.5cm;
+  }
+}
+
+/* Styles for the Intro Section (Sobre Soleia) */
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 70px 60px; /* Ajustado padding superior e inferior */
+  gap: 30px;
+  width: 100vw;
+  max-width: none;
+  height: auto; /* Altura automática para que el contenido determine la altura */
+  background: #1E3427;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.intro-section .container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex; /* Añadido display flex para centrar contenido */
+    flex-direction: column; /* Contenido apilado */
+    align-items: center; /* Centrar contenido horizontalmente */
+    gap: 30px; /* Espacio entre título, subtítulo y slider */
+}
+
+/* Title */
+.intro-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Asegurar centrado */
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+  width: 880px;
+  max-width: 100%;
+  height: auto; /* Altura automática */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  text-align: center; /* Centrar texto dentro del contenedor */
+}
+
+.intro-title h1 {
+  width: 880px;
+  max-width: 100%;
+  height: auto; /* Altura automática */
+  font-family: 'Cormorant Garamond', serif; /* Usar Cormorant Garamond como alternativa a Avocado */
+  font-style: normal; /* Asegurar estilo normal */
+  font-weight: 400; /* Peso de fuente 400 (normal) */
+  font-size: 80px;
+  line-height: 76px;
+  text-align: center;
+  color: #FAEACD;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+  margin: 0;
+}
+
+/* Subtitle */
+.intro-subtitle {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Asegurar centrado */
+  align-items: center;
+  padding: 0;
+  gap: 10px;
+  width: 880px;
+  max-width: 100%;
+  height: auto; /* Altura automática */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  text-align: center; /* Centrar texto dentro del contenedor */
+}
+
+.intro-subtitle p {
+  width: 880px;
+  max-width: 100%;
+  height: auto; /* Altura automática */
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal; /* Asegurar estilo normal */
+  font-weight: normal; /* Cambiado a 'normal' para asegurar que no sea negrilla */
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: #FAEACD;
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;
+  margin: 0;
+}
+
+/* Image Slider */
+.img-slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px;
+  gap: 20px;
+  isolation: isolate;
+  width: 1300px;
+  max-width: 100%;
+  height: 428px;
+  flex: none;
+  order: 2;
+  flex-grow: 0;
+  position: relative;
+  overflow: hidden; /* Añadido para cortar la última imagen */
+}
+
+/* Slider Images Container */
+.slider-images {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 0;
+  gap: 90px;
+  width: 100%;
+  height: 350px; /* Aumentado para hacer las imágenes más grandes */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  z-index: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  padding-right: 50%; /* Añadido para cortar la última imagen */
+}
+
+/* Image Container */
+.img-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 280px; /* Aumentado de 250px a 280px */
+  height: 280px; /* Aumentado de 250px a 280px */
+  flex: none;
+  flex-shrink: 0;
+  flex-basis: 280px; /* Aumentado para mantener consistencia */
+}
+
+/* Slider Button */
+.slider-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  gap: 8px;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #FAEACD;
+  border-radius: 50%;
+  flex: none;
+  flex-grow: 0;
+  z-index: 2;
+  cursor: pointer;
+  top: calc(50% - 60px); /* Ajustado de -40px a -60px para subirlas más */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.right-button {
+  right: 1px; /* Ajustado de 60px a 30px para moverla más a la derecha */
+  background-image: url('Vector (3).png');
+  background-size: 40%;
+}
+
+.left-button {
+  left: 40px; /* Ajustado de 60px a 100px para moverla más a la izquierda */
+  background-image: url('Vector (4).png');
+  background-size: 40%;
+}
+
+/* Ocultar scrollbar */
+.slider-images::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ajuste de alineación vertical para alternar */
+.slider-images .img-container:nth-child(even) { /* Seleccionar items pares (2, 4, 6, ...) */
+    align-self: flex-start; /* Alinear estos items en la parte superior */
+}
+
+/* Eliminado padding para subir/bajar imágenes */
+.img-container.img-up {
+    /* Eliminado padding superior */
+}
+
+.img-container.img-down {
+    /* Eliminado padding inferior */
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Slider Dots Container */
+.slider-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Centrar los puntos */
+  align-items: center; /* Centrar verticalmente los puntos */
+  padding: 10px;
+  gap: 9px;
+  width: 100%; /* Ancho completo */
+  height: auto; /* Altura automática */
+  flex: none;
+  order: 1; /* Debajo de las imágenes */
+  align-self: center; /* Centrar horizontalmente */
+  flex-grow: 0;
+  z-index: 1;
+}
+
+/* Dot */
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #CCCCCC;
+  border-radius: 50%;
+  flex: none;
+  flex-grow: 0;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #000000;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1460px) {
+  .intro-section {
+    padding: 60px 20px;
+  }
+  .intro-section .container {
+      padding: 0;
+  }
+  .intro-title h1 { font-size: 60px; line-height: 1.1; /* Ajustado tamaño de fuente responsive */}
+  .intro-subtitle p { font-size: 18px; line-height: 1.3; /* Ajustado tamaño de fuente responsive */}
+  .intro-title,
+  .intro-subtitle {
+    width: 100%;
+    height: auto; /* Altura automática */
+  }
+  .img-slider {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    align-items: center; /* Centrar en responsive */
+  }
+  .slider-images {
+    gap: 20px; /* Reducido gap en responsive */
+  }
+   .img-container {
+       width: 200px; /* Reducido tamaño imagen en responsive */
+       height: 200px;
+   }
+   .slider-images .img-container:nth-child(even) { /* Aplicar alineación en responsive */
+       align-self: flex-start;
+   }
+   .img-container.img-up {
+       /* Eliminado padding superior */
+   }
+    .img-container.img-down {
+       /* Eliminado padding inferior */
+    }
+  .slider-button {
+       width: 30px; /* Tamaño del círculo responsive */
+       height: 30px; /* Tamaño del círculo responsive */
+       padding: 0; /* Eliminamos padding */
+       top: calc(50% - 45px); /* Ajustado para mantener proporción en responsive */
+    }
+  .left-button {
+      left: 120px; /* Ajustado para mantener la posición relativa en responsive */
+      background-size: 40%;
+  }
+  .right-button {
+      right: 45px; /* Ajustado para mantener la posición relativa en responsive */
+      background-size: 40%;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    padding: 40px 10px;
+  }
+   .intro-title h1 { font-size: 40px; /* Ajustado tamaño de fuente móvil */}
+   .intro-subtitle p { font-size: 16px; /* Ajustado tamaño de fuente móvil */}
+   .img-container {
+       width: 150px; /* Reducido tamaño imagen móvil */
+       height: 150px;
+    }
+    .slider-images .img-container:nth-child(even) { /* Aplicar alineación en móvil */
+       align-self: flex-start;
+   }
+    .img-container.img-up {
+       /* Eliminado padding superior */
+   }
+    .img-container.img-down {
+       /* Eliminado padding inferior */
+    }
+    .slider-button {
+       width: 25px; /* Tamaño del círculo móvil */
+       height: 25px; /* Tamaño del círculo móvil */
+       padding: 0; /* Eliminamos padding */
+       top: calc(50% - 35px); /* Ajustado para mantener proporción en móvil */
+    }
+     .left-button {
+       left: 70px; /* Ajustado para mantener la posición relativa en móvil */
+       background-size: 40%; /* Tamaño de la imagen (40%) */
+     }
+      .right-button {
+       right: 25px; /* Ajustado para mantener la posición relativa en móvil */
+       background-size: 40%; /* Tamaño de la imagen (40%) */
+      }
+}
+
+/* Styles for the Brochure Section */
+.brochure-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 70px; /* Reducido de 80px a 60px */
+  background: #FFFFFF;
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.brochure-section .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Reducido de 1440px a 1200px */
+    margin: 0 auto;
+    gap: 40px; /* Reducido de 50px a 40px */
+}
+
+.brochure-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    width: 35%; /* Reducido de 45% a 35% para compensar el ancho de la imagen */
+    max-width: 400px; /* Reducido de 450px a 400px */
+    flex-shrink: 0;
+}
+
+.brochure-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reducido de 20px a 15px */
+}
+
+.brochure-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 300; /* Cambiado de 400 a 300 para quitar negrilla */
+    font-size: 56px; /* Reducido de 80px a 56px */
+    line-height: 1.2; /* Ajustado de 76px a 1.2 */
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.brochure-description {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300; /* Cambiado de 400 a 300 para quitar negrilla */
+    font-size: 16px; /* Reducido de 20px a 16px */
+    line-height: 1.4; /* Ajustado de 26px a 1.4 */
+    color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+.brochure-button {
+    display: inline-block;
+    padding: 12px 25px; /* Reducido de 15px 30px a 12px 25px */
+    background: #C14D35;
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 300; /* Cambiado de 400 a 300 para quitar negrilla */
+    font-size: 14px; /* Reducido de 18px a 14px */
+    line-height: normal;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    min-width: 180px; /* Añadido para controlar el ancho mínimo */
+    text-align: center; /* Asegurar que el texto esté centrado */
+}
+
+.brochure-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%; /* Aumentado de 40% a 55% para hacer la imagen más ancha */
+    max-width: 600px; /* Aumentado de 400px a 600px */
+    flex-shrink: 0;
+}
+
+.brochure-image-placeholder {
+    width: 100%;
+    height: 280px; /* Reducido de 320px a 280px */
+    background: #D9D9D9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1024px) {
+    .brochure-section {
+        padding: 40px 20px;
+    }
+    .brochure-section .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .brochure-left,
+    .brochure-right {
+        width: 100%;
+        max-width: 600px; /* Aumentado de 400px a 600px */
+        text-align: center;
+        align-items: center;
+    }
+    .brochure-text {
+        gap: 12px;
+    }
+    .brochure-title { 
+        font-size: 42px; /* Reducido de 60px a 42px */
+        line-height: 1.2;
+    }
+    .brochure-description { 
+        font-size: 15px; /* Reducido de 18px a 15px */
+        line-height: 1.3;
+    }
+    .brochure-button {
+        padding: 10px 20px;
+        font-size: 13px;
+        min-width: 160px;
+    }
+    .brochure-image-placeholder {
+        height: 240px; /* Reducido de 280px a 240px */
+    }
+}
+
+@media (max-width: 768px) {
+    .brochure-section {
+        padding: 30px 15px;
+    }
+    .brochure-title { 
+        font-size: 32px; /* Reducido de 40px a 32px */
+    }
+    .brochure-description { 
+        font-size: 14px; /* Reducido de 16px a 14px */
+    }
+    .brochure-button {
+        padding: 8px 15px;
+        font-size: 12px;
+        min-width: 140px;
+    }
+    .brochure-image-placeholder {
+        height: 200px; /* Reducido de 240px a 200px */
+    }
+}
+
+/* Styles for the combined Amenities and CTA Brochure Section */
+.combined-amenities-cta {
+  display: flex; /* Contenedor principal flex para apilar sus hijos (los .container) */
+  flex-direction: column; /* Apila los .container verticalmente */
+  align-items: center; /* Centra los .container horizontalmente */
+  padding: 80px 0; /* Ajusta el padding general superior/inferior */
+  gap: 60px; /* Espacio entre los dos contenedores principales (.container) */
+  background: #224457; /* Color de fondo azul oscuro solicitado */
+  background-image: url('Vector (1).png'); /* Añadimos la imagen de fondo */
+  background-repeat: no-repeat; /* No repetir */
+  background-size: auto; /* Tamaño automático de la imagen de fondo */
+  background-position: left center; /* Posicionada a la izquierda y centrada verticalmente */
+  width: 100vw; /* Abarcar todo el ancho de la ventana */
+  max-width: none; /* Eliminar max-width fijo */
+  height: auto; /* Altura automática */
+  margin: 0; /* Eliminar margen */
+  box-sizing: border-box; /* Incluir padding y borde en el tamaño total */
+  overflow: hidden; /* Ocultar contenido que se desborde */
+   /* Eliminamos cualquier pseudo-elemento ::before o ::after que pueda estar interfiriendo */
+}
+
+.combined-amenities-cta::before,
+.combined-amenities-cta::after {
+    content: none !important;
+    background: none !important;
+}
+
+/* Aseguramos que la sección combinada no afecte el margen superior de la siguiente sección */
+.combined-amenities-cta + section { /* Selecciona la sección que viene inmediatamente después */
+    margin-top: 0 !important; /* Elimina cualquier posible margen superior heredado o conflictivo */
+}
+
+/* Estilos para el primer contenedor dentro de .combined-amenities-cta (Amenidades) */
+.combined-amenities-cta > .container:nth-child(1) { 
+    display: flex;
+    flex-direction: column; /* Contenido apilado verticalmente dentro del contenedor */
+    align-items: flex-start; /* Alinear contenido a la izquierda */
+    width: 100%; /* Ocupar el ancho completo del padre */
+    max-width: 1300px; /* Ancho máximo del contenido */
+    margin: 0 auto; /* Centrar */
+    gap: 30px; /* Espacio entre texto y galería */
+    position: relative; /* Para posicionar elementos absolutos si los hay dentro */
+    padding: 0 20px; /* Padding horizontal */
+    box-sizing: border-box;
+}
+
+/* Estilos para el segundo contenedor dentro de .combined-amenities-cta (CTA Brochure) */
+.combined-amenities-cta > .container:nth-child(2) { 
+    display: flex; /* Usamos flexbox para el layout interno */
+    flex-direction: row; /* Lado a lado en escritorio */
+    justify-content: space-between; /* Espacio entre la imagen y el texto */
+    align-items: center; /* Alinear verticalmente */
+    width: 100%; /* Ocupar el ancho completo del padre */
+    max-width: 1440px; /* Ancho máximo similar al diseño brochure */
+    margin: 0 auto; /* Centrar */
+    gap: 50px; /* Espacio entre elementos */
+    padding: 0 70px; /* Padding horizontal */
+    box-sizing: border-box;
+    background: none !important; /* Importante para anular el fondo del padre si lo hereda */
+}
+
+/* Estilos para el texto de Amenidades */
+.combined-amenities-cta .amenities-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear texto a la izquierda */
+    gap: 15px; /* Reducido gap */
+    width: 100%;
+    max-width: 800px; /* Ajustado ancho */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.combined-amenities-cta .amenities-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px; /* Reducido de 64px a 56px */
+    line-height: 1.2em; /* Ajustado line height */
+    color: #FAEACD; /* Color claro */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+.combined-amenities-cta .amenities-description {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px; /* Reducido de 20px a 18px */
+    line-height: 24px; /* Ajustado line height */
+    color: #FAEACD; /* Color claro */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para la galería de Amenidades */
+.combined-amenities-cta .amenities-gallery {
+    display: flex; /* Contenedor principal flex para apilar sus hijos (imágenes, puntos, botones) */
+    flex-direction: column; /* Apila los hijos verticalmente */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    gap: 20px; /* Espacio entre la fila de imágenes, puntos y botones */
+    width: 100%; /* Ocupar el ancho completo del padre */
+    max-width: 1100px; /* Ancho máximo de la galería */
+    height: auto; /* Altura automática basada en el contenido */
+    position: relative; /* Para posicionar los botones absolutos */
+    overflow: hidden; /* Ocultar el scroll horizontal del contenedor principal si no es deseado */
+    padding: 0 60px; /* Añadido padding a los lados para que las flechas queden fuera */
+    box-sizing: border-box;
+}
+
+.combined-amenities-cta .gallery-images {
+    display: flex; /* Contenedor de las imágenes */
+    flex-direction: row; /* Imágenes una al lado de la otra */
+    align-items: flex-end; /* Alinear las imágenes por abajo (como en la referencia) */
+    gap: 15px; /* Reducido gap entre imágenes */
+    width: 100%; /* Ocupar el ancho completo del padre */
+    height: auto; /* Altura automática basada en las imágenes */
+    overflow-x: auto; /* Habilitar scroll horizontal si es necesario */
+    scrollbar-width: none; /* Ocultar scrollbar en Firefox */
+    -ms-overflow-style: none; /* Ocultar scrollbar en IE 10+ */
+    scroll-behavior: smooth; /* Scroll suave */
+    padding-bottom: 0; /* Eliminar padding inferior si no hay scrollbar */
+    padding-left: 0;
+    padding-right: 0;
+    box-sizing: border-box;
+}
+
+.combined-amenities-cta .gallery-images::-webkit-scrollbar {
+    display: none; /* Ocultar scrollbar en Chrome, Safari y Opera */
+}
+
+.combined-amenities-cta .gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrar contenido (imagen) dentro del item */
+    background: #D9D9D9; /* Color de placeholder */
+    overflow: hidden; /* Ocultar partes de la imagen que se desborden */
+    flex-shrink: 0; /* Evitar que los items se encojan */
+     /* Eliminamos las propiedades de grid si existen */
+    grid-row: auto;
+    align-self: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.combined-amenities-cta .gallery-item-short {
+    width: 220px; /* Ajustado ancho */
+    height: 220px; /* Ajustado altura (cuadrada) */
+    align-self: flex-start; /* Alinear arriba para el patrón */
+}
+
+.combined-amenities-cta .gallery-item-tall {
+    width: 220px; /* Ajustado ancho */
+    height: 350px; /* Ajustado altura (rectangular) */
+    align-self: flex-end; /* Alinear abajo para el patrón */
+}
+
+.combined-amenities-cta .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  object-fit: cover; /* Asegurar que la imagen cubra el contenedor */
+}
+
+/* Estilos para los puntos de navegación */
+.combined-amenities-cta .gallery-dots {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; /* Centrar los puntos */
+  align-items: center; /* Centrar verticalmente los puntos */
+  padding: 10px;
+  gap: 10px; /* Mantenido gap */
+  width: 100%; /* Ancho completo */
+  height: auto; /* Altura automática */
+  flex: none;
+  order: 1; /* Debajo de las imágenes */
+  align-self: center; /* Centrar horizontalmente */
+  flex-grow: 0;
+  z-index: 1;
+}
+
+.combined-amenities-cta .gallery-dots .dot {
+  width: 8px; /* Reducido tamaño del punto */
+  height: 8px; /* Reducido tamaño del punto */
+  background: #CCCCCC; /* Color gris */
+  border-radius: 50%;
+  flex: none;
+  flex-grow: 0;
+  cursor: pointer;
+}
+
+.combined-amenities-cta .gallery-dots .dot.active {
+  background: #FAEACD; /* Color activo claro */
+}
+
+/* Estilos para los botones de navegación (flechas) */
+.combined-amenities-cta .gallery-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0; /* Eliminado padding interno si se usa background-size */
+  gap: 8px;
+  position: absolute; /* Posicionamiento absoluto respecto a .amenities-gallery */
+  width: 40px; /* Reducido tamaño del círculo */
+  height: 40px; /* Reducido tamaño del círculo */
+  background: #FAEACD; /* Fondo claro */
+  border-radius: 50%; /* Círculo perfecto */
+  flex: none;
+  flex-grow: 0;
+  z-index: 3; /* Asegurar que estén encima */
+  cursor: pointer;
+  top: 50%; /* Alinear al centro verticalmente del contenedor amenities-gallery */
+  transform: translateY(-50%); /* Corregir alineación vertical basada en su propia altura */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%; /* Ajustado tamaño de la imagen de la flecha */
+  /* Añadir transiciones si se desean efectos al pasar el mouse */
+  transition: background-color 0.3s ease;
+}
+
+.combined-amenities-cta .gallery-button:hover {
+    background-color: #E0D3B8; /* Color ligeramente más oscuro al pasar el mouse */
+}
+
+.combined-amenities-cta .gallery-button.left-button {
+  left: 10px; /* Posicionado a la izquierda dentro del padding de amenities-gallery */
+  background-image: url('Vector (4).png'); /* Imagen de la flecha izquierda */
+}
+
+.combined-amenities-cta .gallery-button.right-button {
+  right: 10px; /* Posicionado a la derecha dentro del padding de amenities-gallery */
+  background-image: url('Vector (3).png'); /* Imagen de la flecha derecha */
+}
+
+.combined-amenities-cta .gallery-button svg path {
+    /* Si usas SVG directamente, ajusta el color aquí */
+    stroke: #1E3427; /* Color oscuro para la flecha */
+}
+
+/* Styles for the CTA Brochure Section when inside .combined-amenities-cta */
+/* Estos estilos controlan el layout de la imagen y el texto/botón del CTA brochure */
+.combined-amenities-cta .cta-brochure-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    width: 50%; /* Ocupar la mitad del ancho en escritorio */
+    max-width: 700px; /* Ancho máximo */
+    flex-shrink: 0; /* No encoger */
+}
+
+.combined-amenities-cta .cta-brochure-image-placeholder {
+    width: 100%; /* Ocupar el ancho del padre */
+    height: 350px; /* Reducido de 400px a 350px */
+    background: #D9D9D9; /* Color de fondo del placeholder */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.combined-amenities-cta .cta-brochure-image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegurar que la imagen cubra el contenedor */
+}
+
+.combined-amenities-cta .cta-brochure-right {
+    display: flex;
+    flex-direction: column; /* Apilar texto y botón verticalmente */
+    align-items: flex-end; /* Alinear elementos a la derecha */
+    gap: 20px; /* Reducido gap */
+    width: 50%; /* Ocupar la otra mitad del ancho en escritorio */
+    max-width: 500px; /* Ancho máximo del bloque de texto */
+    flex-shrink: 0; /* No encoger */
+    text-align: right; /* Alinear el texto a la derecha */
+}
+
+.combined-amenities-cta .cta-brochure-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reducido gap entre título y descripción */
+    align-items: flex-end; /* Alinear elementos a la derecha dentro del texto */
+}
+
+.combined-amenities-cta .cta-brochure-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 56px; /* Reducido de 80px a 56px */
+    line-height: 1.2em; /* Ajustado line height */
+    color: #FAEACD; /* Color claro */
+    margin: 0;
+    padding: 0;
+}
+
+.combined-amenities-cta .cta-brochure-description {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px; /* Reducido de 20px a 18px */
+    line-height: 24px; /* Ajustado line height */
+    color: #FAEACD; /* Color claro */
+    margin: 0;
+    padding: 0;
+}
+
+.combined-amenities-cta .cta-brochure-button {
+    display: inline-block;
+    padding: 12px 25px; /* Reducido padding */
+    background: #FAEACD; /* Color de fondo claro */
+    color: #000000; /* Color del texto oscuro */
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px; /* Reducido de 18px a 16px */
+    line-height: normal;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* Reducido margen superior */
+}
+
+.combined-amenities-cta .cta-brochure-button:hover {
+    background: #E0D3B8; /* Color de fondo al pasar el mouse */
+}
+
+/* Ajustes responsive para .combined-amenities-cta */
+@media (max-width: 1024px) {
+    .combined-amenities-cta {
+        padding: 60px 0;
+        gap: 40px; /* Ajustado gap entre contenedores */
+         background-size: 150px; /* Ajustado tamaño de fondo responsive */
+         background-position: left top; /* Ajustado posicion responsive */
+    }
+     /* Responsive para el primer contenedor (Amenidades) */
+     .combined-amenities-cta > .container:nth-child(1) {
+         padding: 0 15px;
+         gap: 30px;
+          max-width: 960px; /* Ajustado max-width */
+          align-items: center; /* Centrar contenido apilado en tablet */
+     }
+      .combined-amenities-cta .amenities-text {
+        width: 100%;
+        text-align: center; /* Centrar texto en responsive */
+        align-items: center; /* Centrar elementos en responsive */
+        gap: 15px;
+    }
+    .combined-amenities-cta .amenities-title { font-size: 48px; /* Reducido tamaño de fuente */ line-height: 1.1; }
+    .combined-amenities-cta .amenities-description { font-size: 16px; /* Reducido tamaño de fuente */ line-height: 1.3; }
+
+    .combined-amenities-cta .amenities-gallery {
+        gap: 15px; /* Reducido gap */
+        align-items: center;
+         max-width: 900px; /* Ajustado max-width */
+          padding: 0 40px; /* Ajustado padding */
+    }
+    .combined-amenities-cta .gallery-images {
+        gap: 15px; /* Reducido gap */
+        padding-left: 0;
+        padding-right: 0;
+        height: auto; /* Altura automática */
+        padding-bottom: 0; /* Eliminado padding */
+         justify-content: center; /* Centrar imágenes en tablet si no llenan el ancho */
+    }
+    .combined-amenities-cta .gallery-item {
+        width: 180px; /* Reducido ancho del item */
+        align-self: auto; /* Permitir que flexbox controle la alineación */
+    }
+    .combined-amenities-cta .gallery-item-short {
+        height: 180px; /* Ajustado altura (cuadrada) */
+         align-self: flex-start;
+    }
+    .combined-amenities-cta .gallery-item-tall {
+        height: 280px; /* Ajustado altura */
+         align-self: flex-end;
+    }
+    .combined-amenities-cta .gallery-dots { gap: 8px; /* Reducido gap */ }
+    .combined-amenities-cta .gallery-dots .dot { width: 8px; height: 8px; /* Reducido tamaño del punto */ }
+    .combined-amenities-cta .gallery-button {
+       width: 30px; /* Reducido ancho */
+       height: 30px;
+       top: 50%;
+       transform: translateY(-50%);
+        background-size: 50%;
+    }
+  .combined-amenities-cta .gallery-button.left-button {
+      left: 0; /* Ajustado posicion */
+  }
+  .combined-amenities-cta .gallery-button.right-button {
+      right: 0; /* Ajustado posicion */
+  }
+
+     /* Responsive para el segundo contenedor (CTA Brochure) */
+      .combined-amenities-cta > .container:nth-child(2) { 
+        flex-direction: column; /* Apilar en tablet */
+        gap: 30px;
+        padding: 0 20px;
+        align-items: center; /* Centrar contenido apilado */
+    }
+   .combined-amenities-cta .cta-brochure-left, 
+   .combined-amenities-cta .cta-brochure-right {
+        width: 100%; /* Ocupar todo el ancho en tablet */
+        max-width: 600px; /* Ancho máximo en tablet */
+        text-align: center; /* Centrar texto */
+        align-items: center; /* Centrar elementos */
+   }
+    .combined-amenities-cta .cta-brochure-image-placeholder {
+        height: 250px; /* Reducido altura */
+    }
+    .combined-amenities-cta .cta-brochure-text {
+        gap: 10px;
+        align-items: center; /* Centrar elementos */
+    }
+    .combined-amenities-cta .cta-brochure-title { font-size: 48px; line-height: 1.1; /* Reducido tamaño */ }
+    .combined-amenities-cta .cta-brochure-description { font-size: 16px; line-height: 1.3; /* Reducido tamaño */ }
+    .combined-amenities-cta .cta-brochure-button { padding: 12px 25px; font-size: 16px; margin-top: 15px; }
+
+}
+
+@media (max-width: 768px) {
+    .combined-amenities-cta {
+        padding: 40px 0;
+        gap: 30px; /* Ajustado gap entre contenedores */
+        background-size: 100px; /* Ajustado tamaño de fondo responsive */
+        background-position: left top; /* Ajustado posicion responsive */
+    }
+     /* Responsive para el primer contenedor (Amenidades) */
+     .combined-amenities-cta > .container:nth-child(1) {
+         padding: 0 10px;
+         gap: 20px;
+     }
+      .combined-amenities-cta .amenities-text {
+        text-align: center; /* Centrar texto en responsive */
+         align-items: center; /* Centrar elementos en responsive */
+         gap: 10px;
+     }
+    .combined-amenities-cta .amenities-title { font-size: 36px; /* Reducido tamaño de fuente */}
+    .combined-amenities-cta .amenities-description { font-size: 15px; /* Reducido tamaño de fuente */}
+
+    .combined-amenities-cta .amenities-gallery {
+         max-width: 400px; /* Ajustar ancho máximo en móvil */
+    }
+     .combined-amenities-cta .gallery-images {
+         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+         gap: 8px;
+          max-width: 400px;
+          grid-auto-rows: auto; /* Altura automática en móvil */
+     }
+     /* Reorganizar grid en móvil (2 columnas) */
+    .combined-amenities-cta .gallery-images .needs-item-tall:nth-child(1) { grid-column: span 1; grid-row: span 2; }
+    .combined-amenities-cta .gallery-images .needs-item-short:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+    .combined-amenities-cta .gallery-images .needs-item-tall:nth-child(3) { grid-column: span 1; grid-row: span 2; }
+    .combined-amenities-cta .gallery-images .needs-item-short:nth-child(4) { grid-column: span 1; grid-row: span 1; }
+    .combined-amenities-cta .gallery-images .needs-item-tall:nth-child(5) { grid-column: span 1; grid-row: span 2; }
+    .combined-amenities-cta .gallery-images .needs-item-short:nth-child(6) { grid-column: span 1; grid-row: span 1; }
+    .combined-amenities-cta .gallery-images .needs-item-tall:nth-child(7) { grid-column: span 1; grid-row: span 2; }
+    .combined-amenities-cta .gallery-images .needs-item-short:nth-child(8) { grid-column: span 1; grid-row: span 1; }
+
+    .combined-amenities-cta .needs-button { padding: 10px 20px; font-size: 14px; margin-top: 10px; }
+}
+
+/* Styles for the Needs Section */
+.needs-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 20px; /* Ajustar padding según sea necesario */
+  background: #F8ECD7; /* Color de fondo según la imagen de referencia */
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.needs-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar contenido horizontalmente */
+    width: 100%;
+  max-width: 1200px; /* Ajustar max-width según la referencia */
+    margin: 0 auto;
+  gap: 40px; /* Espacio entre texto, galería y botón */
+}
+
+.needs-section .needs-text {
+    display: flex;
+    flex-direction: column;
+  align-items: center; /* Centrar texto y elementos */
+  text-align: center; /* Centrar el texto */
+  gap: 20px; /* Espacio entre título y descripción */
+  width: 100%;
+  max-width: 800px; /* Ajustar ancho máximo del texto */
+}
+
+.needs-section .needs-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 60px; /* Ajustar tamaño de fuente según la referencia */
+    line-height: 1.1em; /* Ajustar line-height */
+  color: #23412d; /* Color del texto según la referencia */
+    margin: 0;
+    padding: 0;
+}
+
+.needs-section .needs-description {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+  font-weight: normal; /* Asegurar peso normal */
+  font-size: 18px; /* Ajustar tamaño de fuente según la referencia */
+  line-height: 1.4em; /* Ajustar line-height */
+  color: #000000; /* Color del texto según la referencia */
+  margin: 0;
+  padding: 0;
+}
+
+.needs-section .needs-gallery {
+  display: flex; /* Contenedor flex para centrar la cuadrícula si es necesario */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px; /* Ancho máximo para la cuadrícula de imágenes */
+  height: auto;
+}
+
+.needs-section .gallery-images {
+  display: grid; /* Usar Grid para el layout de mosaico */
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho */
+  grid-auto-rows: auto; /* Altura automática para filas */
+  gap: 10px; /* Espacio entre las imágenes */
+    width: 100%;
+  max-width: 1000px; /* Asegurar que la cuadrícula no se desborde */
+}
+
+.needs-section .gallery-item {
+  /* Estilos base para los items de la galería */
+  background: #D9D9D9; /* Color de placeholder */
+  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.needs-section .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Definir tamaños y posiciones en el grid para desktop (4 columnas) */
+.needs-section .gallery-images .needs-item-tall:nth-child(1) { /* Primera imagen (alta) */
+    grid-column: span 1; /* Ocupa 1 columna */
+    grid-row: span 2; /* Ocupa 2 filas */
+}
+
+.needs-section .gallery-images .needs-item-short:nth-child(2) { /* Segunda imagen (corta) */
+    grid-column: span 1; /* Ocupa 1 columna */
+    grid-row: span 1; /* Ocupa 1 fila */
+}
+
+.needs-section .gallery-images .needs-item-tall:nth-child(3) { /* Tercera imagen (alta) */
+     grid-column: span 1;
+     grid-row: span 2;
+}
+
+.needs-section .gallery-images .needs-item-short:nth-child(4) { /* Cuarta imagen (corta) */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.needs-section .gallery-images .needs-item-tall:nth-child(5) { /* Quinta imagen (alta) */
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.needs-section .gallery-images .needs-item-short:nth-child(6) { /* Sexta imagen (corta) */
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.needs-section .gallery-images .needs-item-tall:nth-child(7) { /* Séptima imagen (alta) */
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.needs-section .gallery-images .needs-item-short:nth-child(8) { /* Octava imagen (corta) */
+     grid-column: span 1;
+     grid-row: span 1;
+}
+
+
+.needs-section .needs-button {
+    display: inline-block;
+  padding: 15px 30px; /* Ajustar padding según la referencia */
+  background: #C14D35; /* Color de fondo del botón */
+  color: #FFFFFF;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 18px; /* Ajustar tamaño de fuente */
+    line-height: normal;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  margin-top: 20px; /* Espacio entre la galería y el botón */
+}
+
+.needs-section .needs-button:hover {
+    background: #A03D2A; /* Color al pasar el mouse */
+}
+
+/* Ajustes Responsive para Needs Section */
+@media (max-width: 1024px) {
+  .needs-section {
+    padding: 60px 15px;
+  }
+  .needs-section .container {
+      gap: 30px;
+  }
+  .needs-section .needs-text {
+        gap: 15px;
+  }
+   .needs-section .needs-title { font-size: 48px; line-height: 1.2; }
+   .needs-section .needs-description { font-size: 16px; line-height: 1.3; }
+
+   .needs-section .needs-gallery {
+      max-width: 700px; /* Ajustar ancho máximo en tablet */
+   }
+   .needs-section .gallery-images {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
+      gap: 10px;
+       max-width: 700px;
+       grid-auto-rows: auto; /* Altura automática en tablet */
+   }
+    /* Reorganizar grid en tablet (2 columnas) */
+    .needs-section .gallery-images .needs-item-tall:nth-child(1) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+    .needs-section .gallery-images .needs-item-tall:nth-child(3) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(4) { grid-column: span 1; grid-row: span 1; }
+    .needs-section .gallery-images .needs-item-tall:nth-child(5) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(6) { grid-column: span 1; grid-row: span 1; }
+    .needs-section .gallery-images .needs-item-tall:nth-child(7) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(8) { grid-column: span 1; grid-row: span 1; }
+
+    .needs-section .needs-button { padding: 12px 25px; font-size: 16px; margin-top: 15px; }
+}
+
+@media (max-width: 768px) {
+.needs-section {
+        padding: 40px 10px;
+    }
+     .needs-section .container {
+         gap: 20px;
+     }
+     .needs-section .needs-text {
+    gap: 10px;
+     }
+    .needs-section .needs-title { font-size: 36px; line-height: 1.1; }
+    .needs-section .needs-description { font-size: 15px; line-height: 1.3; }
+
+    .needs-section .needs-gallery {
+         max-width: 400px; /* Ajustar ancho máximo en móvil */
+    }
+     .needs-section .gallery-images {
+         grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+         gap: 8px;
+          max-width: 400px;
+          grid-auto-rows: auto; /* Altura automática en móvil */
+     }
+     /* Reorganizar grid en móvil (2 columnas) */
+    .needs-section .gallery-images .needs-item-tall:nth-child(1) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(2) { grid-column: span 1; grid-row: span 1; }
+    .needs-section .gallery-images .needs-item-tall:nth-child(3) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(4) { grid-column: span 1; grid-row: span 1; }
+    .needs-section .gallery-images .needs-item-tall:nth-child(5) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(6) { grid-column: span 1; grid-row: span 1; }
+    .needs-section .gallery-images .needs-item-tall:nth-child(7) { grid-column: span 1; grid-row: span 2; }
+    .needs-section .gallery-images .needs-item-short:nth-child(8) { grid-column: span 1; grid-row: span 1; }
+
+    .needs-section .needs-button { padding: 10px 20px; font-size: 14px; margin-top: 10px; }
+}
+
+/* Styles for the Features Section */
+.features-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0; /* Reducido padding superior/inferior */
+  background: #F8ECD7; /* Color de fondo según la referencia */
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.features-section .container {
+    display: flex;
+  flex-direction: column; /* Asegurar que el contenido principal (si hubiera título + grid) se apile */
+    align-items: center; /* Centrar contenido horizontalmente */
+    width: 100%;
+  max-width: 1100px; /* Reducido max-width del contenedor principal */
+  margin: 0 auto; /* Centrar el contenedor principal */
+  padding: 0 30px; /* Ajustado padding lateral al contenedor */
+  box-sizing: border-sizing;
+  gap: 30px; /* Ajustado espacio entre elementos dentro del contenedor */
+}
+
+.features-section .features-grid {
+  display: grid; /* Usar Grid para la cuadrícula de tarjetas */
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho en escritorio */
+  gap: 40px; /* Aumentado el espacio entre las tarjetas */
+    width: 100%;
+  max-width: 900px; /* Reducido ligeramente el ancho máximo de la cuadrícula para hacer las tarjetas más pequeñas */
+  margin: 0 auto; /* Centrar la cuadrícula */
+}
+
+.features-section .feature-card {
+  display: flex;
+  flex-direction: column; /* Apilar ícono y texto */
+  justify-content: center; /* Centrar contenido verticalmente */
+  align-items: center; /* Centrar contenido horizontalmente */
+  text-align: center; /* Centrar texto */
+  padding: 15px; /* Reducido padding interno de la tarjeta para dar más espacio a la imagen */
+  background: #FFFFFF; /* Fondo blanco de la tarjeta */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  height: auto; /* Altura automática */
+}
+
+.features-section .feature-card .feature-icon {
+  display: block;
+  width: 100%; /* Ocupa el 100% del ancho del padre */
+  height: auto; /* Altura automática para mantener proporción */
+  max-height: 200px; /* Aumentado muchísimo la altura máxima para que ocupe casi toda la tarjeta */
+  object-fit: contain; /* Asegurar que el ícono se ajuste sin cortarse */
+  margin-bottom: 10px; /* Espacio entre ícono y texto */
+}
+
+/* Si las tarjetas tienen texto, agregar estilos */
+.features-section .feature-card p {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+  font-weight: normal; /* Asegurar peso normal */
+  font-size: 16px;
+  line-height: 1.3em;
+  color: #000000;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajustes Responsive para Features Section */
+@media (max-width: 1024px) {
+  .features-section {
+    padding: 50px 0;
+  }
+  .features-section .container {
+      padding: 0 20px;
+      gap: 25px;
+       max-width: 900px; /* Ajustado max-width responsive */
+  }
+  .features-section .features-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 columnas en tablet */
+      gap: 30px; /* Aumentado el espacio en tablet */
+      max-width: 600px; /* Reducido ligeramente el ancho máximo */
+  }
+   .features-section .feature-card {
+       padding: 12px;
+   }
+   .features-section .feature-card .feature-icon {
+       max-height: 150px; /* Aumentado muchísimo max-height responsive para tablet */
+       margin-bottom: 8px;
+   }
+    .features-section .feature-card p { font-size: 14px; }
+}
+
+@media (max-width: 768px) {
+    .features-section {
+        padding: 40px 0;
+    }
+    .features-section .container {
+         padding: 0 15px;
+        gap: 20px;
+        max-width: 600px; /* Ajustado max-width responsive */
+    }
+    .features-section .features-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+        gap: 25px; /* Aumentado el espacio en móvil */
+         max-width: 300px; /* Reducido ligeramente el ancho máximo */
+    }
+    .features-section .feature-card {
+        padding: 8px;
+    }
+    .features-section .feature-card .feature-icon {
+       max-height: 120px; /* Aumentado muchísimo max-height responsive para móvil */
+       margin-bottom: 5px;
+   }
+     .features-section .feature-card p { font-size: 12px; }
+}
+/* Styles for the living section */
+
+.features-section .feature-card .feature-icon {
+       max-height: 65px; /* Aumentado max-height responsive para tablet */
+       margin-bottom: 8px;
+   }
+
+   .features-section .feature-card .feature-icon {
+       max-height: 90px; /* Aumentado significativamente max-height responsive para tablet */
+       margin-bottom: 8px;
+   }
+
+   .features-section .feature-card .feature-icon {
+       max-height: 150px; /* Aumentado muchísimo max-height responsive para tablet */
+       margin-bottom: 8px;
+   }
+
+/* Styles for the Living Section */
+.living-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0; /* Padding superior e inferior */
+  background: #C14D35; /* Color de fondo naranja/rojizo según la referencia */
+  background-image: url('Vector (1).png'); /* Imagen de vector en el fondo */
+  background-repeat: no-repeat; /* No repetir la imagen */
+  background-size: auto; /* Tamaño automático de la imagen de fondo */
+  background-position: right center; /* Posicionada a la derecha y centrada verticalmente */
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Añadir un pseudo-elemento para aumentar la opacidad del vector de fondo */
+.living-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url('Vector (1).png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: right center;
+  opacity: 0.15; /* Aumentar ligeramente la opacidad del vector */
+  pointer-events: none;
+  z-index: 0;
+}
+
+.living-section .container {
+     display: flex;
+  flex-direction: row; /* Layout horizontal: izquierda (título+botón) y derecha (imagen) */
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center; /* Centrar verticalmente */
+     width: 100%;
+  max-width: 1200px; /* Ajustar max-width */
+     margin: 0 auto;
+  padding: 0 40px; /* Padding lateral */
+     box-sizing: border-box;
+  gap: 50px; /* Espacio entre izquierda y derecha */
+  position: relative; /* Para que el pseudo-elemento se posicione respecto a este contenedor */
+  z-index: 1; /* Asegurar que el contenido esté encima del vector */
+}
+
+.living-section .living-left {
+    display: flex;
+    flex-direction: column;
+  align-items: flex-start; /* Alinear contenido a la izquierda */
+  gap: 30px; /* Espacio entre título y botón */
+    width: 50%; /* Ocupar la mitad del ancho */
+  max-width: 500px;
+}
+
+.living-section .living-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 60px; /* Tamaño grande según la referencia */
+  line-height: 1.1em;
+  color: #FAEACD; /* Color claro según la referencia */
+    margin: 0;
+    padding: 0;
+}
+
+.living-section .living-button {
+    display: inline-block;
+  padding: 15px 25px; /* Padding del botón */
+  background: #FAEACD; /* Fondo claro del botón */
+  color: #000000; /* Texto oscuro del botón */
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 16px;
+    line-height: normal;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.living-section .living-button:hover {
+  background: #E0D3B8; /* Color al pasar el mouse */
+}
+
+.living-section .living-right {
+     display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 50%; /* Ocupar la otra mitad del ancho */
+  max-width: 500px;
+}
+
+.living-section .living-image-placeholder {
+    width: 100%;
+  height: 300px; /* Altura fija para la imagen */
+  background: #D9D9D9; /* Color de placeholder gris */
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  border-radius: 10px; /* Bordes redondeados si es necesario */
+}
+
+.living-section .living-image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para los bloques de texto inferiores - Layout de 2 columnas con 3 filas */
+.living-section .living-text-blocks {
+    display: flex;
+  flex-direction: column; /* Cambiar a columna para apilar las filas */
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto 0; /* Margen superior para separar de la sección superior */
+  padding: 0 40px; /* Padding lateral */
+    box-sizing: border-box;
+  position: relative;
+  z-index: 1; /* Asegurar que esté encima del vector */
+  gap: 0; /* Sin gap entre filas */
+}
+
+/* Cada fila individual */
+.living-section .living-text-blocks .text-row {
+    display: flex;
+  flex-direction: row; /* Título a la izquierda, descripción a la derecha */
+  width: 100%;
+  gap: 60px; /* Espacio entre título y descripción */
+  padding: 30px 0; /* Padding vertical para cada fila */
+  border-bottom: 1px solid #FAEACD; /* Línea continua debajo de cada fila */
+}
+
+/* Quitar línea de la última fila */
+.living-section .living-text-blocks .text-row:last-child {
+  border-bottom: none;
+}
+
+/* Columna de título dentro de cada fila */
+.living-section .living-text-blocks .text-row .row-title {
+  width: 35%; /* Misma proporción que antes */
+    flex-shrink: 0;
+}
+
+/* Columna de descripción dentro de cada fila */
+.living-section .living-text-blocks .text-row .row-description {
+  width: 65%; /* Misma proporción que antes */
+  flex-shrink: 0;
+}
+
+/* Estilos para los títulos */
+.living-section .living-text-blocks .text-row .row-title h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 36px;
+  line-height: 1.2em;
+  color: #FAEACD;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para las descripciones */
+.living-section .living-text-blocks .text-row .row-description p {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  font-size: 16px;
+  line-height: 1.4em;
+  color: #FAEACD;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ocultar las columnas antiguas ya que usaremos la nueva estructura */
+.living-section .living-text-blocks .titles-column,
+.living-section .living-text-blocks .descriptions-column {
+  display: none;
+}
+
+/* Ajustes Responsive para Living Section */
+@media (max-width: 1024px) {
+  .living-section {
+    padding: 60px 0;
+  }
+  .living-section::before {
+    opacity: 0.1; /* Reducir opacidad en responsive */
+  }
+  .living-section .container {
+    flex-direction: column; /* Apilar en tablet */
+    gap: 40px;
+    padding: 0 30px;
+    text-align: center; /* Centrar contenido en tablet */
+  }
+  .living-section .living-left,
+  .living-section .living-right {
+    width: 100%; /* Ocupar todo el ancho en tablet */
+    max-width: 600px;
+    align-items: center; /* Centrar elementos */
+  }
+  .living-section .living-title { font-size: 48px; line-height: 1.1; }
+  .living-section .living-button { padding: 12px 20px; font-size: 15px; }
+  .living-section .living-image-placeholder { height: 250px; }
+  
+  .living-section .living-text-blocks {
+    gap: 0;
+    margin: 40px auto 0;
+    padding: 0 30px;
+    text-align: center; /* Centrar texto en tablet */
+  }
+  
+  .living-section .living-text-blocks .text-row {
+    flex-direction: column; /* Apilar título sobre descripción en tablet */
+    gap: 15px;
+    padding: 25px 0;
+  }
+  
+  .living-section .living-text-blocks .text-row .row-title,
+  .living-section .living-text-blocks .text-row .row-description {
+    width: 100%;
+  }
+  
+  .living-section .living-text-blocks .text-row .row-title h3 { font-size: 32px; }
+  .living-section .living-text-blocks .text-row .row-description p { font-size: 15px; }
+}
+
+@media (max-width: 768px) {
+  .living-section {
+    padding: 40px 0;
+  }
+  .living-section::before {
+    opacity: 0.08; /* Reducir más la opacidad en móvil */
+  }
+  .living-section .container {
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .living-section .living-left,
+  .living-section .living-right {
+    max-width: 100%;
+  }
+  .living-section .living-title { font-size: 36px; }
+  .living-section .living-button { padding: 10px 18px; font-size: 14px; }
+  .living-section .living-image-placeholder { height: 200px; }
+  
+  .living-section .living-text-blocks {
+    gap: 0;
+    margin: 30px auto 0;
+    padding: 0 20px;
+  }
+  
+  .living-section .living-text-blocks .text-row {
+    padding: 20px 0;
+    gap: 10px;
+  }
+  
+  .living-section .living-text-blocks .text-row .row-title h3 { font-size: 28px; }
+  .living-section .living-text-blocks .text-row .row-description p { font-size: 14px; }
+}
+
+/* Styles for the FAQ Section */
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0; /* Padding superior e inferior */
+  background: #FFFFFF; /* Fondo blanco como en la imagen */
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.faq-section .container {
+    display: flex;
+  flex-direction: row; /* Layout horizontal: título a la izquierda, preguntas a la derecha */
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: flex-start; /* Alinear en la parte superior */
+    width: 100%;
+  max-width: 1200px; /* Ajustar max-width */
+    margin: 0 auto;
+  padding: 0 40px; /* Padding lateral */
+  box-sizing: border-box;
+  gap: 80px; /* Espacio generoso entre título y preguntas */
+}
+
+/* Columna izquierda: Título */
+.faq-section .faq-left {
+    display: flex;
+    flex-direction: column;
+  align-items: flex-start; /* Alinear contenido a la izquierda */
+  width: 35%; /* Columna más pequeña para el título */
+  max-width: 400px;
+  flex-shrink: 0;
+}
+
+.faq-section .faq-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 60px; /* Tamaño grande según la referencia */
+  line-height: 1.1em;
+  color: #000000; /* Color negro según la referencia */
+    margin: 0;
+    padding: 0;
+  text-align: left;
+}
+
+/* Columna derecha: Preguntas y respuestas */
+.faq-section .faq-right {
+    display: flex;
+    flex-direction: column;
+  width: 65%; /* Columna más grande para las preguntas */
+  max-width: 700px;
+  flex-shrink: 0;
+}
+
+/* Cada item de pregunta/respuesta */
+.faq-section .faq-item {
+    display: flex;
+    flex-direction: column;
+  width: 100%;
+  padding: 30px 0; /* Padding vertical para cada item */
+  border-bottom: none; /* Quitar línea del contenedor principal */
+  gap: 20px; /* Espacio entre pregunta y respuesta */
+}
+
+/* Quitar línea del último item */
+.faq-section .faq-item:last-child {
+  border-bottom: none;
+}
+
+/* Contenedor de la pregunta */
+.faq-section .faq-question {
+    display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Pregunta a la izquierda, flecha a la derecha */
+    align-items: center;
+  width: 100%;
+  cursor: pointer; /* Cursor pointer aunque no sea funcional */
+  padding-bottom: 15px; /* Espacio antes de la línea */
+  border-bottom: 1px solid #CCCCCC; /* Línea separadora gris debajo de la pregunta */
+}
+
+/* Texto de la pregunta */
+.faq-section .faq-question span:first-child {
+  font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+    font-weight: 400;
+  font-size: 36px; /* Tamaño grande para las preguntas */
+  line-height: 1.2em;
+  color: #000000; /* Color negro */
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; /* Ocupar el espacio disponible */
+}
+
+/* Flecha de la pregunta */
+.faq-section .faq-arrow {
+    font-size: 24px; /* Tamaño de la flecha */
+  color: #000000; /* Color negro */
+  font-weight: bold;
+  flex-shrink: 0; /* No encoger */
+  margin-left: 20px; /* Espacio entre pregunta y flecha */
+  transform: rotate(0deg); /* Flecha hacia abajo */
+}
+
+/* Contenedor de la respuesta */
+.faq-section .faq-answer {
+  display: block; /* Siempre visible */
+  width: 100%;
+}
+
+/* Texto de la respuesta */
+.faq-section .faq-answer p {
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+  font-size: 16px; /* Tamaño más pequeño para las respuestas */
+  line-height: 1.4em;
+  color: #000000; /* Color negro */
+  margin: 0;
+  padding: 0;
+  padding-right: 44px; /* Padding derecho para alinear con el texto de la pregunta (sin llegar hasta la flecha) */
+}
+
+/* Ajustes Responsive para FAQ Section */
+@media (max-width: 1024px) {
+  .faq-section {
+    padding: 60px 0;
+  }
+  .faq-section .container {
+    flex-direction: column; /* Apilar en tablet */
+    gap: 40px;
+    padding: 0 30px;
+    text-align: center; /* Centrar contenido en tablet */
+  }
+  .faq-section .faq-left,
+  .faq-section .faq-right {
+    width: 100%; /* Ocupar todo el ancho en tablet */
+    max-width: 700px;
+    align-items: center; /* Centrar elementos */
+  }
+  .faq-section .faq-title { 
+    font-size: 48px; 
+    line-height: 1.1; 
+    text-align: center; /* Centrar título en tablet */
+  }
+  .faq-section .faq-item {
+    padding: 25px 0;
+  }
+  .faq-section .faq-question span:first-child { 
+    font-size: 32px; 
+         text-align: left;
+    }
+  .faq-section .faq-answer p { 
+    font-size: 15px; 
+    padding-right: 20px; 
+         text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 40px 0;
+  }
+  .faq-section .container {
+    gap: 30px;
+    padding: 0 20px;
+  }
+  .faq-section .faq-left,
+  .faq-section .faq-right {
+    max-width: 100%;
+  }
+  .faq-section .faq-title { 
+    font-size: 36px; 
+  }
+  .faq-section .faq-item {
+    padding: 20px 0;
+        gap: 15px;
+  }
+  .faq-section .faq-question span:first-child { 
+    font-size: 28px; 
+  }
+  .faq-section .faq-arrow {
+    font-size: 20px;
+    margin-left: 15px;
+  }
+  .faq-section .faq-answer p { 
+    font-size: 14px; 
+    padding-right: 15px; 
+  }
+}
+
+/* Styles for the Contact section */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0; /* Ajustar padding superior e inferior */
+  background: #F8ECD7; /* Fondo beige como en la imagen */
+  background-image: url('2653b0e0f4fb2e200ab653c625a39ccacd3f4655.jpg'); /* Imagen de fondo de playa */
+  background-repeat: no-repeat;
+  background-size: cover; /* Cubrir toda la sección */
+  background-position: center; /* Centrar la imagen */
+  width: 100vw;
+  max-width: none;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Overlay transparente para la imagen de fondo */
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(248, 236, 215, 0.7); /* Overlay beige transparente */
+  z-index: 1;
+  pointer-events: none;
+}
+
+.contact-section .container {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    width: 100%;
+  max-width: 800px; /* Ajustar max-width para centrar el formulario */
+    margin: 0 auto;
+  padding: 0 40px; /* Padding lateral */
+    box-sizing: border-box;
+  position: relative;
+  z-index: 2; /* Encima del overlay */
+  gap: 40px; /* Espacio entre formulario e imagen */
+}
+
+/* Contenedor del formulario con fondo oscuro */
+.contact-section .contact-form-block {
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px; /* Padding generoso interno */
+  background: #4A5D5F; /* Fondo azul-verde oscuro como en la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+  width: 100%;
+  max-width: 700px;
+    box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Título del formulario */
+.contact-section .contact-title {
+  font-family: 'Cormorant Garamond', serif;
+    font-style: normal;
+  font-weight: 400;
+  font-size: 48px; /* Tamaño grande */
+  line-height: 1.2em;
+  color: #FFFFFF; /* Color blanco como en la imagen */
+  margin: 0 0 30px 0; /* Margen inferior */
+    padding: 0;
+  text-align: center;
+}
+
+/* Formulario principal */
+.contact-section .contact-form {
+    display: flex;
+  flex-direction: column;
+  width: 100%;
+    gap: 20px; /* Espacio entre filas */
+}
+
+/* Fila del formulario */
+.contact-section .form-row {
+    display: flex;
+  flex-direction: row;
+  gap: 20px; /* Espacio entre campos en la misma fila */
+  width: 100%;
+}
+
+/* Campo individual */
+.contact-section .form-field {
+    display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre label e input */
+  flex: 1; /* Ocupar espacio disponible */
+}
+
+/* Campo de ancho completo */
+.contact-section .form-field.full-width {
+  width: 100%;
+}
+
+/* Labels de los campos */
+.contact-section .form-field label {
+  font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.3em;
+  color: #FFFFFF; /* Color blanco para las labels */
+    margin: 0;
+    padding: 0;
+}
+
+/* Inputs del formulario */
+.contact-section .form-field input,
+.contact-section .form-field textarea {
+    width: 100%;
+  height: 30px; /* Altura reducida de 45px a 30px */
+  background: #FFFFFF; /* Fondo blanco para los campos */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes ligeramente redondeados */
+  padding: 8px 15px; /* Padding reducido */
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+  line-height: 1.3em;
+  color: #000000; /* Texto negro en los campos */
+  box-sizing: border-box;
+  outline: none; /* Quitar outline al hacer focus */
+}
+
+/* Textarea específico (si lo hay) */
+.contact-section .form-field textarea {
+  height: 70px; /* Altura reducida de 100px a 70px */
+  resize: vertical; /* Permitir redimensionar solo verticalmente */
+}
+
+/* Botón de envío */
+.contact-section .submit-button {
+    display: inline-block;
+  padding: 15px 30px; /* Padding del botón */
+  background: #F8ECD7; /* Fondo beige claro como en la imagen */
+  color: #000000; /* Texto negro del botón */
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+  font-weight: 600; /* Peso medium para el botón */
+  font-size: 16px;
+    line-height: normal;
+    border: none;
+  border-radius: 10px; /* Bordes redondeados */
+    cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px; /* Espacio arriba del botón */
+  align-self: center; /* Centrar el botón */
+  min-width: 120px; /* Ancho mínimo */
+}
+
+.contact-section .submit-button:hover {
+  background: #E0D3B8; /* Color ligeramente más oscuro al hover */
+}
+
+/* Restaurar la imagen de abajo */
+.contact-section .contact-image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  width: 100%;
+  max-width: 600px;
+  height: 200px;
+  background: #D9D9D9;
+  border-radius: 10px;
+    overflow: hidden;
+  margin-top: 0; /* Sin margin ya que hay gap en el container */
+}
+
+.contact-section .contact-image-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Ajustes Responsive para Contact Section */
+@media (max-width: 1024px) {
+    .contact-section {
+    padding: 80px 0;
+    }
+    .contact-section .container {
+    max-width: 90%;
+        padding: 0 20px;
+  }
+  .contact-section .contact-form-block {
+    padding: 30px;
+  }
+  .contact-section .contact-title {
+    font-size: 42px;
+  }
+  .contact-section .form-row {
+    flex-direction: column; /* Apilar campos verticalmente en tablet */
+    gap: 15px;
+  }
+  .contact-section .form-field input,
+  .contact-section .form-field textarea {
+    height: 28px; /* Altura reducida también en tablet */
+  }
+  .contact-section .form-field textarea {
+    height: 60px; /* Textarea reducida también en tablet */
+  }
+}
+
+@media (max-width: 768px) {
+     .contact-section {
+    padding: 60px 0;
+    }
+     .contact-section .container {
+    padding: 0 15px;
+  }
+  .contact-section .contact-form-block {
+    padding: 25px;
+  }
+  .contact-section .contact-title {
+    font-size: 36px;
+    margin-bottom: 25px;
+  }
+  .contact-section .contact-form {
+    gap: 15px;
+  }
+  .contact-section .form-field input,
+  .contact-section .form-field textarea {
+    height: 26px; /* Altura reducida también en móvil */
+    padding: 6px 12px; /* Padding ajustado */
+  }
+  .contact-section .form-field textarea {
+    height: 50px; /* Textarea reducida también en móvil */
+  }
+  .contact-section .submit-button {
+    padding: 12px 25px;
+    font-size: 15px;
+  }
+}
+
+/* ==========================================
+   ESTILOS PARA COTIZADOR.HTML
+   ========================================== */
+
+/* Sección Principal del Cotizador */
+.cotizador-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  background: #234457; /* Fondo azul oscuro como en la imagen */
+  width: 100vw;
+  max-width: none;
+  min-height: 70vh; /* Altura mínima para que se vea como en la referencia */
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.cotizador-hero .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+  gap: 60px; /* Espacio entre título y área gris */
+}
+
+/* Título principal del cotizador */
+.cotizador-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 64px; /* Tamaño grande como en la imagen */
+  line-height: 1.1em;
+  color: #FFFFFF; /* Título blanco sobre fondo azul */
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Contenedor del área principal */
+.cotizador-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Área gris del formulario/contenido */
+.cotizador-form-area {
+  width: 100%;
+  height: 400px; /* Altura como en la imagen */
+  background: #E5E5E5; /* Fondo gris claro */
+  border-radius: 12px; /* Bordes redondeados */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Footer del Cotizador */
+.cotizador-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  background: #1E3427; /* Fondo verde oscuro como en la imagen de referencia */
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cotizador-footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Sección del logo y links */
+.footer-logo-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 120px; /* Aumentado de 80px a 120px */
+}
+
+/* Logo del cotizador */
+.cotizador-logo {
+  display: block;
+  max-height: 120px; /* Tamaño del logo */
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* Grid de links del footer */
+.footer-links-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 100px; /* Aumentado de 60px a 100px */
+  flex-grow: 1;
+  justify-content: flex-end; /* Alinear columnas a la derecha */
+}
+
+/* Columnas de links */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espacio entre grupos de links */
+}
+
+/* Grupos de links */
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espacio entre título y subtítulo */
+}
+
+/* Títulos de los links */
+.link-title {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3em;
+  color: #FAEACD; /* Color claro sobre fondo verde */
+  margin: 0;
+  padding: 0;
+}
+
+/* Subtítulos de los links */
+.link-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3em;
+  color: #FAEACD; /* Color claro sobre fondo verde */
+  margin: 0;
+  padding: 0;
+  opacity: 0.8; /* Ligeramente más transparente */
+}
+
+/* Responsive para Cotizador */
+@media (max-width: 1024px) {
+  .cotizador-hero {
+    padding: 80px 0;
+    min-height: 60vh;
+  }
+  .cotizador-hero .container {
+    gap: 50px;
+    padding: 0 30px;
+  }
+  .cotizador-title {
+    font-size: 52px;
+  }
+  .cotizador-form-area {
+    height: 350px;
+  }
+  .footer-logo-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  .footer-links-grid {
+    justify-content: center;
+    gap: 40px;
+  }
+  .cotizador-logo {
+    max-height: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cotizador-hero {
+    padding: 60px 0;
+    min-height: 50vh;
+  }
+  .cotizador-hero .container {
+    gap: 40px;
+    padding: 0 20px;
+  }
+  .cotizador-title {
+    font-size: 42px;
+  }
+  .cotizador-form-area {
+    height: 300px;
+}
+  .cotizador-footer {
+    padding: 40px 0;
+  }
+  .footer-links-grid {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+  .cotizador-logo {
+    max-height: 80px;
+  }
+}
+
+/* ==========================================
+   ESTILOS PARA COTIZADOR.HTML - RÉPLICA EXACTA KIKTEIL
+   ========================================== */
+
+/* Sección Principal del Cotizador */
+.cotizador-section {
+  background-color: #224457;
+  padding: 40px 0;
+  min-height: 100vh;
+}
+
+.cotizador-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.cotizador-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cotizador-main-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: white;
+  margin: 0 0 30px 0;
+}
+
+/* Leyenda de estados */
+.status-legend {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.status-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.status-dot.disponible {
+  background-color: #28a745; /* Verde */
+}
+
+.status-dot.apartado {
+  background-color: #ffc107; /* Amarillo */
+}
+
+.status-dot.vendido {
+  background-color: #dc3545; /* Rojo */
+}
+
+/* Mapa SVG */
+.map-main-container {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.container-svg {
+  width: 100%;
+  height: 600px;
+  position: relative;
+  overflow: hidden;
+}
+
+.container-svg svg {
+  width: 100%;
+  height: 100%;
+  transform: none !important;
+  will-change: auto;
+}
+
+/* Estados de los lotes */
+.batch.disponible .lot-path,
+.batch.disponible polygon {
+  fill: #28a745 !important; /* Verde para disponible */
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+}
+
+.batch.apartado .lot-path,
+.batch.apartado polygon {
+  fill: #ffc107 !important; /* Amarillo para apartado */
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+}
+
+.batch.vendido .lot-path,
+.batch.vendido polygon {
+  fill: #dc3545 !important; /* Rojo para vendido */
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+  cursor: pointer !important; /* Cambiar a pointer para que sea clickeable */
+}
+
+/* Hover específicos para cada estado */
+.batch.disponible:hover .lot-path,
+.batch.disponible:hover polygon {
+  opacity: 1 !important;
+  stroke-width: 3 !important;
+  fill: #28a745 !important;
+}
+
+.batch.apartado:hover .lot-path,
+.batch.apartado:hover polygon {
+  opacity: 1 !important;
+  stroke-width: 3 !important;
+  fill: #ffc107 !important;
+}
+
+.batch.vendido:hover .lot-path,
+.batch.vendido:hover polygon {
+  opacity: 0.8 !important;
+  fill: #dc3545 !important; /* Mantener rojo en hover */
+  stroke: #fff !important;
+  stroke-width: 3 !important;
+}
+
+/* Números de lotes */
+.lot-number {
+  fill: white;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  text-anchor: middle;
+  dominant-baseline: middle;
+  pointer-events: none;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: #999;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.lot-status-display {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.status-dot-large {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid #333;
+}
+
+.status-dot-large.disponible {
+  background-color: #28a745;
+}
+
+.status-dot-large.apartado {
+  background-color: #ffc107;
+}
+
+.status-dot-large.vendido {
+  background-color: #dc3545;
+}
+
+.info-section h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.lot-data {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.lot-data h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-weight: bold;
+}
+
+.data-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.data-row:last-child {
+  border-bottom: none;
+}
+
+.surface-value, .price-value {
+  font-weight: bold;
+  color: #224457;
+}
+
+.payment-plan {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.plan-row, .discount-row, .final-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.final-price-row {
+  margin-bottom: 0;
+  padding-top: 15px;
+  border-top: 2px solid #224457;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.plan-row select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+}
+
+.discount-value, .final-price-value {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.down-payment-section {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.down-payment-section h4 {
+  margin: 0 0 15px 0;
+  color: #333;
+}
+
+.down-payment-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.down-payment-options select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: white;
+}
+
+.payment-summary {
+  background-color: #224457;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.reserve-payment, .installments {
+  margin-bottom: 15px;
+}
+
+.reserve-payment span, .installments span {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: #34495E;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.reserve-amount, .installment-amount {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #E74C3C;
+}
+
+.installment-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Botón Ver plano en modal */
+.view-plan-btn {
+  width: 100%;
+  padding: 12px;
+  background: #E74C3C;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin: 25px 0;
+}
+
+.view-plan-btn:hover {
+  background: #C0392B;
+}
+
+/* Sección de cotización en modal */
+.quote-section {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 2px solid #ECF0F1;
+}
+
+.quote-section h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #2C3E50;
+  margin: 0 0 20px 0;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quote-form input,
+.quote-form textarea {
+  padding: 12px;
+  border: 1px solid #BDC3C7;
+  border-radius: 4px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.quote-form input:focus,
+.quote-form textarea:focus {
+  outline: none;
+  border-color: #E74C3C;
+}
+
+.quote-form button {
+  padding: 12px;
+  background: #27AE60;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.quote-form button:hover {
+  background: #229954;
+}
+
+/* Footer del Cotizador */
+.cotizador-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  background: #1E3427; /* Fondo verde oscuro como en la imagen de referencia */
+  width: 100vw;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.cotizador-footer .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* Sección del logo y links */
+.footer-logo-section {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  gap: 120px; /* Aumentado de 80px a 120px */
+}
+
+/* Logo del cotizador */
+.cotizador-logo {
+  display: block;
+  max-height: 120px; /* Tamaño del logo */
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* Grid de links del footer */
+.footer-links-grid {
+  display: flex;
+  flex-direction: row;
+  gap: 100px; /* Aumentado de 60px a 100px */
+  flex-grow: 1;
+  justify-content: flex-end; /* Alinear columnas a la derecha */
+}
+
+/* Columnas de links */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espacio entre grupos de links */
+}
+
+/* Grupos de links */
+.link-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Espacio entre título y subtítulo */
+}
+
+/* Títulos de los links */
+.link-title {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.3em;
+  color: #FAEACD; /* Color claro sobre fondo verde */
+  margin: 0;
+  padding: 0;
+}
+
+/* Subtítulos de los links */
+.link-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.3em;
+  color: #FAEACD; /* Color claro sobre fondo verde */
+  margin: 0;
+  padding: 0;
+  opacity: 0.8; /* Ligeramente más transparente */
+}
+
+/* Responsive para Cotizador */
+@media (max-width: 1024px) {
+  .cotizador-section {
+    padding: 20px 10px;
+  }
+  
+  .cotizador-main-title {
+    font-size: 28px;
+  }
+  
+  .status-legend {
+    gap: 20px;
+    padding: 12px 20px;
+  }
+  
+  .container-svg {
+    height: 400px;
+  }
+  
+  .modal-content {
+    max-width: 450px;
+    width: 95%;
+  }
+  
+  .footer-logo-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .footer-links-grid {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cotizador-section {
+    padding: 20px 10px;
+  }
+  
+  .cotizador-main-title {
+    font-size: 24px;
+  }
+  
+  .status-legend {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .container-svg {
+    height: 300px;
+  }
+  
+  .modal-content {
+    max-width: 100%;
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .footer-links-grid {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.main-footer {
+  background-color: #1E3427;
+  padding: 60px 0;
+  color: white;
+}
+
+.main-footer .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 120px; /* Aumentado de 80px a 120px */
+}
+
+.footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-logo-img {
+  height: 80px;
+  width: auto;
+}
+
+.footer-links {
+  display: flex;
+  gap: 100px; /* Aumentado de 60px a 100px */
+  flex: 1;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.link-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.link-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FAEACD;
+  margin: 0;
+}
+
+.link-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FAEACD;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.bottom-bar {
+  background-color: #000000;
+  padding: 20px 0;
+  color: white;
+}
+
+.bottom-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.copyright {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.vector-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vector-icon img {
+  height: 24px;
+  width: auto;
+}
+
+.privacy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .main-footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    gap: 40px;
+  }
+  
+  .footer-logo-img {
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-footer {
+    padding: 40px 0;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  
+  .footer-col {
+    gap: 20px;
+  }
+  
+  .footer-logo-img {
+    height: 50px;
+  }
+  
+  .bottom-bar {
+    padding: 15px 0;
+  }
+  
+  .bottom-bar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .vector-icon img {
+    height: 20px;
+  }
+  
+  .copyright, .privacy {
+    font-size: 12px;
+  }
+}
+
+/* Reglas súper específicas para forzar colores */
+a.batch.vendido .lot-path,
+a.batch.vendido polygon,
+.batch.vendido path,
+.batch.vendido polygon {
+  fill: #dc3545 !important; /* Rojo para vendido - FORZADO */
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+}
+
+a.batch.disponible .lot-path,
+a.batch.disponible polygon,
+.batch.disponible path,
+.batch.disponible polygon {
+  fill: #28a745 !important; /* Verde para disponible - FORZADO */
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+}
+
+a.batch.apartado .lot-path,
+a.batch.apartado polygon,
+.batch.apartado path,
+.batch.apartado polygon {
+  fill: #ffc107 !important; /* Amarillo para apartado - FORZADO */
+  stroke: #fff !important;
+  stroke-width: 2 !important;
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+}
+
+/* Hover súper específico */
+a.batch.vendido:hover .lot-path,
+a.batch.vendido:hover polygon,
+.batch.vendido:hover path,
+.batch.vendido:hover polygon {
+  fill: #dc3545 !important; /* Mantener rojo en hover */
+  stroke: #fff !important;
+  stroke-width: 3 !important;
+  opacity: 1 !important;
+}
+
+/* Estados de los lotes */
+.lot-path {
+  fill: rgba(255, 255, 255, 0.2);
+  stroke: #ffffff;
+  stroke-width: 2.5;
+  stroke-dasharray: 2,1;
+  transition: fill 0.3s ease;
+  transform: none !important;
+  pointer-events: all;
+  will-change: auto;
+}
+
+.lot-number {
+  display: none;
+}
+
+.batch:hover .lot-path {
+  fill: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+} 
