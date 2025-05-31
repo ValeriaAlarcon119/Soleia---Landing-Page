@@ -13,7 +13,7 @@ Este proyecto es una landing page para el desarrollo residencial Soleia, con una
 1. **Clona o descarga este repositorio:**
    - Si tienes Git, ejecuta:
      ```
-     git clone <URL-del-repositorio>
+     git clone https://github.com/ValeriaAlarcon119/Soleia---Landing-Page
      ```
    - O descarga el ZIP desde GitHub y descomprímelo.
 
