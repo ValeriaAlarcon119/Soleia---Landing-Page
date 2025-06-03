@@ -5,6 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Soleia - Landing Page</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+      font-family: 'Avocado';
+      src: url('avocado.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'DM Sans Regular';
+      src: url('DMSans-Regular.ttf') format('truetype');
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@900&display=swap" rel="stylesheet">
 </head>
@@ -16,13 +26,16 @@
     <div class="navbar-bg">
       <div class="container navbar-flex">
         <div class="logo">
-          <img src="soleia-logo.svg.png" alt="SOLEIA" width="297" height="66" />
+          <img src="logo soleia.svg" alt="SOLEIA" width="200" height="44" />
         </div>
         <nav>
+          <button class="menu-toggle" aria-label="Menu">
+            <span class="hamburger"></span>
+          </button>
           <ul class="navbar-menu">
             <li><a href="#amenidades">Amenidades</a></li>
-            <li><a href="#brochure">Brochure</a></li>
-            <li><a href="#cotizador">Cotizador</a></li>
+            <li><a href="#brochure-section">Brochure</a></li>
+            <li><a href="cotizador.html">Cotizador</a></li>
           </ul>
         </nav>
       </div>
@@ -31,7 +44,7 @@
 
   <section class="hero">
 
-    <img src="Vector.png" alt="Decoración" class="hero-vector" />
+    <img src="Vector (5).png" alt="Decoración" class="hero-vector" />
 
     <div class="hero-inner">
 
@@ -101,46 +114,49 @@
         </p>
       </div>
       <div class="img-slider">
-        <div class="slider-images">
-          <div class="img-container img-up">
+        <div class="slider-images" id="carrusel-imagenes">
+          <div class="img-container" id="img-1">
             <img src="image 1.png" alt="Amenidad 1">
           </div>
-          <div class="img-container img-down">
+          <div class="img-container" id="img-2">
             <img src="image 1.png" alt="Amenidad 2">
           </div>
-           <div class="img-container img-up">
+          <div class="img-container" id="img-3">
             <img src="image 1.png" alt="Amenidad 3">
           </div>
-          <div class="img-container img-down">
+          <div class="img-container" id="img-4">
             <img src="image 1.png" alt="Amenidad 4">
           </div>
-           <div class="img-container img-up">
+          <div class="img-container" id="img-5">
             <img src="image 1.png" alt="Amenidad 5">
           </div>
-          <div class="img-container img-down">
+          <div class="img-container" id="img-6">
             <img src="image 1.png" alt="Amenidad 6">
           </div>
+          <div class="img-container" id="img-7">
+            <img src="image 1.png" alt="Amenidad 7">
+          </div>
         </div>
-        <div class="slider-dots">
-
-          <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
+        <div class="slider-dots" id="carrusel-dots">
+          <div class="dot active" id="dot-1" onclick="irASlide(0)"></div>
+          <div class="dot" id="dot-2" onclick="irASlide(1)"></div>
+          <div class="dot" id="dot-3" onclick="irASlide(2)"></div>
+          <div class="dot" id="dot-4" onclick="irASlide(3)"></div>
+          <div class="dot" id="dot-5" onclick="irASlide(4)"></div>
+          <div class="dot" id="dot-6" onclick="irASlide(5)"></div>
+          <div class="dot" id="dot-7" onclick="irASlide(6)"></div>
         </div>
-        <div class="slider-button left-button">
-          
+        <div class="slider-button left-button" id="btn-anterior" onclick="anteriorSlide()">
+          <img src="Vector (4).png" alt="Anterior" style="width:18px;height:18px;">
         </div>
-        <div class="slider-button right-button">
-           
+        <div class="slider-button right-button" id="btn-siguiente" onclick="siguienteSlide()">
+          <img src="Vector (3).png" alt="Siguiente" style="width:18px;height:18px;">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="brochure-section">
+  <section class="brochure-section" id="brochure-section">
     <div class="container">
       <div class="brochure-left">
         <div class="brochure-text">
@@ -160,7 +176,7 @@
     </div>
   </section>
 
-  <section class="combined-amenities-cta">
+  <section class="combined-amenities-cta" id="amenidades">
     <div class="container">
       <div class="amenities-text">
         <h2 class="amenities-title">Mas de X amenidades exclusivas</h2>
@@ -171,44 +187,42 @@
       </div>
       <div class="amenities-gallery">
         <div class="gallery-images">
-          <div class="gallery-item gallery-item-short">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-tall">
+            <img src="image 1.png" alt="Amenidad 1">
           </div>
-          <div class="gallery-item gallery-item-tall">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-short">
+            <img src="image 1.png" alt="Amenidad 2">
           </div>
-          <div class="gallery-item gallery-item-short">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-tall">
+            <img src="image 1.png" alt="Amenidad 3">
           </div>
-          <div class="gallery-item gallery-item-tall">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-short">
+            <img src="image 1.png" alt="Amenidad 4">
           </div>
-           <div class="gallery-item gallery-item-short">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-tall">
+            <img src="image 1.png" alt="Amenidad 5">
           </div>
-          <div class="gallery-item gallery-item-tall">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-short">
+            <img src="image 1.png" alt="Amenidad 6">
           </div>
-           <div class="gallery-item gallery-item-short">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-tall">
+            <img src="image 1.png" alt="Amenidad 7">
           </div>
-          <div class="gallery-item gallery-item-tall">
-            <img src="image 1.png" alt="Amenidad">
+          <div class="gallery-item needs-item-short">
+            <img src="image 1.png" alt="Amenidad 8">
           </div>
         </div>
-         <div class="gallery-dots">
+        <div class="gallery-dots">
           <div class="dot active"></div>
-          <div class="dot"></div>
-          <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
           <div class="dot"></div>
         </div>
         <div class="gallery-button left-button">
-          
+          <img src="Vector (4).png" alt="Anterior" style="width:18px;height:18px;">
         </div>
         <div class="gallery-button right-button">
-          
+          <img src="Vector (3).png" alt="Siguiente" style="width:18px;height:18px;">
         </div>
       </div>
     </div>
@@ -249,10 +263,10 @@
             <img src="image 1.png" alt="Necesidad 2">
           </div>
           <div class="gallery-item needs-item-tall">
-            <img src="image 1.png" alt="Necesidad 3">
+            <img src="image 1.png" alt="Necesidad 7">
           </div>
-          <div class="gallery-item needs-item-short">
-            <img src="image 1.png" alt="Necesidad 4">
+          <div class="gallery-item needs-item-short" style="grid-row: span 2;">
+            <img src="image 1.png" alt="Necesidad 8">
           </div>
           <div class="gallery-item needs-item-tall">
             <img src="image 1.png" alt="Necesidad 1">
@@ -260,14 +274,14 @@
           <div class="gallery-item needs-item-short">
             <img src="image 1.png" alt="Necesidad 2">
           </div>
-          <div class="gallery-item needs-item-tall">
-            <img src="image 1.png" alt="Necesidad 3">
-          </div>
           <div class="gallery-item needs-item-short">
-            <img src="image 1.png" alt="Necesidad 4">
+            <img src="image 1.png" alt="Necesidad 7">
           </div>
+          <div class="gallery-item needs-item-tall" style="grid-row: span 2;">
+            <img src="image 1.png" alt="Necesidad 8">
+          </div>
+        </div>
       </div>
-      
     </div>
     <a href="#" class="needs-button">CONSTRUYE TUS SUEÑOS</a>
   </section>
