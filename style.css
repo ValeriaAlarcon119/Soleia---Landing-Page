@@ -27,6 +27,11 @@ body {
   background-image: none;
 }
 
+body .intro-section {
+  background: #1E3427 !important;
+  background-color: #1E3427 !important;
+}
+
 .container {
   width: 100%;
   max-width: 1440px;
@@ -709,107 +714,89 @@ nav a:hover {
 
 /* Styles for the Intro Section (Sobre Soleia) */
 .intro-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 80px 70px 60px; /* Ajustado padding superior e inferior */
-  gap: 30px;
-  width: 100vw;
-  max-width: none;
-  height: auto !important;
-  background: #1E3427 !important;
-  margin: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  padding-bottom: 0 !important;
-  margin-bottom: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  background-color: #1E3427 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  padding: 60px 0 100px !important;
 }
 
-.intro-section .container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex; /* Añadido display flex para centrar contenido */
-    flex-direction: column; /* Contenido apilado */
-    align-items: center; /* Centrar contenido horizontalmente */
-    gap: 30px; /* Espacio entre título, subtítulo y slider */
-}
-
-/* Title */
 .intro-title {
-  display: flex;
-  flex-direction: row;
-  justify-content: center; /* Asegurar centrado */
-  align-items: center;
-  padding: 0;
-  gap: 10px;
-  width: 880px;
-  max-width: 100%;
-  height: auto; /* Altura automática */
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-  text-align: center; /* Centrar texto dentro del contenedor */
+  order: 1 !important;
+  z-index: 3 !important;
+  position: relative !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-bottom: 20px !important;
 }
 
-.intro-title h1 {
-  width: 880px;
-  max-width: 100%;
-  height: auto; /* Altura automática */
+.intro-subtitle {
+  order: 2 !important;
+  z-index: 3 !important;
+  position: relative !important;
+  width: 100% !important;
+  text-align: center !important;
+  margin-bottom: 30px !important;
+}
+
+.img-slider {
+  order: 3 !important;
+  z-index: 2 !important;
+  position: relative !important;
+  width: 100% !important;
+}
+
+.intro-title {
   font-family: 'Avocado', 'Cormorant Garamond', serif;
-  font-style: normal; /* Asegurar estilo normal */
-  font-weight: 400; /* Peso de fuente 400 (normal) */
-  font-size: 80px;
-  line-height: 76px;
-  text-align: center;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 48px;
+  line-height: 1.2;
   color: #FAEACD;
-  flex: none;
-  order: 0;
-  flex-grow: 1;
-  margin: 0;
+  margin: 0 auto;
+  text-align: center;
 }
 
-/* Subtitle */
 .intro-subtitle {
   display: flex;
   flex-direction: row;
-  justify-content: center; /* Asegurar centrado */
+  justify-content: center;
   align-items: center;
   padding: 0;
   gap: 10px;
   width: 880px;
   max-width: 100%;
-  height: auto; /* Altura automática */
+  height: auto;
   flex: none;
   order: 1;
   flex-grow: 0;
-  text-align: center; /* Centrar texto dentro del contenedor */
+  text-align: center;
+  margin: -20px auto 20px;
 }
 
 .intro-subtitle p {
   width: 880px;
   max-width: 100%;
-  height: auto; /* Altura automática */
+  height: auto;
   font-family: 'DMSansCustom', 'DM Sans', sans-serif;
-  font-style: normal; /* Asegurar estilo normal */
-  font-weight: normal; /* Cambiado a 'normal' para asegurar que no sea negrilla */
-  font-size: 20px;
-  line-height: 26px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.4;
   text-align: center;
   color: #FAEACD;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 1;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* Image Slider */
 .img-slider {
   max-width: 1200px;
-  margin: 0 auto;
-  overflow: hidden;
+  margin: -20px auto 0;
+  overflow: visible;
   position: relative;
+  z-index: 1;
 }
 
 .slider-images {
@@ -820,6 +807,7 @@ nav a:hover {
   width: 100%;
   scroll-behavior: smooth;
   padding: 0 30px;
+  margin-top: 20px;
 }
 
 .img-container {
@@ -4658,17 +4646,17 @@ nav a:hover {
 .cotizador-header {
   text-align: center;
   margin-bottom: 30px;
-  }
-  
-  .cotizador-main-title {
+}
+
+.cotizador-main-title {
   font-family: 'DM Sans', sans-serif;
   font-weight: 900;
   font-size: 2.5rem;
   color: white;
   margin: 0 0 30px 0;
-  }
-  
-  .status-legend {
+}
+
+.status-legend {
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -4707,9 +4695,9 @@ nav a:hover {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-  }
-  
-  .container-svg {
+}
+
+.container-svg {
   width: 100%;
   height: 600px;
   position: relative;
@@ -6330,4 +6318,3 @@ a.batch.vendido:hover polygon,
 }
 .footer-links .footer-col:nth-child(3) {
   margin-left: 120px !important;
-}
