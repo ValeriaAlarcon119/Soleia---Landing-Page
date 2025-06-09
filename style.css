@@ -1121,20 +1121,20 @@ nav a:hover {
 }
 
 .brochure-button {
-    display: inline-block;
+    display: inline-block !important;
     padding: 12px 25px !important;
-    background: #C14D35;
-    color: #FAEACD;
-    text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-weight: 400; /* Regular */
+    background: #C14D35 !important;
+    color: #FAEACD !important;
+    text-decoration: none !important;
+    font-family: 'DMSansCustom', 'DM Sans', Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
     font-size: 14px !important;
-    line-height: normal;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-    min-width: 180px; /* Añadido para controlar el ancho mínimo */
-    text-align: center; /* Asegurar que el texto esté centrado */
+    line-height: normal !important;
+    border-radius: 5px !important;
+    transition: background 0.3s ease !important;
+    min-width: 180px !important;
+    text-align: center !important;
 }
 
 .brochure-right {
@@ -1721,26 +1721,21 @@ nav a:hover {
     margin-top: 30px;
 }
 
-.needs-button {
-    display: inline-block;
-    padding: 4px 25px !important;
-    height: 32px !important;
-    background: #C14D35;
+a[href="#"][class="needs-button"] {
+    display: inline-block !important;
+    padding: 16px 35px !important;
+    background: #C14D35 !important;
     color: #FAEACD !important;
-    text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 14px;
-    line-height: 24px !important;
-    border-radius: 200px !important;
-    transition: background 0.3s ease;
-    min-width: 180px;
-    text-align: center;
-    position: relative;
-    top: -180px;
-    margin-top: -120px;
-    margin-bottom: -160px;
+    text-decoration: none !important;
+    font-family: 'DMSansCustom', 'DM Sans', Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: normal !important;
+    border-radius: 25px !important;
+    transition: background 0.3s ease !important;
+    min-width: 220px !important;
+    text-align: center !important;
 }
 
 .needs-section .container {
@@ -2073,23 +2068,23 @@ nav a:hover {
 }
 .living-section .living-button {
     display: inline-block;
-  padding: 15px 25px; 
-  background: #FAEACD; 
-  color: #000000; 
+    padding: 15px 20px;
+    background: #FAEACD !important;
+    color: #224457 !important;
     text-decoration: none;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DMSansCustom', 'DM Sans', Arial, sans-serif !important;
     font-style: normal;
-    font-weight: 400;
-  font-size: 16px;
+    font-weight: 400; /* Regular */
+    font-size: 16px !important; /* Aumentado de 14px a 16px */
     line-height: normal;
-    border-radius: 5px;
+    border-radius: 8px;
     transition: background 0.3s ease;
-  border: none;
-  cursor: pointer;
+    min-width: 160px;
+    text-align: center;
 }
 
 .living-section .living-button:hover {
-  background: #E0D3B8; 
+    background: #E0D3B8;
 }
 
 .living-section .living-right {
@@ -5845,4 +5840,24 @@ a.batch.vendido:hover polygon,
 .img-slider {
   margin-top: -20px !important;
   transform: translateY(-10px) !important;
+}
+
+/* Estilo específico para el botón de brochure */
+a[href="#"][class="brochure-button"] {
+    display: inline-block !important;
+    padding: 12px 25px !important;
+    background: #C14D35 !important;
+    color: #FAEACD !important;
+    text-decoration: none !important;
+    font-family: 'DMSansCustom', 'DM Sans', Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    font-size: 14px !important;
+    line-height: normal !important;
+    border-radius: 5px !important;
+    transition: background 0.3s ease !important;
+    min-width: 180px !important;
+    text-align: center !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
 }
