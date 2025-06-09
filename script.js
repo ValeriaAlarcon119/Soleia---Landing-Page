@@ -363,4 +363,30 @@ document.addEventListener('DOMContentLoaded', function() {
         dots.forEach(dot => dot.classList.remove('active'));
         dots[currentIndex].classList.add('active');
     });
-}); 
+});
+
+function renderLots() {
+  const container = document.querySelector('.container-svg');
+  const svg = container.querySelector('svg');
+  
+  lotes.forEach((lot, index) => {
+    const batch = document.createElement('div');
+    batch.className = `batch ${lot.estado}`;
+    
+    // Agregar la información del lote para el tooltip
+    const statusText = lot.estado === 'disponible' ? 'Disponible' : 
+                      lot.estado === 'apartado' ? 'Apartado' : 'Vendido';
+    batch.setAttribute('data-lot-info', `Lote ${index + 1} - ${statusText}`);
+    
+    // Crear el elemento SVG para el lote
+    const lotElement = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    lotElement.setAttribute("x", lot.x);
+    lotElement.setAttribute("y", lot.y);
+    lotElement.setAttribute("width", lot.width);
+    lotElement.setAttribute("height", lot.height);
+    lotElement.setAttribute("class", "lot-path");
+    
+    batch.appendChild(lotElement);
+    svg.appendChild(batch);
+  });
+} 

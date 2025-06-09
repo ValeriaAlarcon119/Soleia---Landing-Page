@@ -5,18 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cotizador - Soleia</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+      font-family: 'Avocado';
+      src: url('avocado.otf') format('opentype');
+    }
+    @font-face {
+      font-family: 'DM Sans Regular';
+      src: url('DMSans-Regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@900&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    
     <div class="navbar-bg">
       <div class="container navbar-flex">
         <div class="logo">
-          <img src="soleia-logo.svg.png" alt="SOLEIA" width="297" height="66" />
+          <a href="index.html">
+            <img src="logo soleia.svg" alt="SOLEIA" width="200" height="44" />
+          </a>
         </div>
         <nav>
+          <button class="menu-toggle" aria-label="Menu">
+            <span class="hamburger"></span>
+          </button>
           <ul class="navbar-menu">
             <li><a href="index.html#amenidades">Amenidades</a></li>
             <li><a href="index.html#brochure-section">Brochure</a></li>
@@ -30,7 +46,7 @@
   <section class="cotizador-section">
     <div class="cotizador-container">
       <div class="cotizador-header">
-        <h1 class="cotizador-main-title">¡Cotiza tu lote en Soleia!</h1>
+        <h1 class="cotizador-main-title" style="font-family: 'Avocado', sans-serif; font-weight: normal; font-size: 48px; color: #FAEACD;">Cotiza tu lote en Soleia</h1>
         
         <div class="status-legend">
           <div class="status-item">
@@ -58,14 +74,17 @@
                   <!-- LOTE 1 - ROJO -->
                   <a href="#" class="batch vendido" data-lot-id="1">
                     <rect class="lot-path" x="140" y="425" width="20" height="66" id="L01" />
+                    <text x="150" y="458" class="lot-number">1</text>
                   </a>
                   <!-- LOTE 2 - AMARILLO -->
                   <a href="#" class="batch apartado" data-lot-id="2">
                     <rect class="lot-path" x="160" y="425" width="20" height="66" id="L02" />
+                    <text x="170" y="458" class="lot-number">2</text>
                   </a>
                   <!-- LOTE 3 - VERDE -->
                   <a href="#" class="batch disponible" data-lot-id="3">
                     <rect class="lot-path" x="180" y="425" width="20" height="66" id="L03" />
+                    <text x="190" y="458" class="lot-number">3</text>
                   </a>
                   <!-- LOTE 4 - AMARILLO -->
                   <a href="#" class="batch apartado" data-lot-id="4">
@@ -364,7 +383,9 @@
   <footer class="main-footer">
     <div class="container">
       <div class="footer-logo">
-        <img src="col.svg" alt="SOLEIA Logo" class="footer-logo-img">
+        <a href="index.html">
+          <img src="col.svg" alt="SOLEIA Logo" class="footer-logo-img">
+        </a>
       </div>
       <div class="footer-links">
         <div class="footer-col">
