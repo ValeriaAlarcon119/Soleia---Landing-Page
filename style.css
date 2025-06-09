@@ -1218,7 +1218,7 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px 0;
+    padding: 40px 0;
     gap: 40px;
     background: #224457;
     background-image: url('Vector (1).png');
@@ -1233,6 +1233,8 @@ nav a:hover {
     position: relative;
     z-index: 1;
     margin: 0;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
 }
 
 .combined-amenities-cta > .container:nth-child(1) {
@@ -1922,15 +1924,15 @@ a[href="#"][class="needs-button"] {
 
 .features-section .container {
   max-width: 1350px;
-  width: 100%;
-  margin: 0 auto;
+    width: 100%;
+  margin: 0 auto; 
   padding: 0 40px 0 20px;
 }
 
 .features-section .features-grid {
-  width: 100%;
+    width: 100%;
   max-width: 1350px;
-  margin: 0 auto;
+  margin: 0 auto; 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
@@ -1940,29 +1942,29 @@ a[href="#"][class="needs-button"] {
 .features-section .feature-item {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  flex-direction: column; 
+  align-items: center; 
+  text-align: center; 
 }
 
 .features-section .feature-icon {
-  width: 100%;
+  width: 100%; 
   max-width: 250px;
-  height: auto;
+  height: auto; 
   margin-bottom: 15px;
   object-fit: contain;
 }
 
 .features-section .feature-text {
-  font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', sans-serif;
   font-size: 16px;
   color: #224457;
-  margin: 0;
+    margin: 0;
 }
 
 @media (max-width: 1200px) {
   .features-section .features-grid {
-    gap: 25px;
+      gap: 25px;
   }
   
   .features-section .feature-icon {
@@ -1971,8 +1973,8 @@ a[href="#"][class="needs-button"] {
 }
 
 @media (max-width: 768px) {
-  .features-section .features-grid {
-    grid-template-columns: repeat(2, 1fr);
+    .features-section .features-grid {
+        grid-template-columns: repeat(2, 1fr); 
     gap: 20px;
   }
   
@@ -2084,7 +2086,7 @@ a[href="#"][class="needs-button"] {
 }
 
 .living-section .living-button:hover {
-    background: #E0D3B8;
+  background: #E0D3B8; 
 }
 
 .living-section .living-right {
@@ -3000,7 +3002,7 @@ a[href="#"][class="needs-button"] {
   stroke: #fff !important;
   stroke-width: 2 !important;
   opacity: 0.8 !important;
-  cursor: pointer !important;
+  cursor: pointer !important; 
   transition: all 0.3s ease;
 }
 
@@ -5322,8 +5324,8 @@ a.batch.vendido:hover polygon,
     margin-top: 0px !important;
     position: relative;
     z-index: 1;
-    padding-top: 160px !important;
-    padding-bottom: 160px !important;
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
 } 
 
 .intro-section::before, .intro-section::after, .brochure-section::before, .brochure-section::after, .container::before, .container::after {
