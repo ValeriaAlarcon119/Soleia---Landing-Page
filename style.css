@@ -274,7 +274,7 @@ nav a:hover {
   background-image: url('Vector (5).png');
   background-repeat: no-repeat;
   background-position: right top;
-  background-size: auto 100%; /* Cambia 80% por el porcentaje que prefieras */
+  background-size: auto 100%;
 }
 
 .hero::after {
@@ -336,7 +336,7 @@ nav a:hover {
 }
 
 .hero-form input, .hero-form button {
-  width: 100%;
+  width: 50%;
   margin-bottom: 12px;
   font-size: 1rem;
 }
@@ -348,8 +348,8 @@ nav a:hover {
   align-items: flex-start;
   padding: 0;
   gap: 40px;
-  width: 100%;
-  max-width: 1260px;
+  width: 50%;
+  max-width: 120px;
   flex-grow: 0;
   flex-shrink: 1;
   align-self: flex-start;
@@ -359,8 +359,8 @@ nav a:hover {
 .hero-form {
   font-family: 'InterCustom', 'DM Sans', Arial, sans-serif;
   margin-top: 0;
-  width: 100%;
-  max-width: 600px;
+  width: 50%;
+  max-width: 60px;
   margin: 0 auto;
   padding: 20px;
   background: rgba(255, 255, 255, 0.9);
@@ -642,22 +642,20 @@ nav a:hover {
 
 /* Estilos para el botón */
 .hero-form button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-    padding: 15px 30px;
-    gap: 8px;
+  width: 80px;
+  min-width: 60px;
+  max-width: 90px;
+  height: 80px;
+  margin: 0 auto;
+  display: block;
+  font-size: 16px;
+  padding: 0 10px;
   background: #FAEACD;
-    border-radius: 5px;
+  border-radius: 5px;
   border: none;
-    font-family: 'DM Sans Regular', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 29px;
   color: #000000;
-    cursor: pointer;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 /* Contenedor de la imagen derecha - Restaurar dimensiones originales */
@@ -3643,6 +3641,7 @@ a[href="#"][class="needs-button"] {
   stroke-width: 2 !important;
   opacity: 0.8 !important;
   cursor: pointer !important;
+  transition: all 0.3s ease;
 }
 
 .batch.apartado .lot-path,
@@ -3652,6 +3651,7 @@ a[href="#"][class="needs-button"] {
   stroke-width: 2 !important;
   opacity: 0.8 !important;
   cursor: pointer !important;
+  transition: all 0.3s ease;
 }
 
 .batch.vendido .lot-path,
@@ -3661,38 +3661,30 @@ a[href="#"][class="needs-button"] {
   stroke-width: 2 !important;
   opacity: 0.8 !important;
   cursor: pointer !important; 
+  transition: all 0.3s ease;
 }
 
-.batch.disponible:hover .lot-path,
-.batch.disponible:hover polygon {
+.batch:hover .lot-path,
+.batch:hover polygon {
   opacity: 1 !important;
   stroke-width: 3 !important;
-  fill: #28a745 !important;
-}
-
-.batch.apartado:hover .lot-path,
-.batch.apartado:hover polygon {
-  opacity: 1 !important;
-  stroke-width: 3 !important;
-  fill: #ffc107 !important;
-}
-
-.batch.vendido:hover .lot-path,
-.batch.vendido:hover polygon {
-  opacity: 0.8 !important;
-  fill: #dc3545 !important; 
-  stroke: #fff !important;
-  stroke-width: 3 !important;
+  transform: scale(1.05);
 }
 
 .lot-number {
   fill: white;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   text-anchor: middle;
   dominant-baseline: middle;
   pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.batch:hover .lot-number {
+  opacity: 1;
 }
 
 .modal-overlay {
@@ -3706,9 +3698,9 @@ a[href="#"][class="needs-button"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
   background: white;
   border-radius: 15px;
   width: 90%;
@@ -6192,7 +6184,7 @@ a[href="#"][class="brochure-button"] {
   }
   .hero-form input, .hero-form button {
     font-size: 1rem;
-    width: 100%;
+    width: 50%;
     box-sizing: border-box;
   }
 
@@ -6402,6 +6394,16 @@ a[href="#"][class="brochure-button"] {
     white-space: normal;
     word-break: break-word;
   }
+}
+
+@media (max-width: 900px) {
+  .amenities-gallery,
+  .gallery-images,
+  .needs-gallery,
+  .needs-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media (max-width: 900px) {
@@ -7144,7 +7146,11 @@ html, body {
     position: static !important;
     z-index: 2 !important;
   }
-  .row {
+  
+  .hero-form button {
+    height: 90px !important;
+   
+  }.row {
     display: flex !important;
     flex-direction: column !important;
     gap: 8px !important;
