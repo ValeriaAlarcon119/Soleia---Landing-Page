@@ -6406,3 +6406,64 @@ a[href="#"][class="brochure-button"] {
     word-break: break-word;
   }
 }
+
+@media (max-width: 600px) {
+  /* Navbar */
+  .navbar-menu {
+    top: 50px;
+    font-size: 0.98rem;
+  }
+  .navbar-menu li {
+    padding: 12px 10px;
+  }
+  .navbar-menu li a {
+    font-size: 1rem;
+    padding: 0;
+  }
+  .logo img {
+    width: 110px !important;
+    height: auto;
+  }
+  .menu-toggle {
+    font-size: 1.7rem;
+  }
+
+  /* Footer */
+  .footer-links {
+    gap: 4px;
+    padding: 0 4px;
+  }
+  .footer {
+    padding: 8px 0;
+    font-size: 0.95rem;
+  }
+  .footer .logo,
+  .footer .footer-title,
+  .footer .footer-subtitle {
+    max-width: 98vw;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-menu li {
+    padding: 10px 4px;
+  }
+  .navbar-menu li a {
+    font-size: 0.98rem;
+  }
+  .logo img {
+    width: 90px !important;
+  }
+  .footer {
+    font-size: 0.9rem;
+    padding: 6px 0;
+  }
+  .footer .logo,
+  .footer .footer-title,
+  .footer .footer-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 2px;
+  }
+}
