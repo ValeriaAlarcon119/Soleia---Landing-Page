@@ -270,21 +270,35 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('=== CARRUSEL AMENIDADES INICIALIZADO ===');
 });
 
-// Manejo del menú hamburguesa
+// Menú móvil
 document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navbarMenu = document.querySelector('.navbar-menu');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navbarMenu = document.querySelector('.navbar-menu');
+  const nav = document.querySelector('nav');
 
+  if (menuToggle && navbarMenu) {
     menuToggle.addEventListener('click', function() {
-        navbarMenu.classList.toggle('active');
+      navbarMenu.classList.toggle('active');
+      nav.style.right = navbarMenu.classList.contains('active') ? '0' : '-100%';
     });
 
-    // Cerrar el menú al hacer clic en un enlace
-    document.querySelectorAll('.navbar-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            navbarMenu.classList.remove('active');
-        });
+    // Cerrar menú al hacer clic en un enlace
+    const menuLinks = navbarMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        navbarMenu.classList.remove('active');
+        nav.style.right = '-100%';
+      });
     });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        navbarMenu.classList.remove('active');
+        nav.style.right = '-100%';
+      }
+    });
+  }
 });
 
 // Scroll suave para los enlaces internos
