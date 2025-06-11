@@ -288,20 +288,20 @@ nav a:hover {
   background-size: contain;
   pointer-events: none;
   z-index: 2;
-}
+    }
 @media (max-width: 900px) {
-  .hero {
+    .hero {
     padding-top: 48px;
     padding-bottom: 48px;
     min-height: 480px;
-  }
+    }
 }
 @media (max-width: 600px) {
-  .hero {
+    .hero {
     padding-top: 28px;
     padding-bottom: 28px;
     min-height: 340px;
-  }
+    }
 }
 
 .hero-inner {
@@ -651,10 +651,10 @@ nav a:hover {
   font-size: 16px;
   padding: 0 10px;
   background: #FAEACD;
-  border-radius: 5px;
+    border-radius: 5px;
   border: none;
   color: #000000;
-  cursor: pointer;
+    cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -3698,9 +3698,9 @@ a[href="#"][class="needs-button"] {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.modal-content {
+  }
+  
+  .modal-content {
   background: white;
   border-radius: 15px;
   width: 90%;
@@ -7159,4 +7159,5 @@ html, body {
   .field-div {
     width: 100% !important;
   }
+}
 }
