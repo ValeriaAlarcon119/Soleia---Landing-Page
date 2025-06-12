@@ -7033,3 +7033,40 @@ section.hero {
 .intro-section .container {
   padding-top: 90px !important;
 }
+
+section.hero {
+  padding-bottom: 60px !important; /* O el valor que prefieras */
+}
+
+@media (max-width: 60000px) {
+  .hero-title {
+    font-size: 4.2rem !important;   /* Ajusta el valor a tu gusto */
+    line-height: 1.1 !important;
+  }
+  .hero-desc {
+    font-size: 1.1rem !important;   /* Ajusta el valor a tu gusto */
+    line-height: 1.3 !important;
+  }
+}
+
+section.hero {
+  background-color: #FAEACD !important;
+  background-image: url('Vector (7).png') !important;
+  background-repeat: no-repeat !important;
+  background-size: 50% 100% !important;
+  background-position: right center !important;
+}
+
+
+.hero-inner {
+  position: relative !important;
+  left: -130px !important; 
+  
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+    position: relative !important;
+    right: 600px !important;
+  }
+}
