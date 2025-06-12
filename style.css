@@ -310,8 +310,6 @@ nav a:hover {
   margin: 0 auto;
 
   flex-wrap: wrap;
-
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -7058,15 +7056,30 @@ section.hero {
 }
 
 
-.hero-inner {
-  position: relative !important;
-  left: -130px !important; 
-  
+
+@media (min-width: 769px) {
+  .hero-inner {
+    position: relative !important;
+    left: -130px !important;
+  }
 }
 
 @media (max-width: 768px) {
   .hero-inner {
     position: relative !important;
-    right: 600px !important;
+    left: 40px !important; /* O el valor que desees */
+  }
+}
+
+
+@media (max-width: 1000px) {
+  .hero-inner {
+    transform: translateX(30px) !important;
+    left: unset !important;
+    right: unset !important;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    background: none !important;
+   /* Solo para que veas el cambio, luego lo quitas */
   }
 }
