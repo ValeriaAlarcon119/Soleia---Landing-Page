@@ -1,0 +1,252 @@
+/* Estilos móviles - Aplicación forzada */
+@media screen and (max-width: 768px) {
+  /* Reset forzado */
+  html, body {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Forzar contenedores */
+  .container, 
+  .hero-inner,
+  .hero-left,
+  .hero-right-content,
+  .intro-section,
+  .brochure-section,
+  .combined-amenities-cta,
+  .needs-section,
+  .features-section,
+  .faq-section,
+  .main-footer,
+  .cotizador-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15px !important;
+    margin: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Navbar móvil */
+  .navbar-flex {
+    padding: 10px !important;
+    width: 100% !important;
+  }
+
+  .logo {
+    margin: 0 !important;
+  }
+
+  .logo img {
+    width: 120px !important;
+    height: auto !important;
+  }
+
+  .navbar-menu {
+    position: fixed !important;
+    top: 0 !important;
+    right: -100% !important;
+    width: 100% !important;
+    height: 100vh !important;
+    background: #FAEACD !important;
+    padding: 80px 20px !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 9999 !important;
+  }
+
+  .navbar-menu.active {
+    right: 0 !important;
+  }
+
+  .navbar-menu li {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 15px 0 !important;
+  }
+
+  .navbar-menu li a {
+    font-size: 24px !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Hero section */
+  .hero {
+    padding: 20px 0 !important;
+  }
+
+  .hero-title {
+    font-size: 28px !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .hero-desc {
+    font-size: 16px !important;
+    text-align: center !important;
+    line-height: 1.4 !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .hero-form {
+    width: 100% !important;
+    padding: 20px !important;
+    margin: 0 !important;
+  }
+
+  .hero-form .row {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+
+  .hero-form .field-div {
+    width: 100% !important;
+    margin: 0 0 15px 0 !important;
+  }
+
+  /* Sobre Soleia */
+  .intro-title h1 {
+    font-size: 28px !important;
+    text-align: center !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .intro-subtitle p {
+    font-size: 16px !important;
+    text-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Amenidades */
+  .combined-amenities-cta .cta-brochure-img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .combined-amenities-cta .cta-brochure-image-placeholder {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Needs Section */
+  .needs-section .gallery-images {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+    padding: 0 !important;
+  }
+
+  .needs-section .gallery-item {
+    width: 100% !important;
+    max-width: 300px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Features Section */
+  .features-section .features-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+  }
+
+  .features-section .feature-item {
+    width: 100% !important;
+    max-width: 300px !important;
+    text-align: center !important;
+  }
+
+  /* FAQ */
+  .faq-section .faq-item {
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 0 20px 0 !important;
+  }
+
+  .faq-section .faq-question {
+    text-align: center !important;
+    padding: 15px !important;
+  }
+
+  .faq-section .faq-answer {
+    text-align: center !important;
+    padding: 15px !important;
+  }
+
+  /* Footer */
+  .main-footer,
+  .cotizador-footer {
+    padding: 40px 15px 20px !important;
+  }
+
+  .footer-links,
+  .footer-links-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 30px !important;
+    text-align: center !important;
+  }
+
+  .footer-col,
+  .footer-column {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .footer-logo-img,
+  .cotizador-logo {
+    width: 120px !important;
+    height: auto !important;
+    margin: 0 auto 20px !important;
+  }
+
+  .bottom-bar {
+    padding: 15px !important;
+  }
+
+  .bottom-bar .container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+
+  .copyright,
+  .privacy {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Eliminar espacio blanco */
+  * {
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  section {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Imágenes */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+} 

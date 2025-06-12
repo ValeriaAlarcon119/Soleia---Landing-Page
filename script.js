@@ -272,33 +272,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Menú móvil
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.menu-toggle');
-  const navbarMenu = document.querySelector('.navbar-menu');
-  const nav = document.querySelector('nav');
+    // Menú móvil
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navbarMenu = document.querySelector('.navbar-menu');
+    const menuLinks = document.querySelectorAll('.navbar-menu a');
 
-  if (menuToggle && navbarMenu) {
-    menuToggle.addEventListener('click', function() {
-      navbarMenu.classList.toggle('active');
-      nav.style.right = navbarMenu.classList.contains('active') ? '0' : '-100%';
-    });
+    if (menuToggle && navbarMenu) {
+        menuToggle.addEventListener('click', function() {
+            navbarMenu.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
 
-    // Cerrar menú al hacer clic en un enlace
-    const menuLinks = navbarMenu.querySelectorAll('a');
-    menuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navbarMenu.classList.remove('active');
-        nav.style.right = '-100%';
-      });
-    });
+        // Cerrar menú al hacer clic en un enlace
+        menuLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navbarMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
 
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', function(e) {
-      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-        navbarMenu.classList.remove('active');
-        nav.style.right = '-100%';
-      }
-    });
-  }
+        // Cerrar menú al hacer clic fuera
+        document.addEventListener('click', function(event) {
+            if (!navbarMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+                navbarMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            }
+        });
+    }
+
+    // Prevenir scroll cuando el menú está abierto
+    document.body.addEventListener('touchmove', function(e) {
+        if (document.body.classList.contains('menu-open')) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 });
 
 // Scroll suave para los enlaces internos
