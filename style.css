@@ -5375,9 +5375,9 @@ a[href="#"][class="needs-button"] {
   display: flex;
   align-items: center;
   justify-content: center;
-  }
-  
-  .modal-content {
+}
+
+.modal-content {
   background: white;
   border-radius: 15px;
   width: 90%;
@@ -5916,7 +5916,7 @@ a[href="#"][class="needs-button"] {
 
 @media (max-width: 768px) {
   .main-footer {
-    padding: 40px 0;
+  padding: 40px 0;
   }
   
   .footer-links {
@@ -6471,7 +6471,7 @@ a.batch.vendido:hover polygon,
         background: #1E3427;
         flex-direction: column;
         padding: 20px;
-        text-align: center;
+  text-align: center;
         width: 200px;
         border-radius: 4px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
@@ -6513,11 +6513,11 @@ a.batch.vendido:hover polygon,
 .needs-section .needs-description {
     font-family: 'DM Sans', sans-serif;
     font-style: normal;
-    font-weight: normal;
+  font-weight: normal;
     font-size: 18px;
     line-height: 1.4em;
     color: #000000;
-    margin-bottom: 30px;
+  margin-bottom: 30px;
     text-align: center;
 }
 
@@ -7104,9 +7104,9 @@ a[href="#"][class="brochure-button"] {
   .map-main-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
-  }
+}
 
-  .container-svg {
+.container-svg {
     min-width: 800px;
   }
 
@@ -7183,7 +7183,7 @@ a[href="#"][class="brochure-button"] {
 @media (max-width: 768px) {
   /* Contenedores principales */
   .container, .cotizador-container, .intro-section .container, .brochure-section .container, .combined-amenities-cta .container {
-    width: 100%;
+  width: 100%;
     max-width: 100vw;
     padding-left: 10px;
     padding-right: 10px;
@@ -7522,8 +7522,8 @@ a[href="#"][class="brochure-button"] {
   .img-container,
   .needs-item,
   .needs-img-container {
-    width: 140px;
-    max-width: 90vw;
+    width: 100%;
+    max-width: 1000px;
     margin: 0 auto;
     box-sizing: border-box;
     display: flex;
@@ -7651,7 +7651,7 @@ a[href="#"][class="brochure-button"] {
   .container, .cotizador-container, .intro-section .container, .brochure-section .container, .combined-amenities-cta .container,
   .amenities-gallery, .gallery-images, .needs-gallery, .needs-images {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
     margin-left: 0 !important;
@@ -7660,7 +7660,7 @@ a[href="#"][class="brochure-button"] {
     padding-right: 0 !important;
   }
   img, svg, video {
-    max-width: 100vw !important;
+    max-width: 100% !important;
     width: 100% !important;
     height: auto !important;
     display: block !important;
@@ -7668,13 +7668,13 @@ a[href="#"][class="brochure-button"] {
   /* Para sliders o galerías horizontales */
   .img-slider, .slider-images, .gallery-images, .amenities-gallery, .needs-gallery, .needs-images {
     overflow-x: auto !important;
-    max-width: 100vw !important;
-    width: 100vw !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
   /* Para SVGs grandes */
   .container-svg, svg {
-    max-width: 100vw !important;
-    width: 100vw !important;
+    max-width: 100%!important;
+    width: 100% !important;
     min-width: 0 !important;
     display: block !important;
   }
@@ -7683,8 +7683,8 @@ a[href="#"][class="brochure-button"] {
 /* --- CONSISTENCIA UNIVERSAL EN MÓVIL --- */
 @media (max-width: 900px) {
   html, body {
-    width: 100vw;
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     font-size: 15px;
   }
@@ -7694,7 +7694,7 @@ a[href="#"][class="brochure-button"] {
   }
   .container, .cotizador-container, .intro-section .container, .brochure-section .container, .combined-amenities-cta .container {
     width: 100%;
-    max-width: 100vw;
+    max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
     padding-left: 8px;
@@ -7861,7 +7861,7 @@ html, body {
   .container, .cotizador-container, .intro-section .container, .brochure-section .container, .combined-amenities-cta .container,
   .amenities-gallery, .gallery-images, .needs-gallery, .needs-images {
     width: 100% !important;
-    max-width: 100vw !important;
+    max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
     margin-left: 0 !important;
@@ -7870,7 +7870,7 @@ html, body {
     padding-right: 0 !important;
   }
   img, svg, video {
-    max-width: 100vw !important;
+    max-width: 100% !important;
     width: 100% !important;
     height: auto !important;
     display: block !important;
@@ -8511,7 +8511,7 @@ html, body {
 html, body {
     width: 100%;
     overflow-x: hidden;
-    position: relative;
+  position: relative;
 }
 
 .container, 
@@ -8519,7 +8519,7 @@ html, body {
 .intro-section .container, 
 .brochure-section .container, 
 .combined-amenities-cta .container {
-    width: 100%;
+  width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
@@ -8642,7 +8642,7 @@ body {
 .intro-subtitle,
 .img-slider {
     margin-top: 0 !important;
-    transform: none !important;
+  transform: none !important;
 }
 
 @media (max-width: 768px) {
@@ -8819,4 +8819,22 @@ body {
     margin: 0 !important;
     padding: 0 !important;
   }
+
+}
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100vw;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 900px) {
+  section, div, ul, ol, nav, header, footer, main {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+}
 }
