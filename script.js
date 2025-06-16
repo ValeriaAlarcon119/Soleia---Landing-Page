@@ -161,113 +161,111 @@ document.addEventListener('DOMContentLoaded', () => {
 // -- Código para Preguntas Frecuentes --
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
+    const slider = document.querySelector('.slider-images');
+    const images = document.querySelectorAll('.img-container');
+    const leftButton = document.querySelector('.left-button');
+    const rightButton = document.querySelector('.right-button');
+    const dots = document.querySelectorAll('.dot');
 
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
-
-        question.addEventListener('click', () => {
-            // Alternar la clase 'active' en el ítem completo
-            item.classList.toggle('active');
+    // Inicializar FAQ solo si existen los elementos
+    if (faqItems.length > 0) {
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            if (question) {
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            }
         });
-    });
+    }
     
-    // Inicializar carrusel
+    // Inicializar slider solo si existen los elementos necesarios
+    if (slider && images.length > 0) {
+        images.forEach((img, index) => {
+            img.style.flex = '0 0 calc(25% - 10px)';
+            img.style.transition = 'transform 0.5s ease';
+        });
+        
+        mostrarSlides();
+
+        if (leftButton) {
+            leftButton.addEventListener('click', anteriorSlide);
+        }
+        
+        if (rightButton) {
+            rightButton.addEventListener('click', siguienteSlide);
+        }
+
+        if (dots.length > 0) {
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => irASlide(index));
+            });
+        }
+    }
+    
+    // Inicializar carrusel de lotes
     renderLotes();
     
-    setTimeout(function() {
-        mostrarSlides();
-        console.log('✅ CARRUSEL INICIALIZADO - LISTO PARA USAR');
-    }, 100);
-});
-
-// CARRUSEL GARANTIZADO - Sección Amenidades
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('=== INICIANDO CARRUSEL AMENIDADES ===');
-    
-    // Buscar elementos de amenidades
+    // Inicializar carrusel de amenidades
     const filaArriba = document.getElementById('amenidades-carrusel-fila');
     const filaAbajo = document.getElementById('amenidades-fijas-fila');
     const amenitiesDots = document.querySelectorAll('.combined-amenities-cta .gallery-dots .dot');
     const amenitiesLeftBtn = document.querySelector('.combined-amenities-cta .gallery-button.left-button');
     const amenitiesRightBtn = document.querySelector('.combined-amenities-cta .gallery-button.right-button');
-    
-    if (!filaArriba || !filaAbajo) {
-        console.log('ERROR: No se encontraron elementos del carrusel de amenidades');
-        return;
-    }
 
-    let amenitiesCurrentIndex = 0;
-    const amenitiesTotal = 8; // Total de imágenes disponibles
-    const imagenes = [
-        'image 1.png','image 1.png','image 1.png','image 1.png',
-        'image 1.png','image 1.png','image 1.png','image 1.png'
-    ];
+    if (filaArriba && filaAbajo) {
+        let amenitiesCurrentIndex = 0;
+        const amenitiesTotal = 8;
+        const imagenes = [
+            'image 1.png','image 1.png','image 1.png','image 1.png',
+            'image 1.png','image 1.png','image 1.png','image 1.png'
+        ];
 
-    function renderAmenidades() {
-        console.log('RENDERIZANDO AMENIDADES - Índice:', amenitiesCurrentIndex);
-        
-        // Limpiar filas
-        filaArriba.innerHTML = '';
-        filaAbajo.innerHTML = '';
+        function renderAmenidades() {
+            filaArriba.innerHTML = '';
+            filaAbajo.innerHTML = '';
 
-        // Primera fila: LARGA-corta-LARGA-corta
-        for (let i = 0; i < 4; i++) {
-            const idx = (amenitiesCurrentIndex + i) % amenitiesTotal;
-            const clase = i % 2 === 0 ? 'gallery-item-tall' : 'gallery-item-short';
-            const div = document.createElement('div');
-            div.className = `gallery-item ${clase}`;
-            div.innerHTML = `<img src="${imagenes[idx]}" alt="Amenidad ${idx+1}">`;
-            filaArriba.appendChild(div);
+            for (let i = 0; i < 4; i++) {
+                const idx = (amenitiesCurrentIndex + i) % amenitiesTotal;
+                const clase = i % 2 === 0 ? 'gallery-item-tall' : 'gallery-item-short';
+                const div = document.createElement('div');
+                div.className = `gallery-item ${clase}`;
+                div.innerHTML = `<img src="${imagenes[idx]}" alt="Amenidad ${idx+1}">`;
+                filaArriba.appendChild(div);
+            }
+
+            for (let i = 0; i < 4; i++) {
+                const idx = (amenitiesCurrentIndex + 4 + i) % amenitiesTotal;
+                const clase = i % 2 === 0 ? 'gallery-item-short' : 'gallery-item-tall';
+                const div = document.createElement('div');
+                div.className = `gallery-item ${clase}`;
+                div.innerHTML = `<img src="${imagenes[idx]}" alt="Amenidad ${idx+5}">`;
+                filaAbajo.appendChild(div);
+            }
+
+            if (amenitiesDots.length > 0) {
+                amenitiesDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === (amenitiesCurrentIndex % 4));
+                });
+            }
         }
 
-        // Segunda fila: corta-LARGA-corta-LARGA
-        for (let i = 0; i < 4; i++) {
-            const idx = (amenitiesCurrentIndex + 4 + i) % amenitiesTotal;
-            const clase = i % 2 === 0 ? 'gallery-item-short' : 'gallery-item-tall';
-            const div = document.createElement('div');
-            div.className = `gallery-item ${clase}`;
-            div.innerHTML = `<img src="${imagenes[idx]}" alt="Amenidad ${idx+5}">`;
-            filaAbajo.appendChild(div);
+        if (amenitiesLeftBtn) {
+            amenitiesLeftBtn.addEventListener('click', () => {
+                amenitiesCurrentIndex = (amenitiesCurrentIndex - 1 + amenitiesTotal) % amenitiesTotal;
+                renderAmenidades();
+            });
         }
 
-        // Actualizar dots
-        amenitiesDots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === (amenitiesCurrentIndex % 4));
-        });
-    }
+        if (amenitiesRightBtn) {
+            amenitiesRightBtn.addEventListener('click', () => {
+                amenitiesCurrentIndex = (amenitiesCurrentIndex + 1) % amenitiesTotal;
+                renderAmenidades();
+            });
+        }
 
-    function nextAmenities() {
-        console.log('SIGUIENTE AMENIDAD');
-        amenitiesCurrentIndex = (amenitiesCurrentIndex + 1) % amenitiesTotal;
         renderAmenidades();
     }
-
-    function prevAmenities() {
-        console.log('AMENIDAD ANTERIOR');
-        amenitiesCurrentIndex = (amenitiesCurrentIndex - 1 + amenitiesTotal) % amenitiesTotal;
-        renderAmenidades();
-    }
-
-    // Event listeners
-    if (amenitiesRightBtn) {
-        amenitiesRightBtn.onclick = nextAmenities;
-    }
-
-    if (amenitiesLeftBtn) {
-        amenitiesLeftBtn.onclick = prevAmenities;
-    }
-
-    // Dots
-    amenitiesDots.forEach((dot, index) => {
-        dot.onclick = function() {
-            amenitiesCurrentIndex = index;
-            renderAmenidades();
-        };
-    });
-
-    // Inicializar
-    renderAmenidades();
-    console.log('=== CARRUSEL AMENIDADES INICIALIZADO ===');
 });
 
 // Scroll suave para los enlaces internos
@@ -283,69 +281,126 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Slider functionality
+// Inicialización del carrusel
 document.addEventListener('DOMContentLoaded', function() {
+    // Carrusel principal
     const slider = document.querySelector('.slider-images');
     const dots = document.querySelectorAll('.dot');
     const leftButton = document.querySelector('.left-button');
     const rightButton = document.querySelector('.right-button');
     const images = document.querySelectorAll('.img-container');
-    let currentIndex = 0;
-    const totalImages = images.length;
 
-    // Función para actualizar el slider
-    function updateSlider(direction) {
-        if (direction === 'next') {
-            currentIndex = (currentIndex + 1) % totalImages;
-        } else {
-            currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        }
-        
-        // Actualizar posición del slider
-        slider.scrollTo({
-            left: images[currentIndex].offsetLeft,
-            behavior: 'smooth'
-        });
-        
-        // Actualizar dots
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
-    }
+    if (slider && dots.length > 0 && leftButton && rightButton && images.length > 0) {
+        let currentIndex = 0;
+        const totalImages = images.length;
 
-    // Event listeners para los botones
-    rightButton.addEventListener('click', () => updateSlider('next'));
-    leftButton.addEventListener('click', () => updateSlider('prev'));
-
-    // Event listeners para los dots
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
+        function updateSlider(direction) {
+            if (direction === 'next') {
+                currentIndex = (currentIndex + 1) % totalImages;
+            } else {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+            }
+            
             slider.scrollTo({
                 left: images[currentIndex].offsetLeft,
                 behavior: 'smooth'
             });
-            dots.forEach(d => d.classList.remove('active'));
-            dot.classList.add('active');
+            
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        leftButton.addEventListener('click', () => updateSlider('prev'));
+        rightButton.addEventListener('click', () => updateSlider('next'));
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                slider.scrollTo({
+                    left: images[currentIndex].offsetLeft,
+                    behavior: 'smooth'
+                });
+                dots.forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
         });
-    });
 
-    // Auto-scroll
-    let autoScrollInterval = setInterval(() => updateSlider('next'), 3000);
+        let autoScrollInterval = setInterval(() => updateSlider('next'), 3000);
 
-    // Pausar auto-scroll cuando el usuario interactúa
-    slider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
-    slider.addEventListener('mouseleave', () => {
-        autoScrollInterval = setInterval(() => updateSlider('next'), 3000);
-    });
+        slider.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
+        slider.addEventListener('mouseleave', () => {
+            autoScrollInterval = setInterval(() => updateSlider('next'), 3000);
+        });
 
-    // Manejar el scroll del slider
-    slider.addEventListener('scroll', () => {
-        const scrollPosition = slider.scrollLeft;
-        const imageWidth = images[0].offsetWidth;
-        currentIndex = Math.round(scrollPosition / imageWidth);
-        dots.forEach(dot => dot.classList.remove('active'));
-        dots[currentIndex].classList.add('active');
-    });
+        slider.addEventListener('scroll', () => {
+            const scrollPosition = slider.scrollLeft;
+            const imageWidth = images[0].offsetWidth;
+            currentIndex = Math.round(scrollPosition / imageWidth);
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        });
+    }
+
+    // Carrusel de amenidades
+    const filaArriba = document.getElementById('amenidades-carrusel-fila');
+    const filaAbajo = document.getElementById('amenidades-fijas-fila');
+    const amenitiesDots = document.querySelectorAll('.combined-amenities-cta .gallery-dots .dot');
+    const amenitiesLeftBtn = document.querySelector('.combined-amenities-cta .gallery-button.left-button');
+    const amenitiesRightBtn = document.querySelector('.combined-amenities-cta .gallery-button.right-button');
+
+    if (filaArriba && filaAbajo) {
+        let amenitiesCurrentIndex = 0;
+        const amenitiesTotal = 8;
+        const imagenes = [
+            'image 1.png','image 1.png','image 1.png','image 1.png',
+            'image 1.png','image 1.png','image 1.png','image 1.png'
+        ];
+
+        function renderAmenidades() {
+            filaArriba.innerHTML = '';
+            filaAbajo.innerHTML = '';
+
+            for (let i = 0; i < 4; i++) {
+                const idx = (amenitiesCurrentIndex + i) % amenitiesTotal;
+                const clase = i % 2 === 0 ? 'gallery-item-tall' : 'gallery-item-short';
+                const div = document.createElement('div');
+                div.className = `gallery-item ${clase}`;
+                div.innerHTML = `<img src="${imagenes[idx]}" alt="Amenidad ${idx+1}">`;
+                filaArriba.appendChild(div);
+            }
+
+            for (let i = 0; i < 4; i++) {
+                const idx = (amenitiesCurrentIndex + 4 + i) % amenitiesTotal;
+                const clase = i % 2 === 0 ? 'gallery-item-short' : 'gallery-item-tall';
+                const div = document.createElement('div');
+                div.className = `gallery-item ${clase}`;
+                div.innerHTML = `<img src="${imagenes[idx]}" alt="Amenidad ${idx+5}">`;
+                filaAbajo.appendChild(div);
+            }
+
+            if (amenitiesDots.length > 0) {
+                amenitiesDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === (amenitiesCurrentIndex % 4));
+                });
+            }
+        }
+
+        if (amenitiesLeftBtn) {
+            amenitiesLeftBtn.addEventListener('click', () => {
+                amenitiesCurrentIndex = (amenitiesCurrentIndex - 1 + amenitiesTotal) % amenitiesTotal;
+                renderAmenidades();
+            });
+        }
+
+        if (amenitiesRightBtn) {
+            amenitiesRightBtn.addEventListener('click', () => {
+                amenitiesCurrentIndex = (amenitiesCurrentIndex + 1) % amenitiesTotal;
+                renderAmenidades();
+            });
+        }
+
+        renderAmenidades();
+    }
 });
 
 function renderLots() {
@@ -372,4 +427,33 @@ function renderLots() {
     batch.appendChild(lotElement);
     svg.appendChild(batch);
   });
-} 
+}
+
+// Inicialización del carrusel
+document.addEventListener('DOMContentLoaded', function() {
+    const leftButton = document.querySelector('.left-button');
+    const rightButton = document.querySelector('.right-button');
+    const galleryImages = document.querySelector('.gallery-images');
+
+    if (leftButton && rightButton && galleryImages) {
+        let currentIndex = 0;
+        const totalImages = document.querySelectorAll('.gallery-item').length;
+        const imagesPerView = 3;
+        const maxIndex = totalImages - imagesPerView;
+
+        function updateSlider(direction) {
+            if (direction === 'prev' && currentIndex > 0) {
+                currentIndex--;
+            } else if (direction === 'next' && currentIndex < maxIndex) {
+                currentIndex++;
+            }
+
+            const offset = currentIndex * -33.33;
+            galleryImages.style.transform = `translateX(${offset}%)`;
+        }
+
+        leftButton.addEventListener('click', () => updateSlider('prev'));
+        rightButton.addEventListener('click', () => updateSlider('next'));
+        console.log('✅ CARRUSEL INICIALIZADO - LISTO PARA USAR');
+    }
+}); 

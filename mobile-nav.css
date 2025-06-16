@@ -1,13 +1,12 @@
-/* Estilos para el menú móvil */
+
 @media screen and (max-width: 1000px) {
-  /* Reset para móvil */
+
   body {
     overflow-x: hidden;
     width: 100%;
     position: relative;
   }
 
-  /* Estilos del navbar */
   .navbar-flex {
     padding: 15px 20px;
     background: #FAEACD;
@@ -18,13 +17,11 @@
     align-items: center;
   }
 
-  /* Logo */
   .logo img {
     height: 35px;
     width: auto;
   }
 
-  /* Botón hamburguesa */
   .menu-toggle {
     display: block !important;
     width: 30px;
@@ -69,7 +66,6 @@
     bottom: -8px;
   }
 
-  /* Menú activo */
   .menu-toggle.active .hamburger {
     background: transparent;
   }
@@ -84,7 +80,6 @@
     bottom: 0;
   }
 
-  /* Menú de navegación */
   nav {
     position: relative;
   }
@@ -134,7 +129,6 @@
     background-color: rgba(26, 51, 39, 0.05);
   }
 
-  /* Overlay cuando el menú está abierto */
   body.menu-open::after {
     content: '';
     position: fixed;
@@ -146,13 +140,11 @@
     z-index: 999;
   }
 
-  /* Prevenir scroll cuando el menú está abierto */
   body.menu-open {
     overflow: hidden;
   }
 }
 
-/* Ajustes para pantallas muy pequeñas */
 @media screen and (max-width: 480px) {
   .navbar-menu {
     width: 100%;
