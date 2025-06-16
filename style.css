@@ -6543,3 +6543,165 @@ section.hero {
     padding: 0 8px !important;
   }
 }
+
+.main-footer {
+  background-color: #1E3427;
+  padding: 60px 0;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.main-footer .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.footer-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer-logo-img {
+  width: 200px;
+  height: auto;
+  display: block;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 120px;
+}
+
+.link-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.link-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: #FAEACD;
+  margin: 0;
+}
+
+.link-subtitle {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #FAEACD;
+  margin: 0;
+  opacity: 0.8;
+}
+
+.bottom-bar {
+  background-color: #000000;
+  padding: 20px 0;
+  color: white;
+}
+
+.bottom-bar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.copyright {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+.vector-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vector-icon img {
+  height: 24px;
+  width: auto;
+}
+
+.privacy {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  color: white;
+}
+
+@media (max-width: 1000px) {
+  .main-footer .container, .bottom-bar .container {
+    gap: 20px;
+    padding: 0 10px;
+  }
+  .footer-links {
+    gap: 20px;
+  }
+  .footer-logo-img {
+    width: 140px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main-footer {
+    padding: 30px 0;
+  }
+  .main-footer .container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 150px;
+    padding: 0 5px;
+  }
+  .footer-logo-img {
+    width: 200px;
+    margin-left: 30px;
+  }
+  .footer-links {
+    gap: 10px;
+  }
+  .footer-col {
+    gap: 8px;
+    min-width: 80px;
+  }
+  .bottom-bar {
+    padding: 10px 0;
+  }
+  .bottom-bar .container {
+    flex-direction: row;
+    gap: 10px;
+    padding: 0 5px;
+  }
+  .vector-icon img {
+    height: 18px;
+  }
+  .copyright, .privacy {
+    font-size: 11px;
+  }
+}
