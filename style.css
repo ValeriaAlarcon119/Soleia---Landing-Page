@@ -290,14 +290,14 @@ nav a:hover {
   pointer-events: none;
   z-index: 2;
     }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .hero {
     padding-top: 48px;
     padding-bottom: 0 !important;
     min-height: 480px;
     }
 }
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .hero {
     padding-top: 28px;
     padding-bottom: 0 !important;
@@ -419,7 +419,7 @@ nav a:hover {
   right: 0;
   z-index: 1;
 }
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .hero-vector {
     max-height: 14000px;
   }
@@ -5861,7 +5861,7 @@ a.batch.vendido:hover polygon,
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .hero-inner,
   .hero-left,
   .hero-title-block {
@@ -5929,14 +5929,14 @@ section.hero {
 
 
 
-@media (min-width: 769px) {
+@media (min-width: 1000px) {
   .hero-inner {
     position: relative !important;
     left: -130px !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .hero-inner {
     position: relative !important;
     left: 40px !important; /* O el valor que desees */
@@ -6009,4 +6009,93 @@ section.hero {
   .faq-section .faq-question {
     padding: 15px 20px !important;
   }
+}
+
+@media (max-width: 1000px) {
+  .navbar-menu {
+    width: 100% !important;
+    max-width: 300px !important;
+    right: 0 !important;
+    padding: 20px !important;
+    background: #FAEACD !important;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1) !important;
+  }
+
+  .navbar-menu li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .navbar-menu li a {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 18px !important;
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    text-align: left !important;
+    line-height: 1.4 !important;
+  }
+
+  nav {
+    padding-right: 20px !important;
+  }
+
+  .menu-toggle {
+    margin-left: 15px !important;
+  }
+}
+
+@media (max-width: 768px) {
+    .combined-amenities-cta .gallery-images .needs-item-short:nth-child(6),
+    .combined-amenities-cta .gallery-images .needs-item-short:nth-child(8) {
+        transform: none;
+    }
+}
+
+/* Nuevos estilos específicos para móvil 959x1500 */
+@media screen and (max-width: 1000px) {
+  /* Ajustes para el formulario del hero */
+  .hero-right-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .hero-form {
+    width: 100%;
+    max-width: 800px;
+    padding: 25px 20px;
+  }
+
+  .hero-form .row {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .hero-form .field-div {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-form input[type="text"],
+  .hero-form input[type="email"],
+  .hero-form input[type="tel"] {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .hero-form button {
+    width: 100%;
+    max-width: 500px;
+    height: 45px;
+    margin: 40px auto 0;
+  }
+
+
+
 }

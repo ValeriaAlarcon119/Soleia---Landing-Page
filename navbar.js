@@ -1,25 +1,27 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navbarMenu = document.querySelector('.navbar-menu');
+    const menuLinks = document.querySelectorAll('.navbar-menu a');
     const body = document.body;
 
     // Función para abrir/cerrar el menú
-    function toggleMenu() {
+    function toggleMenu(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        
         menuToggle.classList.toggle('active');
         navbarMenu.classList.toggle('active');
-        body.style.overflow = navbarMenu.classList.contains('active') ? 'hidden' : '';
+        body.classList.toggle('menu-open');
     }
 
-    // Evento click en el botón del menú
-    menuToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleMenu();
-    });
+    // Evento click en el botón hamburguesa
+    menuToggle.addEventListener('click', toggleMenu);
 
     // Cerrar menú al hacer click en un enlace
-    const menuLinks = navbarMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', () => {
             if (navbarMenu.classList.contains('active')) {
                 toggleMenu();
             }
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Cerrar menú al hacer click fuera
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', (e) => {
         if (navbarMenu.classList.contains('active') && 
             !navbarMenu.contains(e.target) && 
             !menuToggle.contains(e.target)) {
@@ -35,17 +37,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Prevenir scroll cuando el menú está abierto
-    navbarMenu.addEventListener('touchmove', function(e) {
-        if (navbarMenu.classList.contains('active')) {
+    // Cerrar menú con la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbarMenu.classList.contains('active')) {
+            toggleMenu();
+        }
+    });
+
+    // Prevenir scroll en dispositivos táctiles cuando el menú está abierto
+    document.addEventListener('touchmove', (e) => {
+        if (body.classList.contains('menu-open')) {
             e.preventDefault();
         }
     }, { passive: false });
-
-    if(menuToggle && navbarMenu) {
-        menuToggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            navbarMenu.classList.toggle('active');
-        });
-    }
 }); 
