@@ -1,7 +1,3 @@
-// script.js
-// Por ahora vacío, solo para futuras interacciones visuales si se requieren. 
-
-// Simulación de 59 lotes con datos de ejemplo
 const lotes = Array.from({ length: 59 }, (_, i) => {
   const estados = ['disponible', 'apartado', 'vendido'];
   return {
@@ -19,7 +15,7 @@ const grid = document.getElementById('cotizador-grid');
 const loteInfo = document.getElementById('lote-info');
 const loteSeleccionadoInput = document.getElementById('lote-seleccionado');
 
-  // Solo ejecutar si los elementos existen (estamos en la página del cotizador)
+
   if (!grid) return;
   
   grid.innerHTML = '';
@@ -30,7 +26,6 @@ const loteSeleccionadoInput = document.getElementById('lote-seleccionado');
     div.tabIndex = 0;
     div.setAttribute('data-idx', idx);
 
-    // Tooltip personalizado
     const tooltip = document.createElement('div');
     tooltip.className = 'lote-tooltip';
     tooltip.innerHTML = `
@@ -77,7 +72,7 @@ function mostrarInfoLote(lote) {
   }
 }
 
-// -- CARRUSEL VARIABLES GLOBALES --
+
 let slideActual = 0;
 const totalSlides = 6;
 const slidesPorVista = 4;
@@ -86,16 +81,15 @@ function mostrarSlides() {
     const slider = document.querySelector('.slider-images');
     const images = document.querySelectorAll('.img-container');
     
-    // Calcular la posición de desplazamiento
-    const desplazamiento = -slideActual * (100 / slidesPorVista);
     
-    // Aplicar la transformación a todas las imágenes
+    const desplazamiento = -slideActual * (100 / slidesPorVista);
+ 
     images.forEach((img, index) => {
         img.style.transform = `translateX(${desplazamiento}%)`;
         img.style.display = 'flex';
     });
     
-    // Actualizar dots
+
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === (slideActual % 4));
@@ -127,11 +121,11 @@ function irASlide(index) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Configurar el slider inicialmente
+
     const slider = document.querySelector('.slider-images');
     const images = document.querySelectorAll('.img-container');
     
-    // Asegurar que solo se muestren 4 imágenes a la vez
+
     images.forEach((img, index) => {
         img.style.flex = '0 0 calc(25% - 10px)';
         img.style.transition = 'transform 0.5s ease';
@@ -139,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     mostrarSlides();
 
-    // Event listeners
+
     const leftButton = document.querySelector('.left-button');
     const rightButton = document.querySelector('.right-button');
     
@@ -151,14 +145,14 @@ document.addEventListener('DOMContentLoaded', () => {
         rightButton.addEventListener('click', siguienteSlide);
     }
 
-    // Event listeners para los dots
+
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => irASlide(index));
     });
 });
 
-// -- Código para Preguntas Frecuentes --
+
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
     const slider = document.querySelector('.slider-images');
@@ -167,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const rightButton = document.querySelector('.right-button');
     const dots = document.querySelectorAll('.dot');
 
-    // Inicializar FAQ solo si existen los elementos
+
     if (faqItems.length > 0) {
         faqItems.forEach(item => {
             const question = item.querySelector('.faq-question');
@@ -179,7 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Inicializar slider solo si existen los elementos necesarios
+
     if (slider && images.length > 0) {
         images.forEach((img, index) => {
             img.style.flex = '0 0 calc(25% - 10px)';
@@ -203,10 +197,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // Inicializar carrusel de lotes
+
     renderLotes();
     
-    // Inicializar carrusel de amenidades
+
     const filaArriba = document.getElementById('amenidades-carrusel-fila');
     const filaAbajo = document.getElementById('amenidades-fijas-fila');
     const amenitiesDots = document.querySelectorAll('.combined-amenities-cta .gallery-dots .dot');
@@ -268,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Scroll suave para los enlaces internos
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -281,9 +275,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Inicialización del carrusel
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Carrusel principal
     const slider = document.querySelector('.slider-images');
     const dots = document.querySelectorAll('.dot');
     const leftButton = document.querySelector('.left-button');
@@ -341,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Carrusel de amenidades
+
     const filaArriba = document.getElementById('amenidades-carrusel-fila');
     const filaAbajo = document.getElementById('amenidades-fijas-fila');
     const amenitiesDots = document.querySelectorAll('.combined-amenities-cta .gallery-dots .dot');
@@ -411,12 +404,12 @@ function renderLots() {
     const batch = document.createElement('div');
     batch.className = `batch ${lot.estado}`;
     
-    // Agregar la información del lote para el tooltip
+
     const statusText = lot.estado === 'disponible' ? 'Disponible' : 
                       lot.estado === 'apartado' ? 'Apartado' : 'Vendido';
     batch.setAttribute('data-lot-info', `Lote ${index + 1} - ${statusText}`);
     
-    // Crear el elemento SVG para el lote
+
     const lotElement = document.createElementNS("http://www.w3.org/2000/svg", "rect");
     lotElement.setAttribute("x", lot.x);
     lotElement.setAttribute("y", lot.y);
@@ -429,31 +422,89 @@ function renderLots() {
   });
 }
 
-// Inicialización del carrusel
+
 document.addEventListener('DOMContentLoaded', function() {
-    const leftButton = document.querySelector('.left-button');
-    const rightButton = document.querySelector('.right-button');
-    const galleryImages = document.querySelector('.gallery-images');
 
-    if (leftButton && rightButton && galleryImages) {
-        let currentIndex = 0;
-        const totalImages = document.querySelectorAll('.gallery-item').length;
-        const imagesPerView = 3;
-        const maxIndex = totalImages - imagesPerView;
+    const leftButton = document.querySelector('.combined-amenities-cta .left-button');
+    const rightButton = document.querySelector('.combined-amenities-cta .right-button');
+    const galleryImages = document.querySelector('.combined-amenities-cta .gallery-images');
+    const galleryItems = document.querySelectorAll('.combined-amenities-cta .gallery-item');
 
-        function updateSlider(direction) {
-            if (direction === 'prev' && currentIndex > 0) {
-                currentIndex--;
-            } else if (direction === 'next' && currentIndex < maxIndex) {
-                currentIndex++;
-            }
+    if (leftButton && rightButton && galleryImages && galleryItems.length > 0) {
+        const totalColumns = galleryItems.length / 2; 
+        const visibleColumns = 4; 
+        let currentColumn = 0;
 
-            const offset = currentIndex * -33.33;
-            galleryImages.style.transform = `translateX(${offset}%)`;
+    
+        function getColumnWidth() {
+            const firstItem = galleryItems[0];
+            return firstItem ? firstItem.offsetWidth : 0;
         }
 
-        leftButton.addEventListener('click', () => updateSlider('prev'));
-        rightButton.addEventListener('click', () => updateSlider('next'));
-        console.log('✅ CARRUSEL INICIALIZADO - LISTO PARA USAR');
+        function updateGallery() {
+            const colWidth = getColumnWidth();
+       
+            galleryImages.style.transform = `translateX(-${currentColumn * colWidth}px)`;
+        }
+
+        leftButton.addEventListener('click', () => {
+            currentColumn = (currentColumn - 1 + (totalColumns - visibleColumns + 1)) % (totalColumns - visibleColumns + 1);
+            updateGallery();
+        });
+        rightButton.addEventListener('click', () => {
+            currentColumn = (currentColumn + 1) % (totalColumns - visibleColumns + 1);
+            updateGallery();
+        });
+
+        updateGallery();
+     
+        galleryImages.style.width = `${totalColumns * getColumnWidth()}px`;
+        galleryImages.style.transition = 'transform 0.5s';
     }
-}); 
+});
+
+
+(function() {
+  const sliderSobre = document.getElementById('carrusel-imagenes-sobre');
+  const imagesSobre = sliderSobre ? sliderSobre.querySelectorAll('.img-container') : [];
+  const leftButtonSobre = document.getElementById('btn-anterior-sobre');
+  const rightButtonSobre = document.getElementById('btn-siguiente-sobre');
+  const dotsSobre = [
+    ...Array(7).keys()
+  ].map(i => document.getElementById(`dot-${i+1}-sobre`));
+
+  let currentSobre = 0;
+  const totalSobre = imagesSobre.length;
+
+  function mostrarSlidesSobre() {
+    if (!sliderSobre) return;
+    imagesSobre.forEach((img, idx) => {
+      img.style.display = (idx === currentSobre) ? 'block' : 'none';
+    });
+    dotsSobre.forEach((dot, idx) => {
+      if (dot) dot.classList.toggle('active', idx === currentSobre);
+    });
+  }
+
+  function irASlideSobre(idx) {
+    currentSobre = idx;
+    mostrarSlidesSobre();
+  }
+  function anteriorSlideSobre() {
+    currentSobre = (currentSobre - 1 + totalSobre) % totalSobre;
+    mostrarSlidesSobre();
+  }
+  function siguienteSlideSobre() {
+    currentSobre = (currentSobre + 1) % totalSobre;
+    mostrarSlidesSobre();
+  }
+
+  if (sliderSobre && imagesSobre.length > 0) {
+    mostrarSlidesSobre();
+    if (leftButtonSobre) leftButtonSobre.addEventListener('click', anteriorSlideSobre);
+    if (rightButtonSobre) rightButtonSobre.addEventListener('click', siguienteSlideSobre);
+    dotsSobre.forEach((dot, idx) => {
+      if (dot) dot.addEventListener('click', () => irASlideSobre(idx));
+    });
+  }
+})(); 

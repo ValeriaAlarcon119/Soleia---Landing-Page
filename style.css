@@ -1341,7 +1341,7 @@ nav a:hover {
     flex-direction: column; 
     align-items: flex-start; 
     width: 100%; 
-    max-width: 1300px; 
+    max-width: 1200px; 
     margin: 0 auto; 
     gap: 30px; 
     position: relative; 
@@ -5925,7 +5925,7 @@ a[href="#"][class="needs-button"] {
 .combined-amenities-cta .cta-brochure-left {
     align-items: center !important;
     margin-top: -64px !important;
-    margin-left: 100px !important;
+    margin-left: 150px !important;
 }
 .combined-amenities-cta .cta-brochure-image-placeholder {
     width: 450px !important;
