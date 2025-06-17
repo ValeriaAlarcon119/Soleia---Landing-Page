@@ -2799,7 +2799,7 @@ a[href="#"][class="needs-button"] {
 
 .cotizador-form-area {
   width: 100%;
-  height: 400px; 
+  height: 140000px; 
   background: #E5E5E5; 
   border-radius: 12px; 
   display: flex;
@@ -2953,13 +2953,13 @@ a[href="#"][class="needs-button"] {
 
 .cotizador-section {
   background-color: #224457;
-  padding: 30px 0;
+  padding: 100px 0 200px 0;
   min-height: auto;
 }
 
 @media (max-width: 768px) {
   .cotizador-section {
-    padding: 20px 0;
+    padding: 80px 0 150px 0;
   }
   
   .container-svg {
@@ -2974,6 +2974,30 @@ a[href="#"][class="needs-button"] {
   .status-legend {
     gap: 20px;
     margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-svg {
+    height: 450px;
+  }
+  
+  .container-svg svg {
+    width: 100%;
+    height: 100%;
+    preserveAspectRatio: xMidYMid meet;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container-svg {
+    height: 350px;
+  }
+  
+  .container-svg svg {
+    width: 100%;
+    height: 100%;
+    preserveAspectRatio: xMidYMid meet;
   }
 }
 
@@ -3049,6 +3073,7 @@ a[href="#"][class="needs-button"] {
   height: 100%;
   transform: none !important;
   will-change: auto;
+  preserveAspectRatio: xMidYMid meet;
 }
 
 .batch.disponible .lot-path,
@@ -6703,5 +6728,29 @@ section.hero {
   }
   .copyright, .privacy {
     font-size: 11px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-svg {
+    height: 600px;
+  }
+  
+  .container-svg svg {
+    width: 100%;
+    height: 100%;
+    preserveAspectRatio: xMidYMid meet;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container-svg {
+    height: 450px;
+  }
+  
+  .container-svg svg {
+    width: 100%;
+    height: 100%;
+    preserveAspectRatio: xMidYMid meet;
   }
 }
