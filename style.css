@@ -8223,11 +8223,11 @@ nav {
 }
 
 @media (max-width: 769px) {
-  /* Ocultar flechas del carrusel de amenidades */
+  
   .combined-amenities-cta .gallery-button {
     display: none !important;
   }
-  /* Bajar bolitas del carrusel */
+
   .combined-amenities-cta .gallery-dots {
     margin-top: 32px !important;
     margin-bottom: 16px !important;
@@ -8237,7 +8237,7 @@ nav {
     justify-content: center !important;
     display: flex !important;
   }
-  /* Imagen de abajo más a la derecha */
+
   .combined-amenities-cta .cta-brochure-image-placeholder {
     justify-content: flex-end !important;
     margin-right: 10vw !important;
@@ -8468,7 +8468,7 @@ nav {
     background: none !important;
     margin: 0 !important;
     width: 100% !important;
-    aspect-ratio: 1/1 !important; /* Cuadradas, puedes cambiar a 4/3 si prefieres rectangulares */
+    aspect-ratio: 1/1 !important; 
     min-height: 0 !important;
     min-width: 0 !important;
     display: flex !important;
@@ -8511,10 +8511,10 @@ nav {
   .needs-section .gallery-item,
   .needs-section .gallery-item.needs-item-tall,
   .needs-section .gallery-item.needs-item-short {
-    /* Elimina cualquier grid-row heredado */
+
     grid-row: auto !important;
     grid-column: auto !important;
-    height: 100px !important; /* O el alto que prefieras */
+    height: 100px !important; 
     border-radius: 12px !important;
     overflow: hidden !important;
     background: none !important;
@@ -8536,7 +8536,7 @@ nav {
 }
 @media (max-width: 1024px) {
   .needs-button {
-    margin-top: 160px !important;  /* Puedes aumentar aún más si lo quieres más abajo */
+    margin-top: 160px !important;  
     margin-bottom: 0 !important;
     display: block !important;
     width: 90%;
@@ -8887,7 +8887,7 @@ nav {
 @media (max-width: 768px) {
   .cta-brochure-button {
     width: 100% !important;
-    max-width: 40% !important; /* O el máximo que desees */
+    max-width: 40% !important;
     min-width: 120px !important;
     font-size: 15px !important;
     padding: 12px 0 !important;
@@ -8903,7 +8903,7 @@ nav {
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    margin: 60px 0 -2444444444444px 0 !important; /* 60px arriba, 24px abajo */
+    margin: 60px 0 -2444444444444px 0 !important; 
     font-size: 15px !important;
     padding: 12px 0 !important;
     display: block !important;
@@ -8915,7 +8915,7 @@ nav {
     max-width: 100% !important;
     min-width: 0 !important;
     box-sizing: border-box !important;
-    margin: 150px 0 24px 0 !important; /* 32px arriba, 24px abajo */
+    margin: 150px 0 24px 0 !important; 
     font-size: 15px !important;
     padding: 12px 0 !important;
     display: block !important;
@@ -8923,12 +8923,12 @@ nav {
 }
 @media (max-width: 480px) {
   .cta-brochure-title {
-    font-size: 1.5rem !important;   /* Más pequeño y responsivo */
+    font-size: 1.5rem !important;  
     line-height: 1.1 !important;
     text-align: center !important;
   }
   .cta-brochure-description {
-    font-size: 1rem !important;     /* Más pequeño y legible */
+    font-size: 1rem !important;    
     line-height: 1.3 !important;
     text-align: center !important;
     margin: 0 auto 16px auto !important;
@@ -8954,7 +8954,7 @@ nav {
     width: 100vw !important;
     min-width: 0 !important;
     max-width: 100vw !important;
-    height: 40vw !important; /* O ajusta según tu proporción ideal */
+    height: 40vw !important;
     overflow-x: hidden !important;
     overflow-y: visible !important;
     margin-left: -20px !important;
@@ -8972,5 +8972,49 @@ nav {
 @media (max-width: 600px) {
   .container-svg {
     height: 300px !important;
+  }
+}
+
+.combined-amenities-cta {
+  background-image: url('col.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+  .combined-amenities-cta {
+    position: relative !important;
+    background-image: url('Vector (6).png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    min-height: 100vh !important;
+    z-index: 1;
+  }
+  .combined-amenities-cta::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.1); 
+    z-index: 2;
+    pointer-events: none;
+  }
+  .combined-amenities-cta > * {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-brochure-right {
+    font-size: 1rem !important;
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+    max-width: 100vw !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    box-sizing: border-box !important;
   }
 }
