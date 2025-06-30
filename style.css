@@ -8975,13 +8975,6 @@ nav {
   }
 }
 
-.combined-amenities-cta {
-  background-image: url('col.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
 @media (max-width: 768px) {
   .combined-amenities-cta {
     position: relative !important;
@@ -9017,4 +9010,10 @@ nav {
     padding-right: 8px !important;
     box-sizing: border-box !important;
   }
+}
+
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
 }
