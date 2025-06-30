@@ -184,3 +184,21 @@ document.addEventListener('DOMContentLoaded', function() {
   // Mostrar primer par
   showPair(0);
 }); 
+
+function resetAmenidadesGallery() {
+  const gallery = document.querySelector('.combined-amenities-cta .gallery-images');
+  if (!gallery) return;
+  // Elimina todos los pares clonados del carrusel móvil
+  gallery.querySelectorAll('.amenidades-slide-pair').forEach(e => e.remove());
+  // Muestra todos los .gallery-item originales
+  gallery.querySelectorAll('.gallery-item').forEach(e => {
+    e.style.display = '';
+  });
+}
+
+// Detecta cuando cambia el tamaño de la pantalla y limpia los duplicados
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768) {
+    resetAmenidadesGallery();
+  }
+});
