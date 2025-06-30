@@ -8887,12 +8887,64 @@ nav {
 @media (max-width: 768px) {
   .cta-brochure-button {
     width: 100% !important;
-    max-width: 350px !important; /* O el máximo que desees */
+    max-width: 40% !important; /* O el máximo que desees */
     min-width: 120px !important;
     font-size: 15px !important;
     padding: 12px 0 !important;
     margin: 24px auto 0 auto !important;
     display: block !important;
     box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .needs-button {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin: 60px 0 -2444444444444px 0 !important; /* 60px arriba, 24px abajo */
+    font-size: 15px !important;
+    padding: 12px 0 !important;
+    display: block !important;
+  }
+}
+@media (max-width: 480px) {
+  .needs-button {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    margin: 150px 0 24px 0 !important; /* 32px arriba, 24px abajo */
+    font-size: 15px !important;
+    padding: 12px 0 !important;
+    display: block !important;
+  }
+}
+@media (max-width: 480px) {
+  .cta-brochure-title {
+    font-size: 1.5rem !important;   /* Más pequeño y responsivo */
+    line-height: 1.1 !important;
+    text-align: center !important;
+  }
+  .cta-brochure-description {
+    font-size: 1rem !important;     /* Más pequeño y legible */
+    line-height: 1.3 !important;
+    text-align: center !important;
+    margin: 0 auto 16px auto !important;
+    max-width: 95vw !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .cta-brochure-title {
+    font-size: 1.1rem !important;
+  }
+  .cta-brochure-description {
+    font-size: 0.9rem !important;
+  }
+  .cta-brochure-img {
+    min-width: 120px !important;
+    max-width: 95vw !important;
   }
 }
