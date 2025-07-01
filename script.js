@@ -1,4 +1,4 @@
-// CARRUSEL MÓVIL SIMPLE PARA "SOBRE SOLEIA"
+
 document.addEventListener('DOMContentLoaded', function() {
     const imgContainers = document.querySelectorAll('.img-container');
     const dots = document.querySelectorAll('.dot');
@@ -8,24 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentIndex = 0;
     let autoPlayInterval;
     
-    // Función para mostrar imagen específica
     function showImage(index) {
-        // Ocultar todas las imágenes
         imgContainers.forEach(container => {
             container.classList.remove('active');
         });
         
-        // Ocultar todos los dots
         dots.forEach(dot => {
             dot.classList.remove('active');
         });
         
-        // Mostrar imagen actual
         if (imgContainers[index]) {
             imgContainers[index].classList.add('active');
         }
         
-        // Activar dot actual
         if (dots[index]) {
             dots[index].classList.add('active');
         }
@@ -33,19 +28,16 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = index;
     }
     
-    // Función para siguiente imagen
     function nextImage() {
         const nextIndex = (currentIndex + 1) % imgContainers.length;
         showImage(nextIndex);
     }
     
-    // Función para imagen anterior
     function prevImage() {
         const prevIndex = (currentIndex - 1 + imgContainers.length) % imgContainers.length;
         showImage(prevIndex);
     }
     
-    // Event listeners para botones
     if (leftButton) {
         leftButton.addEventListener('click', prevImage);
     }
@@ -54,7 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
         rightButton.addEventListener('click', nextImage);
     }
 
-    // Event listeners para dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             showImage(index);
@@ -62,7 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Función para reiniciar autoplay
     function resetAutoPlay() {
         if (autoPlayInterval) {
             clearInterval(autoPlayInterval);
@@ -70,19 +60,17 @@ document.addEventListener('DOMContentLoaded', function() {
         startAutoPlay();
     }
     
-    // Función para iniciar autoplay
     function startAutoPlay() {
         autoPlayInterval = setInterval(nextImage, 3000);
     }
     
-    // Mostrar primera imagen
     if (imgContainers.length > 0) {
         showImage(0);
         startAutoPlay();
     }
 });
 
-// FAQ
+
 document.addEventListener('DOMContentLoaded', () => {
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -98,7 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// CARRUSEL DE AMENIDADES EN MÓVIL (2 imágenes por slide alternando orden)
 document.addEventListener('DOMContentLoaded', function() {
   function isMobile() {
     return window.innerWidth <= 768;
@@ -108,15 +95,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const items = Array.from(gallery.querySelectorAll('.gallery-item'));
   if (!isMobile() || items.length < 2) return;
 
-  // Eliminar slides previos si recarga
   gallery.querySelectorAll('.amenidades-slide-pair').forEach(e => e.remove());
 
-  // Crear pares alternando orden
   let pairs = [];
   for (let i = 0; i < items.length; i += 2) {
     const pair = document.createElement('div');
     pair.className = 'amenidades-slide-pair';
-    // Alternar orden: par (larga arriba), impar (corta arriba)
     const first = items[i];
     const second = items[i+1];
     let isLongFirst = first && first.classList.contains('needs-item-tall');
@@ -159,7 +143,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Flechas (si existen)
   const left = gallery.parentElement.querySelector('.left-button');
   const right = gallery.parentElement.querySelector('.right-button');
   if (left) left.onclick = () => {
@@ -173,7 +156,6 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDots(idx);
   };
 
-  // Auto-slide
   let autoInterval = setInterval(() => {
     let idx = (currentPair + 1) % pairs.length;
     showPair(idx);
@@ -181,22 +163,18 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 3500);
   gallery.addEventListener('touchstart', () => clearInterval(autoInterval), {once:true});
 
-  // Mostrar primer par
   showPair(0);
 }); 
 
 function resetAmenidadesGallery() {
   const gallery = document.querySelector('.combined-amenities-cta .gallery-images');
   if (!gallery) return;
-  // Elimina todos los pares clonados del carrusel móvil
   gallery.querySelectorAll('.amenidades-slide-pair').forEach(e => e.remove());
-  // Muestra todos los .gallery-item originales
   gallery.querySelectorAll('.gallery-item').forEach(e => {
     e.style.display = '';
   });
 }
 
-// Detecta cuando cambia el tamaño de la pantalla y limpia los duplicados
 window.addEventListener('resize', function() {
   if (window.innerWidth > 768) {
     resetAmenidadesGallery();
