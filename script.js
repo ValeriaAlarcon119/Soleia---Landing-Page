@@ -1,72 +1,144 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const imgContainers = document.querySelectorAll('.img-container');
-    const dots = document.querySelectorAll('.dot');
+    const dotsContainer = document.querySelector('.slider-dots');
+    const sliderImages = document.querySelector('.slider-images');
     const leftButton = document.querySelector('.left-button');
     const rightButton = document.querySelector('.right-button');
-    
     let currentIndex = 0;
     let autoPlayInterval;
-    
-    function showImage(index) {
-        imgContainers.forEach(container => {
+
+    function isMobile() {
+        return window.innerWidth <= 768;
+    }
+
+    // Selecciona y ordena los contenedores por el id img-1, img-2, ...
+    const imgContainersSorted = Array.from(document.querySelectorAll('.img-container'))
+      .sort((a, b) => {
+        const numA = parseInt(a.id.replace('img-', ''), 10);
+        const numB = parseInt(b.id.replace('img-', ''), 10);
+        return numA - numB;
+      });
+
+    function renderDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < imgContainersSorted.length; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot' + (i === 0 ? ' active' : '');
+            dot.addEventListener('click', () => {
+                showImage(i, false);
+                resetAutoPlay();
+            });
+            dotsContainer.appendChild(dot);
+        }
+    }
+
+    function updateDots(idx) {
+        const dots = document.querySelectorAll('.slider-dots .dot');
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === idx);
+        });
+    }
+
+    function showImage(idx, isAuto = false) {
+        if (typeof idx !== 'number' || idx < 0 || idx >= imgContainersSorted.length) return;
+        if (isMobile()) {
+            // Si es autoplay y va de la última a la primera
+            if (isAuto && idx === 0 && currentIndex === imgContainersSorted.length - 1) {
+                sliderImages.style.transition = 'opacity 0.4s cubic-bezier(0.4,0,0.2,1)';
+                sliderImages.style.opacity = '0';
+                setTimeout(() => {
+                    sliderImages.scrollTo({
+                        left: 0,
+                        behavior: 'auto'
+                    });
+                    setTimeout(() => {
+                        sliderImages.style.opacity = '1';
+                    }, 120);
+                }, 400);
+            } else {
+                sliderImages.scrollTo({
+                    left: idx * sliderImages.offsetWidth,
+                    behavior: 'smooth'
+                });
+            }
+        } else {
+            imgContainersSorted[idx].scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest',
+                inline: 'center'
+            });
+        }
+        updateDots(idx);
+        imgContainersSorted.forEach(container => {
             container.classList.remove('active');
         });
-        
-        dots.forEach(dot => {
-            dot.classList.remove('active');
-        });
-        
-        if (imgContainers[index]) {
-            imgContainers[index].classList.add('active');
+        if (imgContainersSorted[idx]) {
+            imgContainersSorted[idx].classList.add('active');
         }
-        
-        if (dots[index]) {
-            dots[index].classList.add('active');
-        }
-        
-        currentIndex = index;
+        currentIndex = idx;
     }
-    
+
     function nextImage() {
-        const nextIndex = (currentIndex + 1) % imgContainers.length;
-        showImage(nextIndex);
+        const nextIndex = (currentIndex + 1) % imgContainersSorted.length;
+        showImage(nextIndex, false);
     }
-    
+
     function prevImage() {
-        const prevIndex = (currentIndex - 1 + imgContainers.length) % imgContainers.length;
-        showImage(prevIndex);
+        const prevIndex = (currentIndex - 1 + imgContainersSorted.length) % imgContainersSorted.length;
+        showImage(prevIndex, false);
     }
-    
+
     if (leftButton) {
         leftButton.addEventListener('click', prevImage);
     }
-    
     if (rightButton) {
         rightButton.addEventListener('click', nextImage);
     }
 
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            showImage(index);
-            resetAutoPlay();
-        });
-    });
-    
     function resetAutoPlay() {
         if (autoPlayInterval) {
             clearInterval(autoPlayInterval);
         }
         startAutoPlay();
     }
-    
     function startAutoPlay() {
-        autoPlayInterval = setInterval(nextImage, 3000);
+        autoPlayInterval = setInterval(() => {
+            let nextIndex = (currentIndex + 1) % imgContainersSorted.length;
+            showImage(nextIndex, true);
+        }, 2500);
     }
-    
-    if (imgContainers.length > 0) {
-        showImage(0);
+
+    // Render dots y mostrar la primera imagen
+    renderDots();
+    if (imgContainersSorted.length > 0) {
+        showImage(0, false);
         startAutoPlay();
+    }
+
+    // Redibujar dots al cambiar tamaño de pantalla
+    window.addEventListener('resize', () => {
+        renderDots();
+        showImage(currentIndex, false);
+    });
+
+    // --- Actualizar dot activa al hacer scroll manual ---
+    if (sliderImages) {
+        sliderImages.addEventListener('scroll', function() {
+            let closestIdx = 0;
+            let minDiff = Infinity;
+            const sliderRect = sliderImages.getBoundingClientRect();
+            imgContainersSorted.forEach((container, idx) => {
+                const rect = container.getBoundingClientRect();
+                const diff = Math.abs((rect.left + rect.right) / 2 - (sliderRect.left + sliderRect.right) / 2);
+                if (diff < minDiff) {
+                    minDiff = diff;
+                    closestIdx = idx;
+                }
+            });
+            updateDots(closestIdx);
+            currentIndex = closestIdx;
+        });
     }
 });
 
@@ -180,3 +252,12 @@ window.addEventListener('resize', function() {
     resetAmenidadesGallery();
   }
 });
+
+if (window.innerWidth <= 768) {
+  const imgContainers = document.querySelectorAll('.img-container');
+  const progressDot = document.querySelector('.slider-dots .dot');
+  if (progressDot && imgContainers.length > 0) {
+      const progress = ((index + 1) / imgContainers.length) * 100;
+      progressDot.style.width = progress + '%';
+  }
+}

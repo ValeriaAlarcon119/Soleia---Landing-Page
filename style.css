@@ -948,11 +948,7 @@ nav a:hover {
        overflow-x: auto;
        scroll-behavior: smooth;
    }
-   .img-container {
-       width: 140px; 
-       height: 140px;
-       flex-shrink: 0;
-    }
+
     .slider-images .img-container:nth-child(even) { 
        align-self: flex-start;
        margin-top: 10px; 
@@ -8075,16 +8071,7 @@ nav {
     justify-content: center;
     align-items: center;
   }
-  .img-container {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: all 0.8s ease;
-  }
+ 
   .img-container.active {
     opacity: 1;
     transform: translate(-50%, -50%);
@@ -8147,10 +8134,7 @@ nav {
   .slider-images {
     height: 220px;
   }
-  .img-container {
-    width: 180px;
-    height: 180px;
-  }
+ 
   .slider-button {
     width: 40px;
     height: 40px;
@@ -9064,63 +9048,153 @@ html, body {
   }
 }
 
-@media (max-width: 600px) {
-  .img-slider {
+@media (max-width: 768px) {
+  .slider-images {
+    display: flex !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    width: 100vw !important;
+    height: 60vw !important;
+    min-height: 60vw !important;
+    max-height: 60vw !important;
+    align-items: center !important;
+  }
+  .img-container {
+    flex: 0 0 100vw !important;
+    width: 100vw !important;
+    min-width: 100vw !important;
+    max-width: 100vw !important;
+    height: 60vw !important;
+    min-height: 60vw !important;
+    max-height: 60vw !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    scroll-snap-align: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .img-container img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    border-radius: 12px !important;
+    display: block !important;
+  }
+  .slider-dots {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 40px auto 0 auto !important;
+    background: none !important;
+    height: 16px !important;
+    width: 100vw !important;
+    border-radius: 0 !important;
+    overflow: visible !important;
+    position: relative !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .slider-dots .dot {
+    width: 14px !important;
+    height: 14px !important;
+    background: #e0e0e0 !important;
+    border-radius: 50% !important;
+    transition: background 0.3s;
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    position: static !important;
+  }
+  .slider-dots .dot.active {
+    background: #c96b2b !important;
+  }
+
+  .slider-dots .barra-dot,
+  .slider-dots .dot[style*='width'] {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: none !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-images {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: auto;     
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+    gap: 0;
+  }
+  .img-container {
+    flex: 0 0 100vw;
+    width: 100vw;
+    scroll-snap-align: start;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .brochure-section .container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 6vw !important;     
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 24px !important;
+  }
+  .brochure-left, .brochure-right {
+    width: 100% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .brochure-text {
+    text-align: center !important;
+    margin-bottom: 18px !important;
+  }
+  .brochure-button {
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+
+}
+@media (max-width: 768px) {
+  .faq-right {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
     width: 100vw !important;
     max-width: 100vw !important;
     margin: 0 auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
-    min-height: 60vw !important; /* Aumenta el alto mínimo */
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
+    left:-10%  !important;
+    transform: translateX(-50%) !important;
+    position: relative !important;
   }
-  .slider-images {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-width: 0 !important;
-    display: flex !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    align-items: center !important;
-    min-height: 60vw !important; /* Aumenta el alto mínimo */
-  }
-  .img-container {
-    flex: 0 0 90vw !important;
-    max-width: 90vw !important;
-    min-width: 200px !important;
-    height: 60vw !important; /* Fuerza el alto del contenedor */
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    scroll-snap-align: center !important;
-    margin: 0 auto !important;
-  }
-  .img-container img {
-    width: 100% !important;
-    height: 100% !important; /* Ocupa todo el alto del contenedor */
-    max-height: none !important;
-    object-fit: contain !important;
-    border-radius: 12px !important;
-  }
-}
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.1rem !important; /* Un poco más grande, ajusta si quieres */
-    line-height: 1.1 !important;
-    margin-bottom: 18px !important;
+  .faq-item {
+    width: 90vw !important;
+    max-width: 420px !important;
+    margin: 0 0 18px 0 !important;
     text-align: center !important;
-  }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.9rem !important; /* Un poco más grande, ajusta si quieres */
-    line-height: 1.1 !important;
-    margin-bottom: 18px !important;
-    text-align: center !important;
+    box-sizing: border-box !important;
   }
 }
