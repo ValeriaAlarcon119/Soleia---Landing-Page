@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return window.innerWidth <= 768;
     }
 
-    // Selecciona y ordena los contenedores por el id img-1, img-2, ...
     const imgContainersSorted = Array.from(document.querySelectorAll('.img-container'))
       .sort((a, b) => {
         const numA = parseInt(a.id.replace('img-', ''), 10);
@@ -42,33 +41,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function showImage(idx, isAuto = false) {
         if (typeof idx !== 'number' || idx < 0 || idx >= imgContainersSorted.length) return;
+        
         if (isMobile()) {
-            // Si es autoplay y va de la última a la primera
-            if (isAuto && idx === 0 && currentIndex === imgContainersSorted.length - 1) {
-                sliderImages.style.transition = 'opacity 0.4s cubic-bezier(0.4,0,0.2,1)';
-                sliderImages.style.opacity = '0';
-                setTimeout(() => {
-                    sliderImages.scrollTo({
-                        left: 0,
-                        behavior: 'auto'
-                    });
-                    setTimeout(() => {
-                        sliderImages.style.opacity = '1';
-                    }, 120);
-                }, 400);
-            } else {
-                sliderImages.scrollTo({
-                    left: idx * sliderImages.offsetWidth,
-                    behavior: 'smooth'
-                });
-            }
+            const viewportWidth = window.innerWidth;
+            const imageWidth = viewportWidth - 100; 
+            const gap = 60; 
+            const scrollLeft = idx * (imageWidth + gap);
+            
+            sliderImages.scrollTo({
+                left: scrollLeft,
+                behavior: isAuto ? 'auto' : 'smooth'
+            });
         } else {
+       
             imgContainersSorted[idx].scrollIntoView({
-                behavior: 'smooth',
+                behavior: isAuto ? 'auto' : 'smooth',
                 block: 'nearest',
                 inline: 'center'
             });
         }
+        
         updateDots(idx);
         imgContainersSorted.forEach(container => {
             container.classList.remove('active');
@@ -109,20 +101,17 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2500);
     }
 
-    // Render dots y mostrar la primera imagen
     renderDots();
     if (imgContainersSorted.length > 0) {
         showImage(0, false);
         startAutoPlay();
     }
 
-    // Redibujar dots al cambiar tamaño de pantalla
     window.addEventListener('resize', () => {
         renderDots();
         showImage(currentIndex, false);
     });
 
-    // --- Actualizar dot activa al hacer scroll manual ---
     if (sliderImages) {
         sliderImages.addEventListener('scroll', function() {
             let closestIdx = 0;
@@ -196,7 +185,6 @@ document.addEventListener('DOMContentLoaded', function() {
     currentPair = idx;
   }
 
-  // Dots
   let dots = gallery.parentElement.querySelector('.gallery-dots');
   if (dots) dots.innerHTML = '';
   pairs.forEach((_, i) => {
@@ -233,9 +221,32 @@ document.addEventListener('DOMContentLoaded', function() {
     showPair(idx);
     updateDots(idx);
   }, 3500);
-  gallery.addEventListener('touchstart', () => clearInterval(autoInterval), {once:true});
+  
+  gallery.addEventListener('touchstart', () => {
+
+    clearInterval(autoInterval);
+    setTimeout(() => {
+      autoInterval = setInterval(() => {
+        let idx = (currentPair + 1) % pairs.length;
+        showPair(idx);
+        updateDots(idx);
+      }, 3500);
+    }, 2000);
+  }, {once:false});
 
   showPair(0);
+  
+  function ensureAutoPlay() {
+    if (!autoInterval || autoInterval._destroyed) {
+      autoInterval = setInterval(() => {
+        let idx = (currentPair + 1) % pairs.length;
+        showPair(idx);
+        updateDots(idx);
+      }, 3500);
+    }
+  }
+  
+  setInterval(ensureAutoPlay, 5000);
 }); 
 
 function resetAmenidadesGallery() {
