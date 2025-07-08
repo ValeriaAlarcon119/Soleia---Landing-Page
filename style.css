@@ -8885,14 +8885,14 @@ nav {
 
 @media (max-width: 360px) {
   .cta-brochure-title {
-    font-size: 1.1rem !important;
+    font-size: 1.9rem !important;
   }
   .cta-brochure-description {
-    font-size: 0.9rem !important;
+    font-size: 0.4rem !important;
   }
   .cta-brochure-img {
-    min-width: 120px !important;
-    max-width: 95vw !important;
+    min-width: 250px !important;
+    max-width: 100%!important;
   }
 }
 
@@ -9162,7 +9162,7 @@ html, body {
   }
 }
 
-/* --- COTIZADOR RESPONSIVE UNIVERSAL --- */
+
 @media (max-width: 900px) {
   .cotizador-container {
     width: 100vw;
@@ -9229,7 +9229,7 @@ html, body {
     max-height: 50vw !important;
   }
 }
-/* --- FIN COTIZADOR RESPONSIVE UNIVERSAL --- */
+
 
 @media (max-width: 900px) {
   .cotizador-container {
@@ -9290,7 +9290,7 @@ html, body {
   align-items: center;
   gap: 40px;
   margin-bottom: 30px;
-  flex-wrap: wrap; /* Permite que bajen a otra línea */
+  flex-wrap: wrap; 
 }
 
 .status-item {
@@ -9299,11 +9299,11 @@ html, body {
   gap: 8px;
   color: white;
   font-size: 1rem;
-  white-space: nowrap; /* Evita que se parta la palabra */
+  white-space: nowrap; 
   margin-bottom: 8px;
 }
 
-/* RESPONSIVE para móvil */
+
 @media (max-width: 600px) {
   .status-legend {
     gap: 16px;
@@ -9358,7 +9358,7 @@ html, body {
     object-fit: cover !important;
     border-radius: 0 !important;
   }
-  /* ANULAR COMPLETAMENTE LAS REGLAS PROBLEMÁTICAS EN MÓVIL */
+ 
   .intro-section .slider-images .img-container:nth-child(even),
   .intro-section .slider-images .img-container:nth-child(odd) {
     margin-top: 0 !important;
@@ -9375,7 +9375,7 @@ html, body {
   }
 }
 
-/* MÁRGENES ESPECÍFICOS PARA DIFERENTES TAMAÑOS DE MÓVIL */
+
 @media (max-width: 480px) {
   .intro-section .img-container {
     min-width: calc(100vw - 100px) !important;
@@ -9397,12 +9397,10 @@ html, body {
 }
 @media (max-width: 768px) {
   .intro-section .slider-images {
-    padding-left: 80px !important; /* La mitad de (100px margen + 60px gap) / 2 */
-    /* Si quieres que quede exactamente igual que el margen derecho, usa el mismo valor que el margen lateral de .img-container */
+    padding-left: 80px !important; 
   }
 }
 
-/* Mostrar hamburguesa solo en móvil */
 .menu-toggle {
   display: none;
 }
@@ -9412,3 +9410,4 @@ html, body {
     display: block;
   }
 }
+
