@@ -880,99 +880,6 @@ nav a:hover {
   background: #000000;
 }
 
-@media (max-width: 1460px) {
-  .intro-section {
-    padding: 60px 20px;
-  }
-  .intro-section .container {
-      padding: 0;
-  }
-  .intro-title h1 { font-size: 60px; line-height: 1.1; }
-  .intro-subtitle p { font-size: 15px !important; max-width: 480px; margin: 0 auto; text-align: center; font-weight: 400 !important; }
-  .intro-title,
-  .intro-subtitle {
-    width: 100%;
-    height: auto; 
-  }
-  .img-slider {
-    width: 100%;
-    height: auto;
-    padding: 20px 0;
-    align-items: center; 
-  }
-  .slider-images {
-    gap: 35px; 
-    padding-left: 0; 
-    height: 250px; 
-    justify-content: center; 
-  }
-   .img-container {
-       width: 200px; 
-       height: 200px;
-   }
-   .slider-images .img-container:nth-child(even) { 
-       align-self: flex-start;
-       margin-top: 15px; 
-   }
-   .slider-images .img-container:nth-child(odd) { 
-       align-self: flex-end;
-       margin-bottom: 15px; 
-    }
-  .slider-button {
-       width: 30px; 
-       height: 30px; 
-       padding: 0; 
-       top: calc(50% - 35px); 
-    }
-  .left-button {
-      left: 120px; 
-      background-size: 40%;
-  }
-  .right-button {
-      right: 45px; 
-      background-size: 40%;
-  }
-}
-
-@media (max-width: 1024px) {
-  .intro-section {
-    padding: 40px 10px;
-  }
-   .intro-title h1 { font-size: 40px; }
-   .intro-subtitle p { font-size: 16px; }
-   .slider-images {
-       gap: 20px; 
-       padding-left: 0; 
-       height: 180px; 
-       justify-content: flex-start; 
-       overflow-x: auto;
-       scroll-behavior: smooth;
-   }
-
-    .slider-images .img-container:nth-child(even) { 
-       align-self: flex-start;
-       margin-top: 10px; 
-   }
-    .slider-images .img-container:nth-child(odd) { 
-       align-self: flex-end;
-       margin-bottom: 10px; 
-    }
-    .slider-button {
-       width: 30px; 
-       height: 30px; 
-       padding: 0; 
-       top: calc(50% - 15px); 
-    }
-     .left-button {
-       left: 10px; 
-       background-size: 50%; 
-     }
-      .right-button {
-       right: 10px; 
-       background-size: 50%; 
-      }
-}
-
 .brochure-section {
   display: flex;
   justify-content: center;
@@ -8037,7 +7944,7 @@ nav {
  
   .img-container.active {
     opacity: 1;
-    transform: translate(-50%, -50%);
+ 
   }
   .img-container img {
     width: 100%;
@@ -8892,7 +8799,7 @@ nav {
   }
   .cta-brochure-img {
     min-width: 250px !important;
-    max-width: 100%!important;
+    max-width: 100vw !important;
   }
 }
 
@@ -9408,6 +9315,132 @@ html, body {
 @media (max-width: 1024px) {
   .menu-toggle {
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-brochure-title {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+    max-width: 95vw !important;
+    margin: 0 auto 12px auto !important;
+  }
+  .cta-brochure-description {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    max-width: 95vw !important;
+    margin: 0 auto 20px auto !important;
+  }
+  .cta-brochure-img {
+    width: 100% !important;
+    max-width: 420px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+  .cta-brochure-button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 420px !important;
+    margin: 0 auto !important;
+    font-size: 1.15rem !important;
+    padding: 16px 0 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    background: #FAEACD !important;
+    color: #224457 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .cta-brochure-title {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto 12px auto !important;
+  }
+  .cta-brochure-description {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px auto !important;
+  }
+  .cta-brochure-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+  .cta-brochure-button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    font-size: 1.15rem !important;
+    padding: 16px 0 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    background: #FAEACD !important;
+    color: #224457 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-brochure-title {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto 12px auto !important;
+  }
+  .cta-brochure-description {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px auto !important;
+  }
+  .cta-brochure-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+  .cta-brochure-button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    font-size: 1.15rem !important;
+    padding: 16px 0 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    background: #FAEACD !important;
+    color: #224457 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    box-sizing: border-box !important;
   }
 }
 
