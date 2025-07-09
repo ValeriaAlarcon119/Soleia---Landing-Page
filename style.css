@@ -2003,7 +2003,7 @@ a[href="#"][class="needs-button"] {
 
 
 .living-section .living-text-blocks .text-row {
-    display: flex;
+    display: flex; 
   flex-direction: row; 
   width: 100%;
   gap: 60px; 
@@ -3921,6 +3921,8 @@ a[href="#"][class="needs-button"] {
 .status-dot.vendido {
   background-color: #dc3545; 
 }
+
+
 
 .container-svg {
   width: 100%;
@@ -6098,7 +6100,7 @@ a[href="#"][class="needs-button"] {
     padding-left: 0;
     padding-right: 0;
     height: auto; 
-    padding-bottom: 0; 
+    padding-bottom: 0;
     justify-content: flex-start; 
     max-width: 720px; 
 }
@@ -7119,7 +7121,7 @@ section.hero {
 
 @media (max-width: 1000px) {
   .cta-brochure-img {
-    width: 300px !important;
+  
     height: auto !important;
   }
 }
@@ -8136,7 +8138,6 @@ nav {
     display: block !important;
     margin: 0 !important;
     width: 100% !important;
-    max-width: 320px !important;
     height: auto !important;
     object-fit: cover !important;
     border-radius: 16px !important;
@@ -8167,7 +8168,6 @@ nav {
     margin: 0 auto !important;
     display: block !important;
     width: 100% !important;
-    max-width: 320px !important;
     min-width: 0 !important;
     height: auto !important;
     object-fit: cover !important;
@@ -8195,7 +8195,6 @@ nav {
     display: block !important;
     margin: 0 auto !important;
     width: 100% !important;
-    max-width: 320px !important;
     height: auto !important;
     object-fit: cover !important;
     border-radius: 16px !important;
@@ -8254,7 +8253,7 @@ nav {
     display: block !important;
     margin: 0 auto !important;
     width: 100% !important;
-    max-width: 320px !important;
+
     min-width: 0 !important;
     height: auto !important;
     object-fit: cover !important;
@@ -8266,8 +8265,7 @@ nav {
   .cta-brochure-img {
     display: block !important;
     margin: 0 auto !important;
-    width: 100% !important;
-    max-width: 320px !important;
+
     height: auto !important;
   }
   .cta-brochure-right {
@@ -8684,7 +8682,7 @@ nav {
   }
   .cta-brochure-img {
     width: 100% !important;
-    max-width: 320px !important;
+
     height: auto !important;
     display: block !important;
     margin: 0 auto !important;
@@ -8798,7 +8796,7 @@ nav {
     font-size: 0.4rem !important;
   }
   .cta-brochure-img {
-    min-width: 250px !important;
+   
     max-width: 100vw !important;
   }
 }
@@ -9335,7 +9333,7 @@ html, body {
   }
   .cta-brochure-img {
     width: 100% !important;
-    max-width: 420px !important;
+    
     min-width: 0 !important;
     height: auto !important;
     margin: 0 auto 20px auto !important;
@@ -9346,7 +9344,7 @@ html, body {
   .cta-brochure-button {
     display: block !important;
     width: 100% !important;
-    max-width: 420px !important;
+
     margin: 0 auto !important;
     font-size: 1.15rem !important;
     padding: 16px 0 !important;
@@ -9441,6 +9439,248 @@ html, body {
     font-weight: 600 !important;
     letter-spacing: 1px !important;
     box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 240px) {
+  .cta-brochure-title {
+    font-size: 2rem !important;
+    line-height: 1.15 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto 12px auto !important;
+  }
+  .cta-brochure-description {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    margin: 0 auto 20px auto !important;
+  }
+  .cta-brochure-img {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+  .cta-brochure-button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    font-size: 1.15rem !important;
+    padding: 16px 0 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    background: #FAEACD !important;
+    color: #224457 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-brochure-right {
+    width: 95% !important;
+    max-width: 95% !important;
+    min-width: 0 !important;
+    margin: 0 auto 24px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .cta-brochure-right {
+    width: 95% !important;
+    max-width: 95% !important;
+    min-width: 0 !important;
+    margin: 0 auto 24px auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .combined-amenities-cta > .container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 0 32px 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .combined-amenities-cta > .container .cta-brochure-left,
+  .combined-amenities-cta > .container .cta-brochure-right {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 auto 24px auto !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  .combined-amenities-cta .cta-brochure-img,
+  .combined-amenities-cta .cta-brochure-image-placeholder {
+    width: 100% !important;
+    max-width: 320px !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+  .combined-amenities-cta .cta-brochure-title {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 12px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+  }
+  .combined-amenities-cta .cta-brochure-description {
+    font-size: 1.15rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+    word-break: break-word !important;
+  }
+  .combined-amenities-cta .cta-brochure-button {
+    display: block !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    font-size: 1.15rem !important;
+    padding: 16px 0 !important;
+    border-radius: 10px !important;
+    text-align: center !important;
+    background: #FAEACD !important;
+    color: #224457 !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    box-sizing: border-box !important;
+  }
+  .combined-amenities-cta .cta-brochure-left,
+  .combined-amenities-cta .cta-brochure-right,
+  .combined-amenities-cta .cta-brochure-image-placeholder {
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .combined-amenities-cta .cta-brochure-image-placeholder {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto 20px auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .combined-amenities-cta .cta-brochure-img {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .combined-amenities-cta > .container .cta-brochure-image-placeholder {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+  .combined-amenities-cta > .container .cta-brochure-img {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .combined-amenities-cta > .container {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding: 0 0 32px 0 !important;
+    box-sizing: border-box !important;
+  }
+  .combined-amenities-cta .cta-brochure-left,
+  .combined-amenities-cta .cta-brochure-right {
+    width: 100vw !important;
+    max-width: 400px !important;
+    margin: 0 auto 0 auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  .combined-amenities-cta .cta-brochure-image-placeholder {
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 20px auto !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+  }
+  .combined-amenities-cta .cta-brochure-img {
+    display: block !important;
+    margin: 0 auto 20px auto !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+    box-sizing: border-box !important;
+  }
+  .combined-amenities-cta .cta-brochure-title,
+  .combined-amenities-cta .cta-brochure-description,
+  .combined-amenities-cta .cta-brochure-button {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
