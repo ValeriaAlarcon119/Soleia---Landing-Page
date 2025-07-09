@@ -9707,3 +9707,13 @@ html, body {
 .intro-section .slider-dots .dot.active {
   background: #fff !important;
 }
+@media (max-width: 768px) {
+  .faq-right {
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+  }
+  .faq-answer p {
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+  }
+}
