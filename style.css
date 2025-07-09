@@ -9700,3 +9700,12 @@ html, body {
     border-radius: 16px !important;
   }
 }
+@media (max-width: 768px) {
+  .amenities-description {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+    width: auto !important;
+    box-sizing: border-box !important;
+    display: block !important;
+  }
+}
