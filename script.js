@@ -236,18 +236,19 @@ if (!isMobile() || items.length < 2) return;
 
 gallery.querySelectorAll('.amenidades-slide-pair').forEach(e => e.remove());
 
+// --- LÓGICA CORREGIDA: alternar orden visual en cada slide, sin depender de la clase ---
 let pairs = [];
 for (let i = 0; i < items.length; i += 2) {
   const pair = document.createElement('div');
-  pair.className = 'amenidades-slide-pair';
+  pair.className = 'amenidades-slide-pair amenidades-slide-horizontal';
   const first = items[i];
   const second = items[i+1];
-  let isLongFirst = first && first.classList.contains('needs-item-tall');
-  let isLongSecond = second && second.classList.contains('needs-item-tall');
-  if ((pairs.length % 2 === 0 && isLongFirst) || (pairs.length % 2 === 1 && isLongSecond)) {
+  if (((i/2) % 2) === 0) {
+    // Slide impar: primero arriba, segundo abajo
     if (first) pair.appendChild(first.cloneNode(true));
     if (second) pair.appendChild(second.cloneNode(true));
   } else {
+    // Slide par: segundo arriba, primero abajo
     if (second) pair.appendChild(second.cloneNode(true));
     if (first) pair.appendChild(first.cloneNode(true));
   }
@@ -255,12 +256,21 @@ for (let i = 0; i < items.length; i += 2) {
   pairs.push(pair);
 }
 
+// Contenedor para el slide horizontal
+const slideTrack = document.createElement('div');
+slideTrack.className = 'amenidades-slide-track';
+while (gallery.firstChild) {
+  slideTrack.appendChild(gallery.firstChild);
+}
+gallery.appendChild(slideTrack);
+
 let currentPair = 0;
-function showPair(idx) {
-  pairs.forEach((p, i) => {
-    p.classList.toggle('active', i === idx);
-  });
+function showPair(idx, animate = true) {
   currentPair = idx;
+  const offset = -idx * 100;
+  slideTrack.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4,0,0.2,1)' : 'none';
+  slideTrack.style.transform = `translateX(${offset}vw)`;
+  updateDots(idx);
 }
 
 let dots = gallery.parentElement.querySelector('.gallery-dots');
@@ -270,7 +280,7 @@ pairs.forEach((_, i) => {
   dot.className = 'dot' + (i === 0 ? ' active' : '');
   dot.addEventListener('click', () => {
     showPair(i);
-    updateDots(i);
+    resetAutoPlay();
   });
   if (dots) dots.appendChild(dot);
 });
@@ -286,45 +296,73 @@ const right = gallery.parentElement.querySelector('.right-button');
 if (left) left.onclick = () => {
   let idx = (currentPair - 1 + pairs.length) % pairs.length;
   showPair(idx);
-  updateDots(idx);
+  resetAutoPlay();
 };
 if (right) right.onclick = () => {
   let idx = (currentPair + 1) % pairs.length;
   showPair(idx);
-  updateDots(idx);
+  resetAutoPlay();
 };
 
-let autoInterval = setInterval(() => {
-  let idx = (currentPair + 1) % pairs.length;
-  showPair(idx);
-  updateDots(idx);
-}, 3500);
-
-gallery.addEventListener('touchstart', () => {
-
-  clearInterval(autoInterval);
-  setTimeout(() => {
-    autoInterval = setInterval(() => {
-      let idx = (currentPair + 1) % pairs.length;
-      showPair(idx);
-      updateDots(idx);
-    }, 3500);
-  }, 2000);
-}, {once:false});
-
-showPair(0);
-
-function ensureAutoPlay() {
-  if (!autoInterval || autoInterval._destroyed) {
-    autoInterval = setInterval(() => {
-      let idx = (currentPair + 1) % pairs.length;
-      showPair(idx);
-      updateDots(idx);
-    }, 3500);
-  }
+let autoInterval = null;
+function startAutoPlay() {
+  if (autoInterval) clearInterval(autoInterval);
+  autoInterval = setInterval(() => {
+    let idx = (currentPair + 1) % pairs.length;
+    showPair(idx);
+  }, 3500);
+}
+function resetAutoPlay() {
+  if (autoInterval) clearInterval(autoInterval);
+  startAutoPlay();
 }
 
-setInterval(ensureAutoPlay, 5000);
+// Swipe horizontal real
+let touchStartX = 0;
+let touchEndX = 0;
+let touchMoved = false;
+
+slideTrack.addEventListener('touchstart', function(e) {
+  if (e.touches.length === 1) {
+    touchStartX = e.touches[0].clientX;
+    touchMoved = false;
+    slideTrack.style.transition = 'none';
+  }
+}, { passive: true });
+
+slideTrack.addEventListener('touchmove', function(e) {
+  if (e.touches.length === 1) {
+    touchEndX = e.touches[0].clientX;
+    touchMoved = true;
+    const deltaX = touchEndX - touchStartX;
+    slideTrack.style.transform = `translateX(${-currentPair * 100 + (deltaX / window.innerWidth) * 100}vw)`;
+  }
+}, { passive: true });
+
+slideTrack.addEventListener('touchend', function(e) {
+  if (!touchMoved) {
+    showPair(currentPair);
+    startAutoPlay();
+    return;
+  }
+  const deltaX = touchEndX - touchStartX;
+  if (Math.abs(deltaX) > 50) {
+    if (deltaX < 0) {
+      let idx = (currentPair + 1) % pairs.length;
+      showPair(idx);
+    } else {
+      let idx = (currentPair - 1 + pairs.length) % pairs.length;
+      showPair(idx);
+    }
+    resetAutoPlay();
+  } else {
+    showPair(currentPair);
+    startAutoPlay();
+  }
+});
+
+showPair(0, false);
+startAutoPlay();
 }); 
 
 function resetAmenidadesGallery() {
@@ -350,3 +388,136 @@ if (progressDot && imgContainers.length > 0) {
     progressDot.style.width = progress + '%';
 }
 }
+
+// --- LOOP VISUAL INFINITO PARA AMENIDADES ---
+if (isMobile() && gallery.classList.contains('gallery-images')) {
+  // Eliminar slides previos
+  while (gallery.firstChild) gallery.removeChild(gallery.firstChild);
+  // Clonar para loop
+  const firstPair = pairs[0].cloneNode(true);
+  const lastPair = pairs[pairs.length-1].cloneNode(true);
+  const slideTrack = document.createElement('div');
+  slideTrack.className = 'amenidades-slide-track';
+  slideTrack.appendChild(lastPair); // Clon al inicio
+  pairs.forEach(p => slideTrack.appendChild(p));
+  slideTrack.appendChild(firstPair); // Clon al final
+  gallery.appendChild(slideTrack);
+
+  let currentPair = 1; // Empieza en el primer real
+  let isTransitioning = false;
+  function showPair(idx, animate = true) {
+    currentPair = idx;
+    const offset = -idx * 100;
+    slideTrack.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4,0,0.2,1)' : 'none';
+    slideTrack.style.transform = `translateX(${offset}vw)`;
+    // Dots: solo marcan slides reales
+    let dotIdx = idx-1;
+    if (idx === 0) dotIdx = pairs.length-1;
+    if (idx === pairs.length+1) dotIdx = 0;
+    updateDots(dotIdx);
+    isTransitioning = animate;
+  }
+
+  // Dots
+  let dots = gallery.parentElement.querySelector('.gallery-dots');
+  if (dots) dots.innerHTML = '';
+  pairs.forEach((_, i) => {
+    const dot = document.createElement('div');
+    dot.className = 'dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => {
+      showPair(i+1);
+      resetAutoPlay();
+    });
+    if (dots) dots.appendChild(dot);
+  });
+  function updateDots(idx) {
+    if (!dots) return;
+    dots.querySelectorAll('.dot').forEach((d, i) => {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+
+  // Botones
+  const left = gallery.parentElement.querySelector('.left-button');
+  const right = gallery.parentElement.querySelector('.right-button');
+  if (left) left.onclick = () => {
+    showPair(currentPair-1);
+    resetAutoPlay();
+  };
+  if (right) right.onclick = () => {
+    showPair(currentPair+1);
+    resetAutoPlay();
+  };
+
+  // Autoplay
+  let autoInterval = null;
+  function startAutoPlay() {
+    if (autoInterval) clearInterval(autoInterval);
+    autoInterval = setInterval(() => {
+      showPair(currentPair+1);
+    }, 3500);
+  }
+  function resetAutoPlay() {
+    if (autoInterval) clearInterval(autoInterval);
+    startAutoPlay();
+  }
+
+  // Swipe
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let touchMoved = false;
+  slideTrack.addEventListener('touchstart', function(e) {
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchMoved = false;
+      slideTrack.style.transition = 'none';
+    }
+  }, { passive: true });
+  slideTrack.addEventListener('touchmove', function(e) {
+    if (e.touches.length === 1) {
+      touchEndX = e.touches[0].clientX;
+      touchMoved = true;
+      const deltaX = touchEndX - touchStartX;
+      slideTrack.style.transform = `translateX(${-currentPair * 100 + (deltaX / window.innerWidth) * 100}vw)`;
+    }
+  }, { passive: true });
+  slideTrack.addEventListener('touchend', function(e) {
+    if (!touchMoved) {
+      showPair(currentPair);
+      startAutoPlay();
+      return;
+    }
+    const deltaX = touchEndX - touchStartX;
+    if (Math.abs(deltaX) > 50) {
+      if (deltaX < 0) {
+        showPair(currentPair+1);
+      } else {
+        showPair(currentPair-1);
+      }
+      resetAutoPlay();
+    } else {
+      showPair(currentPair);
+      startAutoPlay();
+    }
+  });
+
+  // Loop visual: al terminar transición en clon, saltar sin transición
+  slideTrack.addEventListener('transitionend', function() {
+    if (!isTransitioning) return;
+    if (currentPair === 0) {
+      // Si estamos en el clon del último, saltar al último real
+      showPair(pairs.length, false);
+    } else if (currentPair === pairs.length+1) {
+      // Si estamos en el clon del primero, saltar al primero real
+      showPair(1, false);
+    }
+    isTransitioning = false;
+  });
+
+  // Inicializar
+  showPair(1, false);
+  startAutoPlay();
+}
+
+// --- LOOP SUAVE PARA INTRO SECTION ---
+// ... similar, pero para el carrusel de la intro-section ...
