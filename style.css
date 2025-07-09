@@ -2127,6 +2127,7 @@ a[href="#"][class="needs-button"] {
     gap: 0;
     margin: 30px auto 0;
     padding: 0 20px;
+    text-align: left !important;
   }
   
   .living-section .living-text-blocks .text-row {
@@ -9698,6 +9699,29 @@ html, body {
     margin: 0 auto !important;
     object-fit: cover !important;
     border-radius: 16px !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero-title,
+  .hero-title h1, .hero-title h2,
+  .intro-title,
+  .intro-title h1, .intro-title h2,
+  .brochure-title,
+  .brochure-title h1, .brochure-title h2,
+  .amenities-title,
+  .amenities-title h1, .amenities-title h2,
+  .cta-brochure-title,
+  .cta-brochure-title h1, .cta-brochure-title h2,
+  .needs-title,
+  .needs-title h1, .needs-title h2,
+  .living-title,
+  .living-title h1, .living-title h2,
+  .faq-title,
+  .faq-title h1, .faq-title h2,
+  .contact-title,
+  .contact-title h1, .contact-title h2 {
+    font-size: clamp(2.2rem, 8vw, 3rem) !important;
+    line-height: 1.1 !important;
   }
 }
 @media (max-width: 768px) {
