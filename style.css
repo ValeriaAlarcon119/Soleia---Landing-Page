@@ -9587,48 +9587,8 @@ html, body {
   }
 }
 
-@media (max-width: 768px) {
-  .combined-amenities-cta .cta-brochure-image-placeholder {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin: 0 auto 20px auto !important;
-    padding: 0 !important;
-    box-sizing: border-box !important;
-  }
-  .combined-amenities-cta .cta-brochure-img {
-    display: block !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    height: auto !important;
-    object-fit: cover !important;
-    border-radius: 16px !important;
-  }
-}
 
-@media (max-width: 768px) {
-  .combined-amenities-cta > .container .cta-brochure-image-placeholder {
-    width: 100% !important;
-    max-width: 320px !important;
-    margin: 0 auto 20px auto !important;
-    display: block !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-    padding: 0 !important;
-  }
-  .combined-amenities-cta > .container .cta-brochure-img {
-    display: block !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-    max-width: 320px !important;
-    height: auto !important;
-    object-fit: cover !important;
-    border-radius: 16px !important;
-    box-sizing: border-box !important;
-  }
-}
+
 
 @media (max-width: 768px) {
   .combined-amenities-cta > .container {
@@ -9655,7 +9615,7 @@ html, body {
   }
   .combined-amenities-cta .cta-brochure-image-placeholder {
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 250px !important;
     margin: 0 auto 20px auto !important;
     display: block !important;
     text-align: center !important;
@@ -9666,7 +9626,7 @@ html, body {
     display: block !important;
     margin: 0 auto 20px auto !important;
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 250px !important;
     height: auto !important;
     object-fit: cover !important;
     border-radius: 16px !important;
@@ -9687,7 +9647,7 @@ html, body {
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 250px !important;
     margin: 0 auto 20px auto !important;
     padding: 0 !important;
     box-sizing: border-box !important;
@@ -9695,7 +9655,7 @@ html, body {
   .cta-brochure-img {
     display: block !important;
     width: 100% !important;
-    max-width: 320px !important;
+    max-width: 250px !important;
     height: auto !important;
     margin: 0 auto !important;
     object-fit: cover !important;
@@ -9726,7 +9686,7 @@ html, body {
   }
 }
 @media (max-width: 768px) {
-  .amenities-description {
+  .amenities-description, .cta-brochure-image-placeholder {
     margin-left: 32px !important;
     margin-right: 32px !important;
     width: auto !important;
@@ -9734,6 +9694,7 @@ html, body {
     display: block !important;
   }
 }
+
 
 .intro-section .slider-dots .dot {
   background: rgba(255,255,255,0.3) !important;
