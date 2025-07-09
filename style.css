@@ -8705,12 +8705,7 @@ nav {
   }
 }
 
-@media (max-width: 768px) {
-  .cta-brochure-img {
-    transform: translateX(80px) !important; 
-    transition: transform 0.2s;
-  }
-}
+
 
 @media (max-width: 768px) {
   .contact-section .container {
@@ -9684,3 +9679,24 @@ html, body {
   }
 }
 
+@media (max-width: 768px) {
+  .cta-brochure-image-placeholder {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    margin: 0 auto 20px auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .cta-brochure-img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 320px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+}
