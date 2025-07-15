@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuLinks = document.querySelectorAll('.navbar-menu a');
     const body = document.body;
 
-    // Función para abrir/cerrar el menú
+
     function toggleMenu(e) {
         if (e) {
             e.preventDefault();
@@ -16,10 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         body.classList.toggle('menu-open');
     }
 
-    // Evento click en el botón hamburguesa
     menuToggle.addEventListener('click', toggleMenu);
 
-    // Cerrar menú al hacer click en un enlace
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navbarMenu.classList.contains('active')) {
@@ -28,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Cerrar menú al hacer click fuera
     document.addEventListener('click', (e) => {
         if (navbarMenu.classList.contains('active') && 
             !navbarMenu.contains(e.target) && 
@@ -37,14 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Cerrar menú con la tecla ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && navbarMenu.classList.contains('active')) {
             toggleMenu();
         }
     });
 
-    // Prevenir scroll en dispositivos táctiles cuando el menú está abierto
     document.addEventListener('touchmove', (e) => {
         if (body.classList.contains('menu-open')) {
             e.preventDefault();

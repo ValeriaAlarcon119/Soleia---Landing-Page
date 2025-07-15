@@ -9823,3 +9823,82 @@ html, body {
     z-index: 9999 !important;
   }
 }
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+  .intro-section .container,
+  .needs-section .gallery-images,
+  .combined-amenities-cta .gallery-images {
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+  .combined-amenities-cta .gallery-images {
+    padding-left: 55px;
+    padding-right: 55px;
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+  .combined-amenities-cta .amenities-title{
+    padding-left: 55px;
+    padding-right: 55px;
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+  .combined-amenities-cta .amenities-description{
+    padding-left: 55px;
+    padding-right: 55px;
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+   .cta-brochure-image-placeholder{
+    padding-left: 25px;
+   
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+  .cta-brochure-right{
+   padding-right: 70px;
+   box-sizing: border-box;
+   max-width: 100% !important;
+   padding: 70px;
+   width: 3000px;
+ }
+}
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+  .hero-inner{
+    padding-left: 155px;
+   padding-right: -55px;
+   box-sizing: border-box;
+   max-width: 100% !important;
+   justify-content: center;
+
+ }
+ @media (min-width: 1024px) and (max-width: 1400px) {
+  .hero-form {
+    max-width: 450 !important; /* o el valor que prefieras, menos de 420px */
+  }
+  .hero-right {
+    max-width:540px !important; /* igual que el formulario */
+  }
+}
+}
