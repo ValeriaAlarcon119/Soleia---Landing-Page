@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let autoPlayInterval;
 
   function isMobile() {
-      return window.innerWidth <= 768;
+      return window.innerWidth <= 1024;
   }
 
   const imgContainersSorted = Array.from(document.querySelectorAll('.img-container'))
@@ -227,7 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
 function isMobile() {
-  return window.innerWidth <= 768;
+  return window.innerWidth <= 1024;
 }
 const gallery = document.querySelector('.combined-amenities-cta .gallery-images');
 if (!gallery) return;
@@ -375,12 +375,12 @@ gallery.querySelectorAll('.gallery-item').forEach(e => {
 }
 
 window.addEventListener('resize', function() {
-if (window.innerWidth > 768) {
+if (window.innerWidth > 1024) {
   resetAmenidadesGallery();
 }
 });
 
-if (window.innerWidth <= 768) {
+if (window.innerWidth <= 1024) {
 const imgContainers = document.querySelectorAll('.img-container');
 const progressDot = document.querySelector('.slider-dots .dot');
 if (progressDot && imgContainers.length > 0) {

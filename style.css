@@ -8077,7 +8077,7 @@ nav {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
   
   .combined-amenities-cta .gallery-button {
     display: none !important;
@@ -8110,7 +8110,7 @@ nav {
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 1024px) {
   .combined-amenities-cta > .container .cta-brochure-left,
   .combined-amenities-cta > .container .cta-brochure-right {
     display: flex !important;
