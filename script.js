@@ -95,7 +95,6 @@ document.addEventListener('DOMContentLoaded', function() {
       startAutoPlay();
   }
 
-  // --- AUTOPLAY SOLO SI LA INTRO SECTION ESTÁ VISIBLE ---
   const introSection = document.querySelector('.intro-section');
   let observer;
   let isIntroVisible = true;
@@ -112,10 +111,10 @@ document.addEventListener('DOMContentLoaded', function() {
               isIntroVisible = entry.isIntersecting;
               startAutoplayIfVisible();
           });
-      }, { threshold: 0.2 }); // 20% visible es suficiente
+      }, { threshold: 0.2 }); 
       observer.observe(introSection);
   }
-  // Sobrescribe el startAutoPlay para que solo corra si está visible
+
   function startAutoPlay() {
       if (!isIntroVisible) return;
       if (autoPlayInterval) clearInterval(autoPlayInterval);
@@ -124,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
           showImage(nextIndex, true);
       }, 2500);
   }
-  // Cuando se monta, solo inicia autoplay si está visible
+
   if (imgContainersSorted.length > 0) {
       showImage(0, false);
       startAutoplayIfVisible();
@@ -155,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   }
 
-  // --- SWIPE Y SCROLL LIBRE EN MÓVIL ---
+
   if (isMobile() && sliderImages) {
       let touchStartX = 0;
       let touchEndX = 0;
@@ -163,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
       let userInteracted = false;
       let userScrollTimeout;
 
-      // Pausar autoplay cuando el usuario interactúa
       function pauseAutoplayForUser() {
           userInteracted = true;
           if (autoPlayInterval) clearInterval(autoPlayInterval);
@@ -171,10 +169,8 @@ document.addEventListener('DOMContentLoaded', function() {
           userScrollTimeout = setTimeout(() => {
               userInteracted = false;
               startAutoplayIfVisible();
-          }, 2000); // 2 segundos
+          }, 2000); 
       }
-
-      // Swipe con el dedo
       sliderImages.addEventListener('touchstart', function(e) {
           if (e.touches.length === 1) {
               touchStartX = e.touches[0].clientX;
@@ -192,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
       sliderImages.addEventListener('touchend', function(e) {
           if (!touchMoved) return;
           const deltaX = touchEndX - touchStartX;
-          if (Math.abs(deltaX) > 50) { // Solo si el swipe es suficiente
+          if (Math.abs(deltaX) > 50) { 
               if (deltaX < 0) {
                   nextImage();
               } else {
@@ -202,7 +198,7 @@ document.addEventListener('DOMContentLoaded', function() {
           }
       });
 
-      // Scroll libre: pausar autoplay si el usuario scrollea manualmente
+    
       sliderImages.addEventListener('scroll', function() {
           pauseAutoplayForUser();
       });
@@ -236,7 +232,7 @@ if (!isMobile() || items.length < 2) return;
 
 gallery.querySelectorAll('.amenidades-slide-pair').forEach(e => e.remove());
 
-// --- LÓGICA CORREGIDA: alternar orden visual en cada slide, sin depender de la clase ---
+
 let pairs = [];
 for (let i = 0; i < items.length; i += 2) {
   const pair = document.createElement('div');
@@ -244,11 +240,11 @@ for (let i = 0; i < items.length; i += 2) {
   const first = items[i];
   const second = items[i+1];
   if (((i/2) % 2) === 0) {
-    // Slide impar: primero arriba, segundo abajo
+    
     if (first) pair.appendChild(first.cloneNode(true));
     if (second) pair.appendChild(second.cloneNode(true));
   } else {
-    // Slide par: segundo arriba, primero abajo
+   
     if (second) pair.appendChild(second.cloneNode(true));
     if (first) pair.appendChild(first.cloneNode(true));
   }
@@ -256,7 +252,7 @@ for (let i = 0; i < items.length; i += 2) {
   pairs.push(pair);
 }
 
-// Contenedor para el slide horizontal
+
 const slideTrack = document.createElement('div');
 slideTrack.className = 'amenidades-slide-track';
 while (gallery.firstChild) {
@@ -317,7 +313,6 @@ function resetAutoPlay() {
   startAutoPlay();
 }
 
-// Swipe horizontal real
 let touchStartX = 0;
 let touchEndX = 0;
 let touchMoved = false;
@@ -389,28 +384,27 @@ if (progressDot && imgContainers.length > 0) {
 }
 }
 
-// --- LOOP VISUAL INFINITO PARA AMENIDADES ---
 if (isMobile() && gallery.classList.contains('gallery-images')) {
-  // Eliminar slides previos
+
   while (gallery.firstChild) gallery.removeChild(gallery.firstChild);
-  // Clonar para loop
+
   const firstPair = pairs[0].cloneNode(true);
   const lastPair = pairs[pairs.length-1].cloneNode(true);
   const slideTrack = document.createElement('div');
   slideTrack.className = 'amenidades-slide-track';
-  slideTrack.appendChild(lastPair); // Clon al inicio
+  slideTrack.appendChild(lastPair);
   pairs.forEach(p => slideTrack.appendChild(p));
-  slideTrack.appendChild(firstPair); // Clon al final
+  slideTrack.appendChild(firstPair); 
   gallery.appendChild(slideTrack);
 
-  let currentPair = 1; // Empieza en el primer real
+  let currentPair = 1; 
   let isTransitioning = false;
   function showPair(idx, animate = true) {
     currentPair = idx;
     const offset = -idx * 100;
     slideTrack.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4,0,0.2,1)' : 'none';
     slideTrack.style.transform = `translateX(${offset}vw)`;
-    // Dots: solo marcan slides reales
+
     let dotIdx = idx-1;
     if (idx === 0) dotIdx = pairs.length-1;
     if (idx === pairs.length+1) dotIdx = 0;
@@ -418,7 +412,6 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
     isTransitioning = animate;
   }
 
-  // Dots
   let dots = gallery.parentElement.querySelector('.gallery-dots');
   if (dots) dots.innerHTML = '';
   pairs.forEach((_, i) => {
@@ -437,7 +430,7 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
     });
   }
 
-  // Botones
+
   const left = gallery.parentElement.querySelector('.left-button');
   const right = gallery.parentElement.querySelector('.right-button');
   if (left) left.onclick = () => {
@@ -449,7 +442,6 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
     resetAutoPlay();
   };
 
-  // Autoplay
   let autoInterval = null;
   function startAutoPlay() {
     if (autoInterval) clearInterval(autoInterval);
@@ -462,7 +454,6 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
     startAutoPlay();
   }
 
-  // Swipe
   let touchStartX = 0;
   let touchEndX = 0;
   let touchMoved = false;
@@ -501,23 +492,17 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
     }
   });
 
-  // Loop visual: al terminar transición en clon, saltar sin transición
   slideTrack.addEventListener('transitionend', function() {
     if (!isTransitioning) return;
     if (currentPair === 0) {
-      // Si estamos en el clon del último, saltar al último real
       showPair(pairs.length, false);
     } else if (currentPair === pairs.length+1) {
-      // Si estamos en el clon del primero, saltar al primero real
       showPair(1, false);
     }
     isTransitioning = false;
   });
 
-  // Inicializar
+
   showPair(1, false);
   startAutoPlay();
 }
-
-// --- LOOP SUAVE PARA INTRO SECTION ---
-// ... similar, pero para el carrusel de la intro-section ...
