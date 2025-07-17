@@ -21,11 +21,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function renderDots() {
       if (!dotsContainer) return;
       dotsContainer.innerHTML = '';
-      for (let i = 0; i < imgContainersSorted.length; i++) {
+      let numDots = isTablet() ? Math.ceil(imgContainersSorted.length / 2) : imgContainersSorted.length;
+      for (let i = 0; i < numDots; i++) {
           const dot = document.createElement('div');
           dot.className = 'dot' + (i === 0 ? ' active' : '');
           dot.addEventListener('click', () => {
-              showImage(i, false);
+              showImage(i * 2, false);
               resetAutoPlay();
           });
           dotsContainer.appendChild(dot);
@@ -34,9 +35,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
   function updateDots(idx) {
       const dots = document.querySelectorAll('.slider-dots .dot');
-      dots.forEach((dot, i) => {
-          dot.classList.toggle('active', i === idx);
-      });
+      if (isTablet()) {
+          const numDots = Math.ceil(imgContainersSorted.length / 2);
+          let dotIdx = Math.floor(idx / 2);
+          if (dotIdx >= numDots) dotIdx = numDots - 1;
+          dots.forEach((dot, i) => {
+              dot.classList.toggle('active', i === dotIdx);
+          });
+      } else {
+          dots.forEach((dot, i) => {
+              dot.classList.toggle('active', i === idx);
+          });
+      }
   }
 
   function showImage(idx, isAuto = false) {
@@ -52,6 +62,18 @@ document.addEventListener('DOMContentLoaded', function() {
               left: scrollLeft,
               behavior: isAuto ? 'auto' : 'smooth'
           });
+      } else if (isTablet()) {
+      
+          const containerWidth = 600; 
+          let pairIdx = Math.floor(idx / 2);
+          let scrollLeft = pairIdx * (containerWidth / 2 + 12);
+          sliderImages.scrollTo({
+              left: scrollLeft,
+              behavior: isAuto ? 'auto' : 'smooth'
+          });
+          updateDots(pairIdx * 2);
+          currentIndex = pairIdx * 2;
+          return;
       } else {
      
           imgContainersSorted[idx].scrollIntoView({
@@ -72,12 +94,38 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   function nextImage() {
-      const nextIndex = (currentIndex + 1) % imgContainersSorted.length;
+      let nextIndex;
+      if (isTablet()) {
+          const numDots = Math.ceil(imgContainersSorted.length / 2);
+          let dotIdx = Math.floor(currentIndex / 2);
+          dotIdx = (dotIdx + 1) % numDots;
+          nextIndex = dotIdx * 2;
+          if (nextIndex >= imgContainersSorted.length) {
+              nextIndex = imgContainersSorted.length - 1;
+          }
+          showImage(nextIndex, false);
+          return;
+      } else {
+          nextIndex = (currentIndex + 1) % imgContainersSorted.length;
+      }
       showImage(nextIndex, false);
   }
 
   function prevImage() {
-      const prevIndex = (currentIndex - 1 + imgContainersSorted.length) % imgContainersSorted.length;
+      let prevIndex;
+      if (isTablet()) {
+          const numDots = Math.ceil(imgContainersSorted.length / 2);
+          let dotIdx = Math.floor(currentIndex / 2);
+          dotIdx = (dotIdx - 1 + numDots) % numDots;
+          prevIndex = dotIdx * 2;
+          if (prevIndex >= imgContainersSorted.length) {
+              prevIndex = imgContainersSorted.length - 1;
+          }
+          showImage(prevIndex, false);
+          return;
+      } else {
+          prevIndex = (currentIndex - 1 + imgContainersSorted.length) % imgContainersSorted.length;
+      }
       showImage(prevIndex, false);
   }
 
@@ -119,7 +167,22 @@ document.addEventListener('DOMContentLoaded', function() {
       if (!isIntroVisible) return;
       if (autoPlayInterval) clearInterval(autoPlayInterval);
       autoPlayInterval = setInterval(() => {
-          let nextIndex = (currentIndex + 1) % imgContainersSorted.length;
+          // No avanzar si el usuario está interactuando en tablet
+          if (isTablet() && typeof userInteractedTablet !== 'undefined' && userInteractedTablet) return;
+          let nextIndex;
+          if (isTablet()) {
+              const numDots = Math.ceil(imgContainersSorted.length / 2);
+              let dotIdx = Math.floor(currentIndex / 2);
+              dotIdx = (dotIdx + 1) % numDots;
+              nextIndex = dotIdx * 2;
+              if (nextIndex >= imgContainersSorted.length) {
+                  nextIndex = imgContainersSorted.length - 1;
+              }
+              showImage(nextIndex, true);
+              return;
+          } else {
+              nextIndex = (currentIndex + 1) % imgContainersSorted.length;
+          }
           showImage(nextIndex, true);
       }, 2500);
   }
@@ -137,20 +200,70 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   if (sliderImages) {
-      sliderImages.addEventListener('scroll', function() {
-          let closestIdx = 0;
-          let minDiff = Infinity;
-          const sliderRect = sliderImages.getBoundingClientRect();
-          imgContainersSorted.forEach((container, idx) => {
-              const rect = container.getBoundingClientRect();
-              const diff = Math.abs((rect.left + rect.right) / 2 - (sliderRect.left + sliderRect.right) / 2);
-              if (diff < minDiff) {
-                  minDiff = diff;
-                  closestIdx = idx;
+      let isTabletSnapping = false;
+      let userInteractedTablet = false;
+      let userScrollTimeoutTablet;
+      let lastPairIdx = 0;
+
+      // Pausar autoplay al tocar o empezar a deslizar
+      ['pointerdown', 'touchstart'].forEach(evt => {
+          sliderImages.addEventListener(evt, function() {
+              if (isTablet()) {
+                  userInteractedTablet = true;
+                  if (autoPlayInterval) clearInterval(autoPlayInterval);
+                  if (userScrollTimeoutTablet) clearTimeout(userScrollTimeoutTablet);
               }
-          });
-          updateDots(closestIdx);
-          currentIndex = closestIdx;
+          }, { passive: true });
+      });
+
+      // Snap y reactivar autoplay solo al soltar (no en cada scroll)
+      ['pointerup', 'touchend'].forEach(evt => {
+          sliderImages.addEventListener(evt, function() {
+              if (isTablet()) {
+                  const containerWidth = 600; // Debe coincidir con el CSS
+                  const scrollLeft = sliderImages.scrollLeft;
+                  const pairIdx = Math.round(scrollLeft / (containerWidth / 2 + 22.5));
+                  const snapTo = pairIdx * (containerWidth / 2 + 22.5);
+                  isTabletSnapping = true;
+                  sliderImages.scrollTo({ left: snapTo, behavior: 'smooth' });
+                  setTimeout(() => { isTabletSnapping = false; }, 400);
+                  updateDots(pairIdx * 2);
+                  currentIndex = pairIdx * 2;
+                  lastPairIdx = pairIdx;
+                  if (userScrollTimeoutTablet) clearTimeout(userScrollTimeoutTablet);
+                  userScrollTimeoutTablet = setTimeout(() => {
+                      userInteractedTablet = false;
+                      startAutoPlay();
+                  }, 2000);
+              }
+          }, { passive: true });
+      });
+
+      // El scroll solo actualiza el dot, no hace snap ni pausa autoplay
+      sliderImages.addEventListener('scroll', function() {
+          if (isTablet()) {
+              if (isTabletSnapping) return;
+              const containerWidth = 600;
+              const scrollLeft = sliderImages.scrollLeft;
+              const pairIdx = Math.round(scrollLeft / (containerWidth / 2 + 22.5));
+              updateDots(pairIdx * 2);
+              currentIndex = pairIdx * 2;
+              lastPairIdx = pairIdx;
+          } else {
+              let closestIdx = 0;
+              let minDiff = Infinity;
+              const sliderRect = sliderImages.getBoundingClientRect();
+              imgContainersSorted.forEach((container, idx) => {
+                  const rect = container.getBoundingClientRect();
+                  const diff = Math.abs(rect.left - sliderRect.left);
+                  if (diff < minDiff) {
+                      minDiff = diff;
+                      closestIdx = idx;
+                  }
+              });
+              updateDots(closestIdx);
+              currentIndex = closestIdx;
+          }
       });
   }
 
@@ -505,4 +618,7 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
 
   showPair(1, false);
   startAutoPlay();
+}
+function isTablet() {
+  return window.innerWidth >= 768 && window.innerWidth <= 1024;
 }
