@@ -295,7 +295,7 @@ nav a:hover {
   margin: 0 auto;
   padding: 32px 24px;   
   background: #E86A33;  
-  border-radius: 16px;
+
   box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
   display: flex;
   flex-direction: column;
@@ -572,7 +572,7 @@ nav a:hover {
   font-size: 16px;
   padding: 0 10px;
   background: #FAEACD;
-    border-radius: 5px;
+
   border: none;
   color: #000000;
     cursor: pointer;
@@ -591,7 +591,7 @@ nav a:hover {
   max-width: 100%;
   height: 472px; 
   background: #D6D6D6;
-  border-radius: 10px;
+
   overflow: hidden;
   flex: none;
   order: 1;
@@ -772,7 +772,7 @@ nav a:hover {
     transform: translateY(-50%);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+
     background: #FAEACD !important;
     border: none;
   cursor: pointer;
@@ -18028,7 +18028,7 @@ a[href="#"][class="needs-button"] {
   .living-section .living-left,
   .living-section .living-right {
     width: 100%; 
-    max-width: 600px;
+    max-width: 300px;
     align-items: center; 
   }
   .living-section .living-title { font-size: 48px; line-height: 1.1; }
@@ -25915,7 +25915,7 @@ html, body {
     background: none;
   }
 }
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 469px) and (max-width: 1023px) {
   .needs-gallery {
     max-width: 950px !important;
     width: 100%;
@@ -25948,12 +25948,12 @@ html, body {
   }
   .needs-gallery .gallery-item img {
     width: 100% !important;
-    height: 150% !important;
+    height: 100% !important;
     object-fit: cover !important;
     display: block !important;
   }
 }
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 469px) and (max-width: 1023px) {
   .needs-gallery .gallery-images {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px !important;
@@ -25980,7 +25980,7 @@ html, body {
     display: block !important;
   }
 }
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 250px) and (max-width: 1023px) {
   .needs-button {
     margin-top: 250px !important;
     display: block !important;
@@ -25993,24 +25993,23 @@ html, body {
     height: 240px !important;
     object-fit: cover !important;
     display: block !important;
-    margin: 0 auto 16px auto !important;
   }
 }
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 269px) and (max-width: 1023px) {
   .features-section {
-    padding-top: 60px !important;
+    padding-top: 10px !important;
     padding-bottom: 80px !important;
-    min-height: 600px !important;
+    min-height: 200px !important;
   }
   .features-section .features-grid {
-    gap: 40px !important;
+    gap: 10px !important;
   }
 }
-@media (min-width: 769px) and (max-width: 1023px) {
+@media (min-width: 369px) and (max-width: 1023px) {
   .living-section .living-image-placeholder {
-    max-width: 600px !important;
+    max-width: 400px !important;
     width:100% !important;
-    height: 320px !important;
+    height: 220px !important;
     margin: 0 auto !important;
   }
 }
@@ -26093,10 +26092,37 @@ html, body {
 
   }
 }
-@media (min-width: 769px) and (max-width: 1200px) {
-  .living-text-blocks {
-    transform: translateX(70px) !important;
+@media  (min-width: 1001px) and (max-width: 1024px) {
+  .faq-section .faq-right .faq-item{
+    transform: translateX(45%) !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    max-width: 1200px !important;
   }
+  .faq-title{
+    transform: translateX(-33%) !important;
+    font-size: 2.9rem !important; 
+  }
+
+  .faq-section .faq-item {
+    width: 100% !important;
+  }
+  .faq-section .faq-question span,
+  .faq-section .faq-question {
+    font-size: 2.5rem !important; 
+    font-weight: 400 !important; 
+    line-height: 1.3 !important;
+    white-space: nowrap !important;
+  }
+  .faq-section .faq-answer p {
+    font-size: 1.25rem !important; 
+    line-height: 1.5 !important;
+  }
+  .faq-right {
+    width: 1700px !important;
+  }
+
+  
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -26496,6 +26522,39 @@ html, body {
     margin-right: auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
   }
 }
+.hero-inner {
+    margin-left: auto 15px!important;
+    margin-right: auto !important;
+  }
+
+  @media (min-width: 500px) and (max-width: 758px) {
+    .intro-section .img-container img {
+      width: 400px !important;
+      height: 400px !important;
+      object-fit: cover !important;
+    }
+  }
+
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .needs-gallery .gallery-item,
+    .needs-gallery .gallery-item img,
+    .needs-gallery .gallery-item.needs-item-short,
+    .needs-gallery .gallery-item.needs-item-tall {
+      height: 160px !important;
+      min-height: 0 !important;
+      max-height: 160px !important;
+    }
+    .needs-gallery .gallery-images {
+      grid-auto-rows: 160px !important;
+    }
+    .needs-section,
+.needs-gallery {
+  min-height: unset !important;
+  height: auto !important;
+  padding-bottom: 40px !important; /* O menos si quieres menos espacio */
+  margin-bottom: 0 !important;
+}
+  }
