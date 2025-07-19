@@ -316,6 +316,163 @@ document.addEventListener('DOMContentLoaded', function() {
           pauseAutoplayForUser();
       });
   }
+
+  // GUARDA el HTML original de la galería de amenidades
+  const amenidadesGallery = document.querySelector('.combined-amenities-cta .gallery-images');
+  let originalAmenidadesHTML = '';
+  if (amenidadesGallery) {
+    originalAmenidadesHTML = amenidadesGallery.innerHTML;
+  }
+
+  let lastBreakpoint = getBreakpoint();
+
+  window.addEventListener('resize', function() {
+    const currentBreakpoint = getBreakpoint();
+    if (currentBreakpoint !== lastBreakpoint) {
+      // Restaura el HTML original SOLO para amenidades
+      if (amenidadesGallery) {
+        amenidadesGallery.innerHTML = originalAmenidadesHTML;
+      }
+      // Vuelve a ejecutar la lógica de pares SOLO si es móvil o tablet
+      if (currentBreakpoint === 'mobile' || currentBreakpoint === 'tablet') {
+        // --- INICIO LÓGICA DE PARES AMENIDADES ---
+        const gallery = amenidadesGallery;
+        const items = Array.from(gallery.querySelectorAll('.gallery-item'));
+        if (items.length < 2) return;
+        let pairs = [];
+        for (let i = 0; i < items.length; i += 2) {
+          const pair = document.createElement('div');
+          pair.className = 'amenidades-slide-pair amenidades-slide-horizontal';
+          const first = items[i];
+          const second = items[i+1];
+          if (((i/2) % 2) === 0) {
+            if (first) pair.appendChild(first.cloneNode(true));
+            if (second) pair.appendChild(second.cloneNode(true));
+          } else {
+            if (second) pair.appendChild(second.cloneNode(true));
+            if (first) pair.appendChild(first.cloneNode(true));
+          }
+          gallery.appendChild(pair);
+          pairs.push(pair);
+        }
+        const slideTrack = document.createElement('div');
+        slideTrack.className = 'amenidades-slide-track';
+        while (gallery.firstChild) {
+          slideTrack.appendChild(gallery.firstChild);
+        }
+        gallery.appendChild(slideTrack);
+        let currentPair = 1; 
+        let isTransitioning = false;
+        function showPair(idx, animate = true) {
+          currentPair = idx;
+          const offset = -idx * 100;
+          slideTrack.style.transition = animate ? 'transform 0.5s cubic-bezier(0.4,0,0.2,1)' : 'none';
+          slideTrack.style.transform = `translateX(${offset}vw)`;
+          let dotIdx = idx-1;
+          if (idx === 0) dotIdx = pairs.length-1;
+          if (idx === pairs.length+1) dotIdx = 0;
+          updateDots(dotIdx);
+          isTransitioning = animate;
+        }
+        let dots = gallery.parentElement.querySelector('.gallery-dots');
+        if (dots) dots.innerHTML = '';
+        pairs.forEach((_, i) => {
+          const dot = document.createElement('div');
+          dot.className = 'dot' + (i === 0 ? ' active' : '');
+          dot.addEventListener('click', () => {
+            showPair(i+1);
+            resetAutoPlay();
+          });
+          if (dots) dots.appendChild(dot);
+        });
+        function updateDots(idx) {
+          if (!dots) return;
+          dots.querySelectorAll('.dot').forEach((d, i) => {
+            d.classList.toggle('active', i === idx);
+          });
+        }
+        const left = gallery.parentElement.querySelector('.left-button');
+        const right = gallery.parentElement.querySelector('.right-button');
+        if (left) left.onclick = () => {
+          showPair(currentPair-1);
+          resetAutoPlay();
+        };
+        if (right) right.onclick = () => {
+          showPair(currentPair+1);
+          resetAutoPlay();
+        };
+        let autoInterval = null;
+        function startAutoPlay() {
+          if (autoInterval) clearInterval(autoInterval);
+          autoInterval = setInterval(() => {
+            showPair(currentPair+1);
+          }, 3500);
+        }
+        function resetAutoPlay() {
+          if (autoInterval) clearInterval(autoInterval);
+          startAutoPlay();
+        }
+        let touchStartX = 0;
+        let touchEndX = 0;
+        let touchMoved = false;
+        slideTrack.addEventListener('touchstart', function(e) {
+          if (e.touches.length === 1) {
+            touchStartX = e.touches[0].clientX;
+            touchMoved = false;
+            slideTrack.style.transition = 'none';
+          }
+        }, { passive: true });
+        slideTrack.addEventListener('touchmove', function(e) {
+          if (e.touches.length === 1) {
+            touchEndX = e.touches[0].clientX;
+            touchMoved = true;
+            const deltaX = touchEndX - touchStartX;
+            slideTrack.style.transform = `translateX(${-currentPair * 100 + (deltaX / window.innerWidth) * 100}vw)`;
+          }
+        }, { passive: true });
+        slideTrack.addEventListener('touchend', function(e) {
+          if (!touchMoved) {
+            showPair(currentPair);
+            startAutoPlay();
+            return;
+          }
+          const deltaX = touchEndX - touchStartX;
+          if (Math.abs(deltaX) > 50) {
+            if (deltaX < 0) {
+              showPair(currentPair+1);
+            } else {
+              showPair(currentPair-1);
+            }
+            resetAutoPlay();
+          } else {
+            showPair(currentPair);
+            startAutoPlay();
+          }
+        });
+        slideTrack.addEventListener('transitionend', function() {
+          if (!isTransitioning) return;
+          if (currentPair === 0) {
+            showPair(pairs.length, false);
+          } else if (currentPair === pairs.length+1) {
+            showPair(1, false);
+          }
+          isTransitioning = false;
+        });
+        showPair(1, false);
+        startAutoPlay();
+        // --- FIN LÓGICA DE PARES AMENIDADES ---
+      }
+      // Si es desktop, no hagas nada más: el HTML original ya es el correcto
+    }
+    lastBreakpoint = currentBreakpoint;
+  });
+
+  function getBreakpoint() {
+    const width = window.innerWidth;
+    if (width <= 768) return 'mobile';
+    if (width <= 1024) return 'tablet';
+    return 'desktop';
+  }
 });
 
 
@@ -622,3 +779,29 @@ if (isMobile() && gallery.classList.contains('gallery-images')) {
 function isTablet() {
   return window.innerWidth >= 768 && window.innerWidth <= 1024;
 }
+(function() {
+  let lastBreakpoint = getBreakpoint();
+
+  window.addEventListener('resize', function() {
+    const currentBreakpoint = getBreakpoint();
+    if (currentBreakpoint !== lastBreakpoint) {
+      // Destruye el carrusel de amenidades
+      resetAmenidadesGallery();
+      // Espera un poco y vuelve a inicializar el carrusel
+      setTimeout(() => {
+        // Vuelve a ejecutar el código de inicialización del carrusel de amenidades
+        // Puedes copiar la función que tienes para inicializar el carrusel aquí
+        // O simplemente recarga la página si prefieres:
+        window.location.reload();
+      }, 200);
+    }
+    lastBreakpoint = currentBreakpoint;
+  });
+
+  function getBreakpoint() {
+    const width = window.innerWidth;
+    if (width <= 768) return 'mobile';
+    if (width <= 1024) return 'tablet';
+    return 'desktop';
+  }
+})();
