@@ -24536,7 +24536,7 @@ nav {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   .footer-links {
     display: flex !important;
     flex-direction: column !important;
@@ -26004,10 +26004,10 @@ html, body {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .living-text-blocks {
-    max-width: 700px !important;
+    max-width: 900px !important;
     width: 100% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    margin-left: 20px !important;
+    margin-right: 20px !important;
   }
 }
 
@@ -26760,5 +26760,28 @@ html, body {
 @media (min-width: 100px) and (max-width:496px) {
   .faq-right{
     transform: translateX(7%) !important;
+  }
+}
+@media (max-width: 1024px) {
+  .faq-item {
+    max-width: 85vw !important;
+    width: 85vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contact-form-block, .contact-image-placeholder {
+    max-width: 800px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .contact-image-placeholder img {
+    max-width: 800px !important;
+    width: 100% !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 }
