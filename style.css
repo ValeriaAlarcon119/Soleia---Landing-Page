@@ -26785,3 +26785,64 @@ html, body {
     margin: 0 auto !important;
   }
 }
+.hero-form {
+  border-radius: 0 !important;
+}
+.hero-right, .hero-img {
+  border-radius: 0 !important;
+}
+/* Quitar borde redondeado a todas las imágenes y contenedores de intro-section y needs-section en todos los tamaños */
+.intro-section .img-container,
+.intro-section .img-container img,
+.needs-section .gallery-item,
+.needs-section .gallery-item img,
+.gallery-item,
+.gallery-item img,
+.combined-amenities-cta .gallery-item,
+.combined-amenities-cta .gallery-item img,
+.amenidades-slide-pair .gallery-item,
+.amenidades-slide-pair .gallery-item img {
+  border-radius: 0 !important;
+}
+
+/* Y para máxima prioridad, repítelo en los media queries más usados */
+@media (max-width: 1024px) {
+  .intro-section .img-container,
+  .intro-section .img-container img,
+  .needs-section .gallery-item,
+  .needs-section .gallery-item img,
+  .gallery-item,
+  .gallery-item img,
+  .combined-amenities-cta .gallery-item,
+  .combined-amenities-cta .gallery-item img,
+  .amenidades-slide-pair .gallery-item,
+  .amenidades-slide-pair .gallery-item img {
+    border-radius: 0 !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .intro-section .img-container,
+  .intro-section .img-container img,
+  .needs-section .gallery-item,
+  .needs-section .gallery-item img,
+  .gallery-item,
+  .gallery-item img,
+  .combined-amenities-cta .gallery-item,
+  .combined-amenities-cta .gallery-item img,
+  .amenidades-slide-pair .gallery-item,
+  .amenidades-slide-pair .gallery-item img {
+    border-radius: 0 !important;
+  }
+}
+
+.intro-section .img-container,
+.intro-section .img-container *,
+.needs-section .gallery-item,
+.needs-section .gallery-item *,
+.combined-amenities-cta .gallery-item,
+.combined-amenities-cta .gallery-item *,
+.amenidades-slide-pair .gallery-item,
+.amenidades-slide-pair .gallery-item * {
+  border-radius: 0 !important;
+}
+
