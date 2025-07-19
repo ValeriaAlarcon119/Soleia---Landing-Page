@@ -26594,7 +26594,6 @@ html, body {
 
 }
 @media (min-width: 820px) and (max-width: 900px) {
-   /* 1. ELIMINAR BORDES REDONDEADOS de todas las imágenes de galería */
    .combined-amenities-cta .gallery-item,
    .combined-amenities-cta .gallery-item img,
    .amenidades-slide-pair.amenidades-slide-horizontal .gallery-item,
@@ -26707,10 +26706,9 @@ html, body {
   }
 }
 @media (max-width: 1024px) {
-  /* Igualar el ancho de la imagen del brochure al de las imágenes de la galería */
   .cta-brochure-img {
     width: 100% !important;
-    max-width: 910px !important; /* Igual al de .gallery-images en tablet */
+    max-width: 910px !important; 
     min-width: 0 !important;
     display: block !important;
     margin: 0 auto !important;
@@ -26728,11 +26726,10 @@ html, body {
   }
 }
 
-/* Si tienes otros breakpoints para móvil, iguala el max-width */
 @media (max-width: 820px) {
   .cta-brochure-img,
   .cta-brochure-image-placeholder {
-    max-width: 900px !important; /* O el valor que uses en .gallery-images para móvil */
+    max-width: 900px !important; 
   }
 }
 @media (max-width: 1024px) {
@@ -26772,9 +26769,7 @@ html, body {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* Selecciona SOLO el container del brochure */
   .combined-amenities-cta > .container:last-of-type {
-    max-width: 1100px !important; /* Igual que la galería */
     width: 100% !important;
     margin: 0 auto !important;
     padding: 0 !important;
@@ -26810,7 +26805,6 @@ html, body {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  /* Solo el container del brochure en la sección de amenidades */
   .combined-amenities-cta > .container:last-of-type {
     max-width: 1100px !important;
     width: 100% !important;
@@ -26849,10 +26843,10 @@ html, body {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .combined-amenities-cta > .container:last-of-type {
-    max-width: 1100px !important; /* Igual que la galería */
+    max-width: 1100px !important; 
     width: 100% !important;
     margin: 0 auto !important;
-    padding: 0 20%   !important; /* Márgenes laterales */
+    padding: 0 20%   !important; 
     box-sizing: border-box !important;
   }
   .combined-amenities-cta > .container:last-of-type .cta-brochure-left,
@@ -26876,12 +26870,30 @@ html, body {
 }
 @media (min-width: 368px) and (max-width: 1024px) {
   .combined-amenities-cta > .container:last-of-type .cta-brochure-title {
-    margin-top: 48px !important;   /* Baja el título */
+    margin-top: 48px !important;  
     margin-bottom: 12px !important;
   }
   .combined-amenities-cta > .container:last-of-type .cta-brochure-description {
-    font-size: 0.85rem !important; /* Letra más pequeña */
+    font-size: 0.85rem !important; 
     line-height: 1.4 !important;
     margin-bottom: 24px !important;
+  }
+}
+@media (min-width: 1025px) {
+  .hero-inner {
+    max-width: 1200px;      /* O el ancho que prefieras, igual que las otras secciones */
+    margin: 0 auto;         /* Centrado horizontal SIEMPRE */
+    padding-left: 30px;     /* Margen interno opcional */
+    padding-right: 38px;    /* Margen interno opcional */
+    box-sizing: border-box;
+  }
+}
+
+@media (min-width: 1025px) {
+  .logo {
+    margin-left: 100px !important; /* Puedes ajustar el valor */
+  }
+  nav {
+    padding-right: 60px !important; /* Puedes ajustar el valor */
   }
 }

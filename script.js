@@ -805,3 +805,14 @@ function isTablet() {
     return 'desktop';
   }
 })();
+
+@media (min-width: 1025px) {
+  .intro-section {
+    max-width: 1200px;   /* O el ancho que prefieras */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 32px;
+    padding-right: 32px;
+    box-sizing: border-box;
+  }
+}
