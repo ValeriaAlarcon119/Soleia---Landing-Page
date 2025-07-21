@@ -1459,61 +1459,46 @@ function isTablet() {
     return pairs;
   }
 
-  function clearListeners() {
-    sliderImages.replaceWith(sliderImages.cloneNode(true));
+  function getDesktopWindows() {
+    // Devuelve los índices de las ventanas de 4 imágenes
+    const windows = [];
+    for (let i = 0; i <= imgContainers.length - 4; i++) {
+      windows.push([i, i+1, i+2, i+3]);
+    }
+    // Si hay menos de 4 imágenes, solo una ventana
+    if (imgContainers.length < 4) windows.push([0]);
+    return windows;
   }
 
-  function renderDotsTablet() {
+  function renderDots() {
     if (!dotsContainer) return;
     dotsContainer.innerHTML = '';
-    const pairs = getTabletPairs();
-    for (let i = 0; i < pairs.length; i++) {
+    let numDots = 0;
+    if (isTablet()) {
+      numDots = Math.ceil(imgContainers.length / 2);
+    } else if (isDesktop()) {
+      numDots = imgContainers.length - 3; // ventanas de 4
+    } else {
+      numDots = imgContainers.length;
+    }
+    for (let i = 0; i < numDots; i++) {
       const dot = document.createElement('div');
       dot.className = 'dot' + (i === 0 ? ' active' : '');
       dot.addEventListener('click', () => {
-        showPair(i, false);
+        if (isTablet()) {
+          showPair(i, false);
+        } else if (isDesktop()) {
+          showDesktopWindow(i, false);
+        } else {
+          showImage(i, false);
+        }
         pauseAutoplayForUser();
       });
       dotsContainer.appendChild(dot);
     }
   }
-  function renderDotsMobile() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < imgContainers.length; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => {
-        showImageMobile(i, false);
-        pauseAutoplayForUser();
-      });
-      dotsContainer.appendChild(dot);
-    }
-  }
-  function renderDotsDesktop() {
-    if (!dotsContainer) return;
-    dotsContainer.innerHTML = '';
-    for (let i = 0; i < imgContainers.length; i++) {
-      const dot = document.createElement('div');
-      dot.className = 'dot' + (i === 0 ? ' active' : '');
-      dot.addEventListener('click', () => {
-        showImageDesktop(i, false);
-        pauseAutoplayForUser();
-      });
-      dotsContainer.appendChild(dot);
-    }
-  }
-  function updateDotsTablet(pairIdx) {
-    if (!dotsContainer) return;
-    const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === pairIdx));
-  }
-  function updateDotsMobile(idx) {
-    if (!dotsContainer) return;
-    const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
-    dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
-  }
-  function updateDotsDesktop(idx) {
+
+  function updateDots(idx) {
     if (!dotsContainer) return;
     const dots = Array.from(dotsContainer.querySelectorAll('.dot'));
     dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
@@ -1525,13 +1510,13 @@ function isTablet() {
     if (pairIdx < 0) pairIdx = pairs.length - 1;
     if (pairIdx >= pairs.length) pairIdx = 0;
     const containerWidth = imgContainers[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
+    const gap = parseInt(getComputedStyle(sliderImages).gap) || 45;
     const scrollLeft = pairIdx * (containerWidth * 2 + gap);
     isSnapping = true;
     sliderImages.scrollTo({ left: scrollLeft, behavior: isAuto ? 'auto' : 'smooth' });
     setTimeout(() => { isSnapping = false; }, 400);
     currentIdx = pairIdx;
-    updateDotsTablet(pairIdx);
+    updateDots(pairIdx);
   }
   function nextPair(isAuto = false) {
     showPair(currentIdx + 1, isAuto);
@@ -1540,207 +1525,181 @@ function isTablet() {
     showPair(currentIdx - 1, false);
   }
 
-  // --- MOBILE ---
-  function showImageMobile(idx, isAuto = false) {
-    let maxIdx = imgContainers.length - 1;
-    if (idx < 0) idx = maxIdx;
-    if (idx > maxIdx) idx = 0;
+  // --- DESKTOP (4 visibles) ---
+  function showDesktopWindow(winIdx, isAuto = false) {
     const containerWidth = imgContainers[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
-    const scrollLeft = idx * (containerWidth + gap);
-    sliderImages.scrollTo({ left: scrollLeft, behavior: isAuto ? 'auto' : 'smooth' });
-    currentIdx = idx;
-    updateDotsMobile(idx);
-  }
-  function nextImageMobile(isAuto = false) {
-    showImageMobile(currentIdx + 1, isAuto);
-  }
-  function prevImageMobile() {
-    showImageMobile(currentIdx - 1, false);
-  }
-
-  // --- DESKTOP ---
-  function showImageDesktop(idx, isAuto = false) {
-    let maxIdx = imgContainers.length - 1;
-    if (idx < 0) idx = maxIdx;
-    if (idx > maxIdx) idx = 0;
-    const containerWidth = imgContainers[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
-    const scrollLeft = idx * (containerWidth + gap);
+    const gap = parseInt(getComputedStyle(sliderImages).gap) || 40;
+    // Cada ventana empieza en winIdx
+    const scrollLeft = winIdx * (containerWidth + gap);
     isSnapping = true;
     sliderImages.scrollTo({ left: scrollLeft, behavior: isAuto ? 'auto' : 'smooth' });
     setTimeout(() => { isSnapping = false; }, 400);
+    currentIdx = winIdx;
+    updateDots(winIdx);
+  }
+  function nextDesktopWindow(isAuto = false) {
+    const maxWin = imgContainers.length - 4;
+    let nextIdx = currentIdx + 1;
+    if (nextIdx > maxWin) nextIdx = 0;
+    showDesktopWindow(nextIdx, isAuto);
+  }
+  function prevDesktopWindow() {
+    const maxWin = imgContainers.length - 4;
+    let prevIdx = currentIdx - 1;
+    if (prevIdx < 0) prevIdx = maxWin;
+    showDesktopWindow(prevIdx, false);
+  }
+
+  // --- MOBILE ---
+  function showImage(idx, isAuto = false) {
+    let maxIdx = imgContainers.length - 1;
+    if (idx < 0) idx = maxIdx;
+    if (idx > maxIdx) idx = 0;
+    const containerWidth = imgContainers[0].offsetWidth;
+    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
+    const scrollLeft = idx * (containerWidth + gap);
+    sliderImages.scrollTo({ left: scrollLeft, behavior: isAuto ? 'auto' : 'smooth' });
     currentIdx = idx;
-    updateDotsDesktop(idx);
+    updateDots(idx);
   }
-  function nextImageDesktop(isAuto = false) {
-    showImageDesktop(currentIdx + 1, isAuto);
+  function nextImage(isAuto = false) {
+    showImage(currentIdx + 1, isAuto);
   }
-  function prevImageDesktop() {
-    showImageDesktop(currentIdx - 1, false);
+  function prevImage() {
+    showImage(currentIdx - 1, false);
   }
 
   // --- AUTOPLAY ---
-  function startAutoPlay(mode) {
+  function startAutoPlay() {
     if (autoPlayInterval) clearInterval(autoPlayInterval);
     autoPlayInterval = setInterval(() => {
       if (!userInteracted) {
-        if (mode === 'tablet') nextPair(true);
-        else if (mode === 'mobile') nextImageMobile(true);
-        else if (mode === 'desktop') nextImageDesktop(true);
+        if (isTablet()) nextPair(true);
+        else if (isDesktop()) nextDesktopWindow(true);
+        else nextImage(true);
       }
     }, 3500);
   }
   function stopAutoPlay() {
     if (autoPlayInterval) clearInterval(autoPlayInterval);
   }
-  function pauseAutoplayForUser(mode) {
+  function pauseAutoplayForUser() {
     userInteracted = true;
     stopAutoPlay();
     if (userScrollTimeout) clearTimeout(userScrollTimeout);
     userScrollTimeout = setTimeout(() => {
       userInteracted = false;
-      startAutoPlay(mode);
+      startAutoPlay();
     }, 2000);
   }
 
-  // --- INIT Y LISTENERS ---
-  function activateTablet() {
-    clearListeners();
-    renderDotsTablet();
-    showPair(0, true);
-    startAutoPlay('tablet');
-    // Touch
-    sliderImages.addEventListener('touchstart', onTouchStartTablet, { passive: true });
-    sliderImages.addEventListener('touchmove', onTouchMoveTablet, { passive: true });
-    sliderImages.addEventListener('touchend', onTouchEndTablet);
-    sliderImages.addEventListener('scroll', onScrollTablet);
-    if (leftButton) leftButton.onclick = () => { prevPair(); pauseAutoplayForUser('tablet'); };
-    if (rightButton) rightButton.onclick = () => { nextPair(); pauseAutoplayForUser('tablet'); };
+  // Flechas
+  if (leftButton) {
+    leftButton.onclick = () => {
+      if (isTablet()) {
+        prevPair();
+      } else if (isDesktop()) {
+        prevDesktopWindow();
+      } else {
+        prevImage();
+      }
+      pauseAutoplayForUser();
+    };
   }
-  function activateMobile() {
-    clearListeners();
-    renderDotsMobile();
-    showImageMobile(0, true);
-    startAutoPlay('mobile');
-    // Touch
-    sliderImages.addEventListener('touchstart', onTouchStartMobile, { passive: true });
-    sliderImages.addEventListener('touchmove', onTouchMoveMobile, { passive: true });
-    sliderImages.addEventListener('touchend', onTouchEndMobile);
-    sliderImages.addEventListener('scroll', onScrollMobile);
-    if (leftButton) leftButton.onclick = () => { prevImageMobile(); pauseAutoplayForUser('mobile'); };
-    if (rightButton) rightButton.onclick = () => { nextImageMobile(); pauseAutoplayForUser('mobile'); };
-  }
-  function activateDesktop() {
-    clearListeners();
-    renderDotsDesktop();
-    showImageDesktop(0, true);
-    startAutoPlay('desktop');
-    sliderImages.addEventListener('scroll', onScrollDesktop);
-    if (leftButton) leftButton.onclick = () => { prevImageDesktop(); pauseAutoplayForUser('desktop'); };
-    if (rightButton) rightButton.onclick = () => { nextImageDesktop(); pauseAutoplayForUser('desktop'); };
+  if (rightButton) {
+    rightButton.onclick = () => {
+      if (isTablet()) {
+        nextPair();
+      } else if (isDesktop()) {
+        nextDesktopWindow();
+      } else {
+        nextImage();
+      }
+      pauseAutoplayForUser();
+    };
   }
 
-  // --- TOUCH Y SCROLL HANDLERS ---
-  function onTouchStartTablet(e) {
-    if (e.touches.length === 1) {
-      touchStartX = e.touches[0].clientX;
-      touchMoved = false;
-    }
-  }
-  function onTouchMoveTablet(e) {
-    if (e.touches.length === 1) {
-      touchEndX = e.touches[0].clientX;
-      touchMoved = true;
-    }
-  }
-  function onTouchEndTablet(e) {
-    if (!touchMoved) return;
-    const deltaX = touchEndX - touchStartX;
-    if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0) nextPair();
-      else prevPair();
-      pauseAutoplayForUser('tablet');
-    }
-  }
-  function onScrollTablet() {
-    if (isSnapping) return;
-    const containerWidth = imgContainers[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
-    let pairIdx = Math.round(sliderImages.scrollLeft / (containerWidth * 2 + gap));
-    const pairs = getTabletPairs();
-    if (pairIdx < 0) pairIdx = 0;
-    if (pairIdx >= pairs.length) pairIdx = pairs.length - 1;
-    currentIdx = pairIdx;
-    updateDotsTablet(pairIdx);
-  }
-  function onTouchStartMobile(e) {
-    if (e.touches.length === 1) {
-      touchStartX = e.touches[0].clientX;
-      touchMoved = false;
-    }
-  }
-  function onTouchMoveMobile(e) {
-    if (e.touches.length === 1) {
-      touchEndX = e.touches[0].clientX;
-      touchMoved = true;
-    }
-  }
-  function onTouchEndMobile(e) {
-    if (!touchMoved) return;
-    const deltaX = touchEndX - touchStartX;
-    if (Math.abs(deltaX) > 50) {
-      if (deltaX < 0) nextImageMobile();
-      else prevImageMobile();
-      pauseAutoplayForUser('mobile');
-    }
-  }
-  function onScrollMobile() {
-    const containerWidth = imgContainers[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
-    let idx = Math.round(sliderImages.scrollLeft / (containerWidth + gap));
-    let maxIdx = imgContainers.length - 1;
-    if (idx < 0) idx = 0;
-    if (idx > maxIdx) idx = maxIdx;
-    currentIdx = idx;
-    updateDotsMobile(idx);
-  }
-  function onScrollDesktop() {
-    if (isSnapping) return;
-    const containerWidth = imgContainers[0].offsetWidth;
-    const gap = parseInt(getComputedStyle(sliderImages).gap) || 20;
-    let idx = Math.round(sliderImages.scrollLeft / (containerWidth + gap));
-    let maxIdx = imgContainers.length - 1;
-    if (idx < 0) idx = 0;
-    if (idx > maxIdx) idx = maxIdx;
-    currentIdx = idx;
-    updateDotsDesktop(idx);
+  // Touch para tablet y desktop
+  if (sliderImages) {
+    sliderImages.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        touchMoved = false;
+      }
+    }, { passive: true });
+    sliderImages.addEventListener('touchmove', function(e) {
+      if (e.touches.length === 1) {
+        touchEndX = e.touches[0].clientX;
+        touchMoved = true;
+      }
+    }, { passive: true });
+    sliderImages.addEventListener('touchend', function(e) {
+      if (!touchMoved) return;
+      const deltaX = touchEndX - touchStartX;
+      if (Math.abs(deltaX) > 50) {
+        if (isTablet()) {
+          if (deltaX < 0) nextPair();
+          else prevPair();
+        } else if (isDesktop()) {
+          if (deltaX < 0) nextDesktopWindow();
+          else prevDesktopWindow();
+        } else {
+          if (deltaX < 0) nextImage();
+          else prevImage();
+        }
+        pauseAutoplayForUser();
+      }
+    });
   }
 
-  // --- RESPONSIVE HANDLER ---
-  let lastMode = '';
-  function handleMode() {
-    stopAutoPlay();
+  // Sincronizar dots con scroll manual (tablet y desktop)
+  if (sliderImages) {
+    sliderImages.addEventListener('scroll', function() {
+      if (isTablet()) {
+        if (isSnapping) return;
+        const containerWidth = imgContainers[0].offsetWidth;
+        const gap = parseInt(getComputedStyle(sliderImages).gap) || 45;
+        let pairIdx = Math.round(sliderImages.scrollLeft / (containerWidth * 2 + gap));
+        let pairCount = Math.ceil(imgContainers.length / 2);
+        if (pairIdx < 0) pairIdx = 0;
+        if (pairIdx >= pairCount) pairIdx = pairCount - 1;
+        currentIdx = pairIdx;
+        updateDots(pairIdx);
+      } else if (isDesktop()) {
+        if (isSnapping) return;
+        const containerWidth = imgContainers[0].offsetWidth;
+        const gap = parseInt(getComputedStyle(sliderImages).gap) || 40;
+        let idx = Math.round(sliderImages.scrollLeft / (containerWidth + gap));
+        let maxIdx = imgContainers.length - 1;
+        if (idx < 0) idx = 0;
+        if (idx > maxIdx) idx = maxIdx;
+        currentIdx = idx;
+        updateDots(idx);
+      }
+    });
+  }
+
+  window.addEventListener('resize', () => {
+    renderDots();
     if (isTablet()) {
-      if (lastMode !== 'tablet') {
-        lastMode = 'tablet';
-        activateTablet();
-      }
-    } else if (isMobile()) {
-      if (lastMode !== 'mobile') {
-        lastMode = 'mobile';
-        activateMobile();
-      }
+      showPair(currentIdx, false);
+    } else if (isDesktop()) {
+      showDesktopWindow(currentIdx, false);
     } else {
-      if (lastMode !== 'desktop') {
-        lastMode = 'desktop';
-        activateDesktop();
-      }
+      showImage(currentIdx, false);
     }
-  }
+  });
 
-  window.addEventListener('resize', handleMode);
-  handleMode();
+  // Inicialización
+  renderDots();
+  if (isTablet()) {
+    showPair(0, true);
+  } else if (isDesktop()) {
+    showDesktopWindow(0, true);
+  } else {
+    showImage(0, true);
+  }
+  startAutoPlay();
 })();
 // === FIN CARRUSEL UNIFICADO Y ROBUSTO ===
 

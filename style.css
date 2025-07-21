@@ -12892,7 +12892,7 @@ a[href="#"][class="needs-button"] {
     font-weight: 400;
   font-size: 18px; 
     line-height: normal;
-  border-radius: 5px;
+  border-radius: 0;
   transition: background 0.3s ease; 
   margin-top: 20px; 
   margin-bottom: 40px;
@@ -15244,7 +15244,7 @@ a[href="#"][class="needs-button"] {
 
 .lot-data {
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15275,7 +15275,7 @@ a[href="#"][class="needs-button"] {
 
 .payment-plan {
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15298,7 +15298,7 @@ a[href="#"][class="needs-button"] {
 .plan-row select {
   padding: 8px 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 0;
   background: white;
 }
 
@@ -15309,7 +15309,7 @@ a[href="#"][class="needs-button"] {
 
 .down-payment-section {
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15328,14 +15328,14 @@ a[href="#"][class="needs-button"] {
 .down-payment-options select {
   padding: 8px 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 0;
   background: white;
 }
 
 .payment-summary {
   background-color: #224457;
   color: white;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15375,7 +15375,7 @@ a[href="#"][class="needs-button"] {
   background: #E74C3C;
   color: #FFFFFF;
   border: none;
-  border-radius: 6px;
+  border-radius: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -15412,7 +15412,7 @@ a[href="#"][class="needs-button"] {
 .quote-form textarea {
   padding: 12px;
   border: 1px solid #BDC3C7;
-  border-radius: 4px;
+  border-radius: 0;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   transition: border-color 0.3s ease;
@@ -15429,7 +15429,7 @@ a[href="#"][class="needs-button"] {
   background: #27AE60;
   color: #FFFFFF;
   border: none;
-  border-radius: 4px;
+  border-radius: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -15702,7 +15702,7 @@ a[href="#"][class="needs-button"] {
 
 .modal-content {
   background: white;
-  border-radius: 15px;
+  border-radius: 0;
   width: 90%;
   max-width: 600px;
   max-height: 90vh;
@@ -15770,7 +15770,7 @@ a[href="#"][class="needs-button"] {
 
 .lot-data {
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15801,7 +15801,7 @@ a[href="#"][class="needs-button"] {
 
 .payment-plan {
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15824,7 +15824,7 @@ a[href="#"][class="needs-button"] {
 .plan-row select {
   padding: 8px 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 0;
   background: white;
 }
 
@@ -15835,7 +15835,7 @@ a[href="#"][class="needs-button"] {
 
 .down-payment-section {
   background-color: #f8f9fa;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15854,14 +15854,14 @@ a[href="#"][class="needs-button"] {
 .down-payment-options select {
   padding: 8px 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 0;
   background: white;
 }
 
 .payment-summary {
   background-color: #224457;
   color: white;
-  border-radius: 10px;
+  border-radius: 0;
   padding: 20px;
   margin-bottom: 20px;
 }
@@ -15901,7 +15901,7 @@ a[href="#"][class="needs-button"] {
   background: #E74C3C;
   color: #FFFFFF;
   border: none;
-  border-radius: 6px;
+  border-radius: 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -15938,7 +15938,7 @@ a[href="#"][class="needs-button"] {
 .quote-form textarea {
   padding: 12px;
   border: 1px solid #BDC3C7;
-  border-radius: 4px;
+  border-radius: 0;
   font-family: 'DM Sans', sans-serif;
   font-size: 14px;
   transition: border-color 0.3s ease;
@@ -16543,7 +16543,7 @@ nav a:hover {
   max-width: 100%;
   height: 472px; 
   background: #D6D6D6;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
   flex: none;
   order: 1;
@@ -16921,7 +16921,7 @@ nav a:hover {
     font-weight: 400 !important;
     font-size: 14px !important;
     line-height: normal !important;
-    border-radius: 5px !important;
+    border-radius: 0 !important;
     transition: background 0.3s ease !important;
     min-width: 180px !important;
     text-align: center !important;
@@ -17221,7 +17221,7 @@ nav a:hover {
     width: 70vw !important;
     max-width: 250px !important;
     min-width: 120px !important;
-    border-radius: 18px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     box-shadow: 0 2px 12px rgba(0,0,0,0.07);
     margin: 0 auto !important;
@@ -17233,7 +17233,7 @@ nav a:hover {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    border-radius: 18px !important;
+    border-radius: 0 !important;
     display: block;
   }
   .amenidades-slide-pair.amenidades-slide-horizontal .gallery-item.needs-item-tall {
@@ -17242,7 +17242,6 @@ nav a:hover {
   .amenidades-slide-pair.amenidades-slide-horizontal .gallery-item.needs-item-short {
     height: 100px !important;
   }
-  /* Ocultar los .gallery-item originales en móvil */
   .combined-amenities-cta .gallery-item:not(.amenidades-slide-pair .gallery-item) {
     display: none !important;
   }
@@ -17396,7 +17395,7 @@ nav a:hover {
     font-weight: 400 !important;
     font-size: 14px !important;
     line-height: normal !important;
-    border-radius: 5px !important;
+    border-radius: 0 !important;
     transition: background 0.3s ease !important;
     min-width: 180px !important;
     text-align: center !important;
@@ -17575,7 +17574,7 @@ a[href="#"][class="needs-button"] {
     font-weight: 400 !important;
     font-size: 16px !important;
     line-height: normal !important;
-    border-radius: 25px !important;
+    border-radius: 0 !important;
     transition: background 0.3s ease !important;
     min-width: 220px !important;
     text-align: center !important;
@@ -17604,7 +17603,7 @@ a[href="#"][class="needs-button"] {
     width: 100%;
     height: 100%;
   overflow: hidden;
-    border-radius: 10px;
+    border-radius: 0;
 }
 
 .needs-section .gallery-item.needs-item-tall {
@@ -17676,7 +17675,7 @@ a[href="#"][class="needs-button"] {
     font-weight: 400;
   font-size: 18px; 
     line-height: normal;
-  border-radius: 5px;
+  border-radius: 0;
   transition: background 0.3s ease; 
   margin-top: 20px; 
   margin-bottom: 40px;
@@ -17904,7 +17903,7 @@ a[href="#"][class="needs-button"] {
     font-weight: 400; 
     font-size: 16px !important; 
     line-height: normal;
-    border-radius: 8px;
+    border-radius:0;
     transition: background 0.3s ease;
     min-width: 160px;
     text-align: center;
@@ -17930,7 +17929,7 @@ a[href="#"][class="needs-button"] {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-  border-radius: 10px; 
+  border-radius: 0; 
 }
 
 .living-section .living-image-placeholder img {
@@ -18335,7 +18334,7 @@ a[href="#"][class="needs-button"] {
   align-items: center;
   padding: 40px;
   background: #4A5D5F; 
-    border-radius: 10px; 
+    border-radius: 0; 
   width: 100%;
   max-width: 200px;
     box-sizing: border-box;
@@ -18397,7 +18396,7 @@ a[href="#"][class="needs-button"] {
   height: 30px; 
   background: #FFFFFF;
   border: none; 
-  border-radius: 5px; 
+  border-radius: 0; 
   padding: 8px 15px;
     font-family: 'DM Sans', sans-serif;
     font-size: 16px;
@@ -18427,7 +18426,7 @@ a[href="#"][class="needs-button"] {
   font-size: 16px;
     line-height: normal;
     border: none;
-  border-radius: 10px; 
+  border-radius: 0; 
     cursor: pointer;
   transition: background 0.3s ease;
   margin-top: 20px;
@@ -18447,7 +18446,7 @@ a[href="#"][class="needs-button"] {
   max-width: 600px;
   height: 200px;
   background: #D9D9D9;
-  border-radius: 10px;
+  border-radius: 0;
     overflow: hidden;
   margin-top: 0; 
 }
@@ -18570,7 +18569,7 @@ a[href="#"][class="needs-button"] {
   width: 100%;
   height: 140000px; 
   background: #E5E5E5; 
-  border-radius: 12px; 
+  border-radius: 0px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21791,7 +21790,7 @@ a[href="#"][class="needs-button"] {
   background: #27AE60;
   color: #FFFFFF;
   border: none;
-  border-radius: 4px;
+  border-radius: 0 ;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -22504,7 +22503,7 @@ a[href="#"][class="needs-button"] {
   padding: 20px;
   text-align: center;
         width: 200px;
-        border-radius: 4px;
+        border-radius: 0 !important;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
@@ -22823,7 +22822,7 @@ a[href="#"][class="needs-button"] {
   max-width: 900px;
   width: 100%;
   min-width: 350px;
-  border-radius: 10px;
+  border-radius: 0  !important;
   box-sizing: border-box;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   padding: 40px 60px;
@@ -24135,7 +24134,7 @@ nav {
     width: 100% !important;
     height: auto !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
 }
 @media (max-width: 1024px) {
@@ -24195,7 +24194,7 @@ nav {
     min-width: 0 !important;
     height: auto !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius:0 !important;
   }
 }
 
@@ -24253,7 +24252,7 @@ nav {
     justify-items: stretch !important;
   }
   .gallery-item {
-    border-radius: 12px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     background: none !important;
     margin: 0 !important;
@@ -24276,7 +24275,7 @@ nav {
     margin: 32px auto 0 auto !important;
     font-size: 16px !important;
     padding: 12px 24px !important;
-    border-radius: 25px !important;
+    border-radius:0 !important;
     width: 90%;
     max-width: 320px;
     text-align: center;
@@ -24305,7 +24304,7 @@ nav {
     grid-row: auto !important;
     grid-column: auto !important;
     height: 100px !important; 
-    border-radius: 12px !important;
+    border-radius: 0!important;
     overflow: hidden !important;
     background: none !important;
     margin: 0 !important;
@@ -24624,7 +24623,7 @@ nav {
     height: auto !important;
     display: block !important;
     margin: 0 auto !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
     object-fit: cover !important;
   }
   .cta-brochure-text,
@@ -24880,7 +24879,7 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     object-fit: contain !important;
-    border-radius: 12px !important;
+    border-radius: 0 !important;
     display: block !important;
   }
   .slider-dots {
@@ -25273,7 +25272,7 @@ html, body {
     margin: 0 auto 20px auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0!important;
   }
   .cta-brochure-button {
     display: block !important;
@@ -25282,7 +25281,7 @@ html, body {
     margin: 0 auto !important;
     font-size: 1.15rem !important;
     padding: 16px 0 !important;
-    border-radius: 10px !important;
+    border-radius: 0 !important;
     text-align: center !important;
     background: #FAEACD !important;
     color: #224457 !important;
@@ -25315,7 +25314,7 @@ html, body {
     margin: 0 auto 20px auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
   .cta-brochure-button {
     display: block !important;
@@ -25324,7 +25323,7 @@ html, body {
     margin: 0 auto !important;
     font-size: 1.15rem !important;
     padding: 16px 0 !important;
-    border-radius: 10px !important;
+    border-radius: 0px !important;
     text-align: center !important;
     background: #FAEACD !important;
     color: #224457 !important;
@@ -25357,7 +25356,7 @@ html, body {
     margin: 0 auto 20px auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0!important;
   }
   .cta-brochure-button {
     display: block !important;
@@ -25366,7 +25365,7 @@ html, body {
     margin: 0 auto !important;
     font-size: 1.15rem !important;
     padding: 16px 0 !important;
-    border-radius: 10px !important;
+    border-radius: 0  !important;
     text-align: center !important;
     background: #FAEACD !important;
     color: #224457 !important;
@@ -25399,7 +25398,7 @@ html, body {
     margin: 0 auto 20px auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
   .cta-brochure-button {
     display: block !important;
@@ -25408,7 +25407,7 @@ html, body {
     margin: 0 auto !important;
     font-size: 1.15rem !important;
     padding: 16px 0 !important;
-    border-radius: 10px !important;
+    border-radius: 0 !important;
     text-align: center !important;
     background: #FAEACD !important;
     color: #224457 !important;
@@ -25483,7 +25482,7 @@ html, body {
     margin: 0 auto 20px auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
   .combined-amenities-cta .cta-brochure-title {
     font-size: 2rem !important;
@@ -25506,7 +25505,7 @@ html, body {
     margin: 0 auto !important;
     font-size: 1.15rem !important;
     padding: 16px 0 !important;
-    border-radius: 10px !important;
+    border-radius:0 !important;
     text-align: center !important;
     background: #FAEACD !important;
     color: #224457 !important;
@@ -25567,7 +25566,7 @@ html, body {
     max-width: 250px !important;
     height: auto !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
     box-sizing: border-box !important;
   }
   .combined-amenities-cta .cta-brochure-title,
@@ -25597,7 +25596,7 @@ html, body {
     height: auto !important;
     margin: 0 auto !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
 }
 @media (max-width: 1024px) {
@@ -25890,7 +25889,7 @@ html, body {
 
   .hero-right {
     height: 340px;
-    border-radius: 16px;
+    border-radius: 0;
     overflow: hidden;
     background: none !important;
   }
@@ -25899,7 +25898,7 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 16px;
+    border-radius: 0;
     display: block;
     background: none;
   }
@@ -25927,7 +25926,7 @@ html, body {
     height: 820px !important;
     min-width: 0 !important;
     min-height: 0 !important;
-    border-radius: 12px !important;
+    border-radius:0 !important;
     overflow: hidden !important;
     background: none !important;
     margin: 0 !important;
@@ -25984,6 +25983,7 @@ html, body {
     display: block !important;
   }
 }
+
 @media (min-width: 269px) and (max-width: 1023px) {
   .features-section {
     padding-top: 10px !important;
@@ -26045,7 +26045,7 @@ html, body {
     align-items: center !important;
     scroll-snap-align: start !important;
     margin: 0 !important;
-    border-radius: 12px !important;
+    border-radius: 0 !important;
     overflow: hidden !important;
     background: #fff;
   }
@@ -26053,7 +26053,7 @@ html, body {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    border-radius: 12px !important;
+    border-radius:0 !important;
     display: block !important;
   }
 }
@@ -26080,7 +26080,7 @@ html, body {
     min-height: 60px !important;
     width: 100% !important;
     object-fit: cover !important;
-    border-radius: 12px !important;
+    border-radius: 0 !important;
     display: block !important;
   }
 }
@@ -26327,7 +26327,7 @@ html, body {
     margin-right: auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
   
 }
@@ -26363,7 +26363,7 @@ html, body {
     margin-right: auto !important;
     display: block !important;
     object-fit: cover !important;
-    border-radius: 16px !important;
+    border-radius: 0 !important;
   }
   
   .cta-brochure-right {
@@ -26791,7 +26791,6 @@ html, body {
 .hero-right, .hero-img {
   border-radius: 0 !important;
 }
-/* Quitar borde redondeado a todas las imágenes y contenedores de intro-section y needs-section en todos los tamaños */
 .intro-section .img-container,
 .intro-section .img-container img,
 .needs-section .gallery-item,
@@ -26805,7 +26804,6 @@ html, body {
   border-radius: 0 !important;
 }
 
-/* Y para máxima prioridad, repítelo en los media queries más usados */
 @media (max-width: 1024px) {
   .intro-section .img-container,
   .intro-section .img-container img,
@@ -26846,3 +26844,67 @@ html, body {
   border-radius: 0 !important;
 }
 
+.gallery-item,
+.amenidades-slide-pair .gallery-item,
+.combined-amenities-cta .gallery-item {
+  border-radius: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  .features-section img,
+  .features-section .feature-card img,
+  .features-section .feature-icon {
+    border-radius: 0 !important;
+  }
+}
+@media (max-width: 600px) {
+  .features-section img,
+  .features-section .feature-card img,
+  .features-section .feature-icon {
+    border-radius: 0 !important;
+  }
+}
+.features-section img,
+.features-section .feature-card img,
+.features-section .feature-icon {
+  border-radius: 0 !important;
+}
+.features-section .feature-card,
+.features-section .feature-card img,
+.features-section .feature-icon {
+  border-radius: 0 !important;
+}
+@media (min-width: 1025px) {
+  .intro-section .slider-images {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scroll-behavior: smooth !important;
+    gap: 20px !important;
+    width: 100%;
+    height: 260px !important;
+    justify-content: flex-start !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    position: relative !important;
+  }
+  .intro-section .img-container {
+    flex: 0 0 400px !important;
+    height: 260px !important;
+    display: flex !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-width: 400px !important;
+    max-width: 400px !important;
+    width: 400px !important;
+  }
+  .intro-section .slider-images .img-container:nth-child(even) {
+    align-self: flex-start !important;
+    margin-top: 20px !important;
+  }
+  .intro-section .slider-images .img-container:nth-child(odd) {
+    align-self: flex-end !important;
+    margin-bottom: 20px !important;
+  }
+}
