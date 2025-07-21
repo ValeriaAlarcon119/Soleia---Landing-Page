@@ -25996,7 +25996,7 @@ html, body {
 }
 @media (min-width: 369px) and (max-width: 1023px) {
   .living-section .living-image-placeholder {
-    max-width: 900px !important;
+    max-width: 835px !important;
     width:100% !important;
     height: 420px !important;
     margin: 0 auto !important;
@@ -27176,5 +27176,20 @@ html, body {
     margin-left: auto !important;
     margin-right: auto !important;
     border-radius: 8px !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .needs-section .container {
+    padding-right: 40px !important;
+  }
+}
+@media (min-width: 909px) and (max-width: 1000px) {
+  .features-section .container {
+    transform: translateX(02%) !important;
+  }
+}
+@media (min-width:1000px) and (max-width: 1023px) {
+  .features-section .container {
+    transform: translateX(03%) !important;
   }
 }
