@@ -25944,7 +25944,7 @@ html, body {
 @media (min-width: 469px) and (max-width: 1023px) {
   .needs-gallery .gallery-images {
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 32px !important;
+    gap: 12px !important;
     grid-auto-rows: 250px !important; 
   }
   .needs-gallery .gallery-item,
@@ -25954,7 +25954,7 @@ html, body {
     height: 240px !important;
     min-height: 0 !important;
     max-height: none !important;
-    width: 100% !important;
+    width: 90% !important;
     object-fit: cover !important;
     display: flex !important;
     align-items: stretch !important;
@@ -25962,7 +25962,7 @@ html, body {
     overflow: hidden !important;
   }
   .needs-gallery .gallery-item img {
-    width: 100% !important;
+    width: 90% !important;
     height: 100% !important;
     object-fit: cover !important;
     display: block !important;
@@ -26134,7 +26134,7 @@ html, body {
     justify-content: center !important;
   }
   .cta-brochure-img {
-    max-width: 720px !important;
+    max-width:1720px !important;
     width: 100% !important;
     height: auto !important;
     display: block !important;
@@ -26175,7 +26175,7 @@ html, body {
 
   .gallery-item.needs-item-tall,
   .gallery-item.needs-item-short {
-    max-width: 520px !important;
+    max-width: 700px !important;
     width: 100% !important;
     min-width: 320px !important;
     min-height: 320px !important;
@@ -26189,7 +26189,7 @@ html, body {
   }
   .gallery-item.needs-item-tall img,
   .gallery-item.needs-item-short img {
-    max-width: 520px !important;
+    max-width: 700px !important;
     width: 100% !important;
     min-width: 320px !important;
     min-height: 320px !important;
@@ -26199,30 +26199,7 @@ html, body {
     margin-left: auto !important;
     margin-right: auto !important;
   }
-
-  .cta-brochure-image-placeholder {
-    max-width: 520px !important;
-    width: 100% !important;
-    min-width: 320px !important;
-    min-height: 320px !important;
-    height: 340px !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  .cta-brochure-img {
-    max-width: 520px !important;
-    width: 100% !important;
-    min-width: 320px !important;
-    min-height: 320px !important;
-    height: 340px !important;
-    object-fit: cover !important;
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+  
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
@@ -26240,7 +26217,7 @@ html, body {
     box-sizing: border-box !important;
   }
   .cta-brochure-img {
-    max-width: 520px !important;
+    max-width:1520px !important;
     width: 100% !important;
     min-width: 320px !important;
     height: 340px !important;
@@ -26435,12 +26412,14 @@ html, body {
     .needs-gallery .gallery-item img,
     .needs-gallery .gallery-item.needs-item-short,
     .needs-gallery .gallery-item.needs-item-tall {
-      height: 160px !important;
+      height: 180px !important;
       min-height: 0 !important;
-      max-height: 160px !important;
+      max-height: 180px !important;
+
     }
     .needs-gallery .gallery-images {
-      grid-auto-rows: 160px !important;
+      grid-auto-rows: 180px !important;
+
     }
     .needs-section,
     .needs-gallery {
@@ -26448,6 +26427,7 @@ html, body {
   height: auto !important;
   padding-bottom: 40px !important; 
   margin-bottom: 0 !important;
+
 }
 
 
@@ -26531,7 +26511,7 @@ html, body {
 @media (min-width: 768px) and (max-width: 1024px) {
   .cta-brochure-img {
     width: 100% !important;
-    max-width: 910px !important; 
+    max-width:1910px !important; 
     min-width: 0 !important;
     display: block !important;
     margin: 0 auto !important;
@@ -26552,7 +26532,7 @@ html, body {
 @media (min-width: 768px) and (max-width: 1024px) {
   .cta-brochure-img,
   .cta-brochure-image-placeholder {
-    max-width: 900px !important; 
+    max-width:1900px !important; 
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -26567,7 +26547,7 @@ html, body {
   }
   .cta-brochure-image-placeholder {
     width: 100% !important;
-    max-width: 910px !important;
+    max-width:1910px !important;
     min-width: 0 !important;
     margin: 0 auto !important;
     display: flex !important;
@@ -26577,7 +26557,7 @@ html, body {
   }
   .cta-brochure-img {
     width: 100% !important;
-    max-width: 910px !important;
+    max-width:1910px !important;
     min-width: 0 !important;
     display: block !important;
     margin: 0 auto !important;
@@ -27052,15 +27032,129 @@ html, body {
 
   
 }
-@media (min-width: 469px) and (max-width: 768px) {
-  .cta-brochure-img {
-    width:100% !important;
-    max-width: 1120px !important;
+@media (max-width: 768px) {
+  .amenities-description {
+    font-size: 0.95rem !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    box-sizing: border-box !important;
+    line-height: 1.4 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+@media (min-width: 469px) and (max-width: 1023px) {
+  .combined-amenities-cta > .container:last-of-type {
+    max-width: 1020px !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .combined-amenities-cta > .container:last-of-type .cta-brochure-left,
+  .combined-amenities-cta > .container:last-of-type .cta-brochure-image-placeholder {
+    max-width: 1020px !important;
+    width: 90% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+  .combined-amenities-cta > .container:last-of-type .cta-brochure-img {
+    max-width: 1020px !important;
+    width: 95% !important;
     min-width: 0 !important;
     height: auto !important;
     display: block !important;
     object-fit: cover !important;
     margin: 0 auto !important;
     border-radius: 0 !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .gallery-item.needs-item-tall,
+  .gallery-item.needs-item-short {
+    height: 940px !important;
+    min-height: 340px !important;
+    max-height: 940px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .gallery-item.needs-item-tall img,
+  .gallery-item.needs-item-short img {
+    height: 100% !important;
+    min-height: 0 !important;
+    max-height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .needs-gallery .gallery-images {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 50px !important;
+    grid-auto-rows: 245px !important; 
+  }
+  .needs-gallery .gallery-item,
+  .needs-gallery .gallery-item.needs-item-short,
+  .needs-gallery .gallery-item.needs-item-tall {
+    height: 240px !important;
+    min-height: 140px !important;
+    max-height: 240px !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: stretch !important;
+    justify-content: stretch !important;
+    overflow: hidden !important;
+  }
+  .needs-gallery .gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 768px){
+  .gallery-images {
+    grid-auto-rows: 110px !important; 
+    gap: 8px !important;
+  }
+  .gallery-item,
+  .gallery-item.needs-item-tall,
+  .gallery-item.needs-item-short {
+    height: 110px !important;
+    min-height: 110px !important;
+    max-height: 110px !important;
+    aspect-ratio: 1/1 !important;
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 !important;
+  }
+}
+@media (min-width: 250px) and (max-width: 480px) {
+  .needs-button {
+    margin-top:198px !important;
+    margin-bottom: 0 !important;
+    display: block !important;
+    width: 90%;
+    max-width: 320px;
+    text-align: center;
+    font-size: 16px !important;
+    padding: 12px 24px !important;
+    border-radius: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
