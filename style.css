@@ -25996,7 +25996,7 @@ html, body {
 }
 @media (min-width: 369px) and (max-width: 1023px) {
   .living-section .living-image-placeholder {
-    max-width: 800px !important;
+    max-width: 900px !important;
     width:100% !important;
     height: 420px !important;
     margin: 0 auto !important;
@@ -26010,7 +26010,11 @@ html, body {
     margin-right: 20px !important;
   }
 }
-
+@media (min-width: 768px) and (max-width: 1024px) {
+  .living-text-blocks {
+    transform: translateX(02%) !important;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .intro-section {
@@ -26734,13 +26738,13 @@ html, body {
 }
 @media (min-width: 496px) and (max-width: 1023px) {
   .faq-right{
-    transform: translateX(10%) !important;
+    transform: translateX(09%) !important;
   }
 }
 
-@media (min-width: 100px) and (max-width:496px) {
+@media (min-width: 100px) and (max-width:596px) {
   .faq-right{
-    transform: translateX(7%) !important;
+    transform: translateX(2%) !important;
   }
 }
 @media (max-width: 1024px) {
@@ -27158,5 +27162,19 @@ html, body {
     border-radius: 0 !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+}
+@media (max-width: 600px) {
+  .needs-section {
+    height: 900px !important;
+  }
+  .needs-section .needs-button {
+    width: 70% !important;          /* Botón más angosto */
+    max-width: 220px !important;
+    
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    border-radius: 8px !important;
   }
 }
