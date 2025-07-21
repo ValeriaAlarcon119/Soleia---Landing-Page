@@ -25996,7 +25996,7 @@ html, body {
 }
 @media (min-width: 369px) and (max-width: 1023px) {
   .living-section .living-image-placeholder {
-    max-width: 600px !important;
+    max-width: 800px !important;
     width:100% !important;
     height: 420px !important;
     margin: 0 auto !important;
@@ -27120,13 +27120,14 @@ html, body {
 }
 
 @media (max-width: 768px){
-  .gallery-images {
+  .needs-section .gallery-images {
     grid-auto-rows: 110px !important; 
     gap: 8px !important;
   }
-  .gallery-item,
-  .gallery-item.needs-item-tall,
-  .gallery-item.needs-item-short {
+  .needs-section .gallery-item,
+  .needs-section .gallery-item.needs-item-tall,
+  .needs-section .gallery-item.needs-item-short
+   {
     height: 110px !important;
     min-height: 110px !important;
     max-height: 110px !important;
@@ -27135,7 +27136,8 @@ html, body {
     margin: 0 !important;
     box-sizing: border-box !important;
   }
-  .gallery-item img {
+  .needs-section .gallery-item img
+  {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
