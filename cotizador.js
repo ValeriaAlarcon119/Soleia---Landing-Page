@@ -1,70 +1,80 @@
-// Datos de los lotes de Soleia (59 lotes) - Estados actualizados para coincidir con HTML
+// Datos de los lotes de Soleia (59 lotes) - actualizados con M2 y precio de lista del Excel
 const lotsData = [
-  // Etapa 1 - Lotes 1-20
-  {id: 1, etapa: 1, superficie: 250, precio: 850000, estado: 'vendido'}, // Rojo en HTML
-  {id: 2, etapa: 1, superficie: 275, precio: 920000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 3, etapa: 1, superficie: 300, precio: 980000, estado: 'disponible'}, // Verde en HTML
-  {id: 4, etapa: 1, superficie: 280, precio: 950000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 5, etapa: 1, superficie: 265, precio: 890000, estado: 'disponible'}, // Verde en HTML
-  {id: 6, etapa: 1, superficie: 290, precio: 970000, estado: 'vendido'}, // Rojo en HTML
-  {id: 7, etapa: 1, superficie: 320, precio: 1020000, estado: 'disponible'}, // Verde en HTML
-  {id: 8, etapa: 1, superficie: 285, precio: 960000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 9, etapa: 1, superficie: 310, precio: 1000000, estado: 'disponible'}, // Verde en HTML
-  {id: 10, etapa: 1, superficie: 295, precio: 985000, estado: 'vendido'}, // Rojo en HTML
-  {id: 11, etapa: 1, superficie: 270, precio: 910000, estado: 'disponible'}, // Verde en HTML
-  {id: 12, etapa: 1, superficie: 330, precio: 1050000, estado: 'vendido'}, // Rojo en HTML
-  {id: 13, etapa: 1, superficie: 255, precio: 870000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 14, etapa: 1, superficie: 305, precio: 995000, estado: 'disponible'}, // Verde en HTML
-  {id: 15, etapa: 1, superficie: 275, precio: 925000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 16, etapa: 1, superficie: 315, precio: 1010000, estado: 'disponible'}, // Verde en HTML
-  {id: 17, etapa: 1, superficie: 260, precio: 880000, estado: 'vendido'}, // Rojo en HTML
-  {id: 18, etapa: 1, superficie: 340, precio: 1080000, estado: 'disponible'}, // Verde en HTML
-  {id: 19, etapa: 1, superficie: 285, precio: 965000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 20, etapa: 1, superficie: 325, precio: 1035000, estado: 'disponible'}, // Verde en HTML
+  // Etapa 1 - Lotes 1-20 (ZONA 1 y ZONA 2)
+  {id: 1, etapa: 1, superficie: 240.66, precio: 1203300, estado: 'vendido'},      // Lote 1 - ZONA 1
+  {id: 2, etapa: 1, superficie: 243,    precio: 1215000, estado: 'apartado'},     // Lote 2
+  {id: 3, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 3
+  {id: 4, etapa: 1, superficie: 243,    precio: 1215000, estado: 'apartado'},     // Lote 4
+  {id: 5, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 5
+  {id: 6, etapa: 1, superficie: 243,    precio: 1215000, estado: 'vendido'},      // Lote 6
+  {id: 7, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 7
+  {id: 8, etapa: 1, superficie: 243,    precio: 1215000, estado: 'apartado'},     // Lote 8
+  {id: 9, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 9
+  {id: 10, etapa: 1, superficie: 243,   precio: 1215000, estado: 'vendido'},      // Lote 10
+  {id: 11, etapa: 1, superficie: 243,   precio: 1215000, estado: 'disponible'},   // Lote 11
+
+  // ZONA 2 - mismos M2 y precio para 12-21
+  {id: 12, etapa: 1, superficie: 243,   precio: 1275750, estado: 'vendido'},      // Lote 12
+  {id: 13, etapa: 1, superficie: 243,   precio: 1275750, estado: 'apartado'},     // Lote 13
+  {id: 14, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 14
+  {id: 15, etapa: 1, superficie: 243,   precio: 1275750, estado: 'apartado'},     // Lote 15
+  {id: 16, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 16
+  {id: 17, etapa: 1, superficie: 243,   precio: 1275750, estado: 'vendido'},      // Lote 17
+  {id: 18, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 18
+  {id: 19, etapa: 1, superficie: 243,   precio: 1275750, estado: 'apartado'},     // Lote 19
+  {id: 20, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 20
   
-  // Etapa 2 - Lotes 21-40
-  {id: 21, etapa: 2, superficie: 350, precio: 1150000, estado: 'vendido'}, // Rojo en HTML
-  {id: 22, etapa: 2, superficie: 380, precio: 1250000, estado: 'disponible'}, // Verde en HTML
-  {id: 23, etapa: 2, superficie: 365, precio: 1200000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 24, etapa: 2, superficie: 340, precio: 1120000, estado: 'vendido'}, // Rojo en HTML
-  {id: 25, etapa: 2, superficie: 375, precio: 1230000, estado: 'disponible'}, // Verde en HTML
-  {id: 26, etapa: 2, superficie: 390, precio: 1280000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 27, etapa: 2, superficie: 355, precio: 1170000, estado: 'vendido'}, // Rojo en HTML
-  {id: 28, etapa: 2, superficie: 370, precio: 1220000, estado: 'disponible'}, // Verde en HTML
-  {id: 29, etapa: 2, superficie: 385, precio: 1265000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 30, etapa: 2, superficie: 360, precio: 1185000, estado: 'vendido'}, // Rojo en HTML
-  {id: 31, etapa: 2, superficie: 345, precio: 1135000, estado: 'disponible'}, // Verde en HTML
-  {id: 32, etapa: 2, superficie: 395, precio: 1295000, estado: 'vendido'}, // Rojo en HTML
-  {id: 33, etapa: 2, superficie: 350, precio: 1155000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 34, etapa: 2, superficie: 380, precio: 1245000, estado: 'disponible'}, // Verde en HTML
-  {id: 35, etapa: 2, superficie: 365, precio: 1205000, estado: 'vendido'}, // Rojo en HTML
-  {id: 36, etapa: 2, superficie: 375, precio: 1235000, estado: 'disponible'}, // Verde en HTML
-  {id: 37, etapa: 2, superficie: 390, precio: 1285000, estado: 'vendido'}, // Rojo en HTML
-  {id: 38, etapa: 2, superficie: 355, precio: 1175000, estado: 'vendido'}, // Rojo en HTML
-  {id: 39, etapa: 2, superficie: 370, precio: 1215000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 40, etapa: 2, superficie: 400, precio: 1320000, estado: 'disponible'}, // Verde en HTML
-  
-  // Etapa 3 - Lotes 41-59
-  {id: 41, etapa: 3, superficie: 420, precio: 1450000, estado: 'vendido'}, // Rojo en HTML
-  {id: 42, etapa: 3, superficie: 435, precio: 1520000, estado: 'disponible'}, // Verde en HTML
-  {id: 43, etapa: 3, superficie: 410, precio: 1380000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 44, etapa: 3, superficie: 450, precio: 1580000, estado: 'vendido'}, // Rojo en HTML
-  {id: 45, etapa: 3, superficie: 425, precio: 1470000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 46, etapa: 3, superficie: 440, precio: 1540000, estado: 'disponible'}, // Verde en HTML
-  {id: 47, etapa: 3, superficie: 415, precio: 1420000, estado: 'vendido'}, // Rojo en HTML
-  {id: 48, etapa: 3, superficie: 460, precio: 1620000, estado: 'disponible'}, // Verde en HTML
-  {id: 49, etapa: 3, superficie: 430, precio: 1500000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 50, etapa: 3, superficie: 445, precio: 1560000, estado: 'vendido'}, // Rojo en HTML
-  {id: 51, etapa: 3, superficie: 455, precio: 1600000, estado: 'disponible'}, // Verde en HTML
-  {id: 52, etapa: 3, superficie: 420, precio: 1460000, estado: 'vendido'}, // Rojo en HTML
-  {id: 53, etapa: 3, superficie: 465, precio: 1640000, estado: 'disponible'}, // Verde en HTML
-  {id: 54, etapa: 3, superficie: 435, precio: 1530000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 55, etapa: 3, superficie: 450, precio: 1590000, estado: 'disponible'}, // Verde en HTML
-  {id: 56, etapa: 3, superficie: 470, precio: 1660000, estado: 'vendido'}, // Rojo en HTML
-  {id: 57, etapa: 3, superficie: 425, precio: 1480000, estado: 'disponible'}, // Verde en HTML
-  {id: 58, etapa: 3, superficie: 475, precio: 1680000, estado: 'apartado'}, // Amarillo en HTML
-  {id: 59, etapa: 3, superficie: 440, precio: 1550000, estado: 'vendido'} // Rojo en HTML
+  // Etapa 2 - Lotes 21-40 (ZONA 2 final y ZONA 3)
+  {id: 21, etapa: 2, superficie: 243,   precio: 1275750, estado: 'vendido'},      // Lote 21
+  {id: 22, etapa: 2, superficie: 243,   precio: 1336500, estado: 'disponible'},   // Lote 22
+  {id: 23, etapa: 2, superficie: 243,   precio: 1336500, estado: 'apartado'},     // Lote 23
+  {id: 24, etapa: 2, superficie: 243,   precio: 1336500, estado: 'vendido'},      // Lote 24
+  {id: 25, etapa: 2, superficie: 243,   precio: 1336500, estado: 'disponible'},   // Lote 25
+  {id: 26, etapa: 2, superficie: 243,   precio: 1336500, estado: 'apartado'},     // Lote 26
+  {id: 27, etapa: 2, superficie: 243,   precio: 1336500, estado: 'vendido'},      // Lote 27
+  {id: 28, etapa: 2, superficie: 243,   precio: 1336500, estado: 'disponible'},   // Lote 28
+  {id: 29, etapa: 2, superficie: 243,   precio: 1336500, estado: 'apartado'},     // Lote 29
+  {id: 30, etapa: 2, superficie: 243,   precio: 1336500, estado: 'vendido'},      // Lote 30
+  {id: 31, etapa: 2, superficie: 341.72,precio: 1879460, estado: 'disponible'},   // Lote 31
+
+  // Etapa 2 - Habitacionales playa (inicio de 32)
+  {id: 32, etapa: 2, superficie: 436.03,precio: 2834195, estado: 'vendido'},      // Lote 32
+  {id: 33, etapa: 2, superficie: 290.66,precio: 1889290, estado: 'apartado'},     // Lote 33
+  {id: 34, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 34
+  {id: 35, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 35
+  {id: 36, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 36
+  {id: 37, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 37
+  {id: 38, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 38
+  {id: 39, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'apartado'},     // Lote 39
+  {id: 40, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 40
+
+  // Etapa 3 - Lotes 41-59 (Habitacionales playa)
+  {id: 41, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 41
+  {id: 42, etapa: 3, superficie: 292.74,precio: 2195550, estado: 'disponible'},   // Lote 42
+  {id: 43, etapa: 3, superficie: 389.29,precio: 3308965, estado: 'apartado'},     // Lote 43
+  {id: 44, etapa: 3, superficie: 313.1, precio: 3131000, estado: 'vendido'},      // Lote 44
+  {id: 45, etapa: 3, superficie: 476.02,precio: 3094130, estado: 'apartado'},     // Lote 45
+  {id: 46, etapa: 3, superficie: 292.97,precio: 1904305, estado: 'disponible'},   // Lote 46
+  {id: 47, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 47
+  {id: 48, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 48
+  {id: 49, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'apartado'},     // Lote 49
+  {id: 50, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 50
+  {id: 51, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 51
+  {id: 52, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 52
+  {id: 53, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 53
+  {id: 54, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'apartado'},     // Lote 54
+  {id: 55, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 55
+  {id: 56, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 56
+  {id: 57, etapa: 3, superficie: 327.11,precio: 2453325, estado: 'disponible'},   // Lote 57
+  {id: 58, etapa: 3, superficie: 339.32,precio: 2884220, estado: 'apartado'},     // Lote 58
+  {id: 59, etapa: 3, superficie: 350.98,precio: 3509800, estado: 'vendido'}       // Lote 59
 ];
+
+// Ajuste solicitado: todos los lotes deben estar en estado "disponible"
+// y el "precio base" mostrado en el modal será el precio total de lista (campo `precio`).
+lotsData.forEach(lot => {
+  lot.estado = 'disponible';
+});
 
 // Variable para el lote seleccionado
 let selectedLot = null;
