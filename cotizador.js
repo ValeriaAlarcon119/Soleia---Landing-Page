@@ -1,73 +1,73 @@
-// Datos de los lotes de Soleia (59 lotes) - actualizados con M2 y precio de lista del Excel
+// Datos de los lotes de Soleia (59 lotes) - actualizados con todos los datos del Excel
 const lotsData = [
-  // Etapa 1 - Lotes 1-20 (ZONA 1 y ZONA 2)
-  {id: 1, etapa: 1, superficie: 240.66, precio: 1203300, estado: 'vendido'},      // Lote 1 - ZONA 1
-  {id: 2, etapa: 1, superficie: 243,    precio: 1215000, estado: 'apartado'},     // Lote 2
-  {id: 3, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 3
-  {id: 4, etapa: 1, superficie: 243,    precio: 1215000, estado: 'apartado'},     // Lote 4
-  {id: 5, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 5
-  {id: 6, etapa: 1, superficie: 243,    precio: 1215000, estado: 'vendido'},      // Lote 6
-  {id: 7, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 7
-  {id: 8, etapa: 1, superficie: 243,    precio: 1215000, estado: 'apartado'},     // Lote 8
-  {id: 9, etapa: 1, superficie: 243,    precio: 1215000, estado: 'disponible'},   // Lote 9
-  {id: 10, etapa: 1, superficie: 243,   precio: 1215000, estado: 'vendido'},      // Lote 10
-  {id: 11, etapa: 1, superficie: 243,   precio: 1215000, estado: 'disponible'},   // Lote 11
+  // ZONA 1 - Lotes 1-11
+  {id: 1, etapa: 1, superficie: 240.66, precio: 1203300, precioListaFF: 1143135, precioContadoFF: 1028821.50, pago50EngancheFF: 1085978.25, precio30Enganche: 1143135, estado: 'vendido', zona: 'ZONA 1'},
+  {id: 2, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'apartado', zona: 'ZONA 1'},
+  {id: 3, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'disponible', zona: 'ZONA 1'},
+  {id: 4, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'apartado', zona: 'ZONA 1'},
+  {id: 5, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'disponible', zona: 'ZONA 1'},
+  {id: 6, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'vendido', zona: 'ZONA 1'},
+  {id: 7, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'disponible', zona: 'ZONA 1'},
+  {id: 8, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'apartado', zona: 'ZONA 1'},
+  {id: 9, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'disponible', zona: 'ZONA 1'},
+  {id: 10, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'vendido', zona: 'ZONA 1'},
+  {id: 11, etapa: 1, superficie: 243, precio: 1215000, precioListaFF: 1154250, precioContadoFF: 1038825, pago50EngancheFF: 1096537.50, precio30Enganche: 1154250, estado: 'disponible', zona: 'ZONA 1'},
 
-  // ZONA 2 - mismos M2 y precio para 12-21
-  {id: 12, etapa: 1, superficie: 243,   precio: 1275750, estado: 'vendido'},      // Lote 12
-  {id: 13, etapa: 1, superficie: 243,   precio: 1275750, estado: 'apartado'},     // Lote 13
-  {id: 14, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 14
-  {id: 15, etapa: 1, superficie: 243,   precio: 1275750, estado: 'apartado'},     // Lote 15
-  {id: 16, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 16
-  {id: 17, etapa: 1, superficie: 243,   precio: 1275750, estado: 'vendido'},      // Lote 17
-  {id: 18, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 18
-  {id: 19, etapa: 1, superficie: 243,   precio: 1275750, estado: 'apartado'},     // Lote 19
-  {id: 20, etapa: 1, superficie: 243,   precio: 1275750, estado: 'disponible'},   // Lote 20
+  // ZONA 2 - Lotes 12-21
+  {id: 12, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'vendido', zona: 'ZONA 2'},
+  {id: 13, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'apartado', zona: 'ZONA 2'},
+  {id: 14, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'disponible', zona: 'ZONA 2'},
+  {id: 15, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'apartado', zona: 'ZONA 2'},
+  {id: 16, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'disponible', zona: 'ZONA 2'},
+  {id: 17, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'vendido', zona: 'ZONA 2'},
+  {id: 18, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'disponible', zona: 'ZONA 2'},
+  {id: 19, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'apartado', zona: 'ZONA 2'},
+  {id: 20, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'disponible', zona: 'ZONA 2'},
+  {id: 21, etapa: 2, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'vendido', zona: 'ZONA 2'},
   
-  // Etapa 2 - Lotes 21-40 (ZONA 2 final y ZONA 3)
-  {id: 21, etapa: 2, superficie: 243,   precio: 1275750, estado: 'vendido'},      // Lote 21
-  {id: 22, etapa: 2, superficie: 243,   precio: 1336500, estado: 'disponible'},   // Lote 22
-  {id: 23, etapa: 2, superficie: 243,   precio: 1336500, estado: 'apartado'},     // Lote 23
-  {id: 24, etapa: 2, superficie: 243,   precio: 1336500, estado: 'vendido'},      // Lote 24
-  {id: 25, etapa: 2, superficie: 243,   precio: 1336500, estado: 'disponible'},   // Lote 25
-  {id: 26, etapa: 2, superficie: 243,   precio: 1336500, estado: 'apartado'},     // Lote 26
-  {id: 27, etapa: 2, superficie: 243,   precio: 1336500, estado: 'vendido'},      // Lote 27
-  {id: 28, etapa: 2, superficie: 243,   precio: 1336500, estado: 'disponible'},   // Lote 28
-  {id: 29, etapa: 2, superficie: 243,   precio: 1336500, estado: 'apartado'},     // Lote 29
-  {id: 30, etapa: 2, superficie: 243,   precio: 1336500, estado: 'vendido'},      // Lote 30
-  {id: 31, etapa: 2, superficie: 341.72,precio: 1879460, estado: 'disponible'},   // Lote 31
+  // ZONA 3 - Lotes 22-30
+  {id: 22, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'disponible', zona: 'ZONA 3'},
+  {id: 23, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'apartado', zona: 'ZONA 3'},
+  {id: 24, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'vendido', zona: 'ZONA 3'},
+  {id: 25, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'disponible', zona: 'ZONA 3'},
+  {id: 26, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'apartado', zona: 'ZONA 3'},
+  {id: 27, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'vendido', zona: 'ZONA 3'},
+  {id: 28, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'disponible', zona: 'ZONA 3'},
+  {id: 29, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'apartado', zona: 'ZONA 3'},
+  {id: 30, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'vendido', zona: 'ZONA 3'},
+  
+  // LOTE 31 (antes de Habitacionales Playa)
+  {id: 31, etapa: 2, superficie: 341.72, precio: 1879460, precioListaFF: 1785487, precioContadoFF: 1606938.30, pago50EngancheFF: 1696212.65, precio30Enganche: 1785487, estado: 'disponible', zona: 'ZONA 3'},
 
-  // Etapa 2 - Habitacionales playa (inicio de 32)
-  {id: 32, etapa: 2, superficie: 436.03,precio: 2834195, estado: 'vendido'},      // Lote 32
-  {id: 33, etapa: 2, superficie: 290.66,precio: 1889290, estado: 'apartado'},     // Lote 33
-  {id: 34, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 34
-  {id: 35, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 35
-  {id: 36, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 36
-  {id: 37, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 37
-  {id: 38, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 38
-  {id: 39, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'apartado'},     // Lote 39
-  {id: 40, etapa: 2, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 40
-
-  // Etapa 3 - Lotes 41-59 (Habitacionales playa)
-  {id: 41, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 41
-  {id: 42, etapa: 3, superficie: 292.74,precio: 2195550, estado: 'disponible'},   // Lote 42
-  {id: 43, etapa: 3, superficie: 389.29,precio: 3308965, estado: 'apartado'},     // Lote 43
-  {id: 44, etapa: 3, superficie: 313.1, precio: 3131000, estado: 'vendido'},      // Lote 44
-  {id: 45, etapa: 3, superficie: 476.02,precio: 3094130, estado: 'apartado'},     // Lote 45
-  {id: 46, etapa: 3, superficie: 292.97,precio: 1904305, estado: 'disponible'},   // Lote 46
-  {id: 47, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 47
-  {id: 48, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 48
-  {id: 49, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'apartado'},     // Lote 49
-  {id: 50, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 50
-  {id: 51, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 51
-  {id: 52, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 52
-  {id: 53, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 53
-  {id: 54, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'apartado'},     // Lote 54
-  {id: 55, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'disponible'},   // Lote 55
-  {id: 56, etapa: 3, superficie: 292.74,precio: 1902810, estado: 'vendido'},      // Lote 56
-  {id: 57, etapa: 3, superficie: 327.11,precio: 2453325, estado: 'disponible'},   // Lote 57
-  {id: 58, etapa: 3, superficie: 339.32,precio: 2884220, estado: 'apartado'},     // Lote 58
-  {id: 59, etapa: 3, superficie: 350.98,precio: 3509800, estado: 'vendido'}       // Lote 59
+  // LOTES HABITACIONALES PLAYA - Lotes 32-59
+  {id: 32, etapa: 2, superficie: 436.03, precio: 3008607, precioListaFF: 2858176.65, precioContadoFF: 2572358.99, pago50EngancheFF: 2715267.82, precio30Enganche: 2858176.65, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 33, etapa: 2, superficie: 290.66, precio: 2005554, precioListaFF: 1905276.30, precioContadoFF: 1714748.67, pago50EngancheFF: 1810012.49, precio30Enganche: 1905276.30, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 34, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 35, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 36, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 37, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 38, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 39, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 40, etapa: 2, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 41, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 42, etapa: 3, superficie: 292.74, precio: 2195550, precioListaFF: 2085772.50, precioContadoFF: 1877195.25, pago50EngancheFF: 1981483.88, precio30Enganche: 2085772.50, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 43, etapa: 3, superficie: 389.29, precio: 3308965, precioListaFF: 3143516.75, precioContadoFF: 2829165.08, pago50EngancheFF: 2986340.91, precio30Enganche: 3143516.75, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 44, etapa: 3, superficie: 313.1, precio: 3131000, precioListaFF: 2974450, precioContadoFF: 2677005, pago50EngancheFF: 2825727.50, precio30Enganche: 2974450, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 45, etapa: 3, superficie: 476.02, precio: 3284538, precioListaFF: 3120311.10, precioContadoFF: 2808279.99, pago50EngancheFF: 2964295.55, precio30Enganche: 3120311.10, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 46, etapa: 3, superficie: 292.97, precio: 2021493, precioListaFF: 1920418.35, precioContadoFF: 1728376.52, pago50EngancheFF: 1824397.43, precio30Enganche: 1920418.35, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 47, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 48, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 49, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 50, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 51, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 52, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 53, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 54, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 55, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 56, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 57, etapa: 3, superficie: 327.11, precio: 2453325, precioListaFF: 2330658.75, precioContadoFF: 2097592.88, pago50EngancheFF: 2214125.81, precio30Enganche: 2330658.75, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 58, etapa: 3, superficie: 339.32, precio: 2884220, precioListaFF: 2740009, precioContadoFF: 2466008.10, pago50EngancheFF: 2603008.55, precio30Enganche: 2740009, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA'},
+  {id: 59, etapa: 3, superficie: 350.98, precio: 3509800, precioListaFF: 3334310, precioContadoFF: 3000879, pago50EngancheFF: 3167594.50, precio30Enganche: 3334310, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA'}
 ];
 
 // Ajuste solicitado: todos los lotes deben estar en estado "disponible"
@@ -80,8 +80,9 @@ lotsData.forEach(lot => {
 let selectedLot = null;
 
 // Elementos del DOM para el modal
-let modal, modalStatus, modalStatusText, modalEtapa, modalLote, 
-    modalSurface, modalBasePrice, modalViewPlan, 
+let modal, modalStatus, modalStatusText, modalZona, modalEtapa, modalLote, 
+    modalSurface, modalPrecioLista, modalPrecioListaFF, modalPrecioContadoFF,
+    modalPago50EngancheFF, modalPrecio30Enganche, modalViewPlan, 
     modalQuoteForm, modalClose;
 
 // Inicializar cuando el DOM esté listo
@@ -95,10 +96,15 @@ function initializeElements() {
   modal = document.getElementById('lotModal');
   modalStatus = document.getElementById('modalStatus');
   modalStatusText = document.getElementById('modalStatusText');
+  modalZona = document.getElementById('modalZona');
   modalEtapa = document.getElementById('modalEtapa');
   modalLote = document.getElementById('modalLote');
   modalSurface = document.getElementById('modalSurface');
-  modalBasePrice = document.getElementById('modalBasePrice');
+  modalPrecioLista = document.getElementById('modalPrecioLista');
+  modalPrecioListaFF = document.getElementById('modalPrecioListaFF');
+  modalPrecioContadoFF = document.getElementById('modalPrecioContadoFF');
+  modalPago50EngancheFF = document.getElementById('modalPago50EngancheFF');
+  modalPrecio30Enganche = document.getElementById('modalPrecio30Enganche');
   modalViewPlan = document.getElementById('modalViewPlan');
   modalQuoteForm = document.getElementById('modalQuoteForm');
   modalClose = document.querySelector('.modal-close');
@@ -215,10 +221,17 @@ function updateModalInfo() {
   }
 
   // Actualizar datos del lote
+  modalZona.textContent = selectedLot.zona || '-';
   modalEtapa.textContent = selectedLot.etapa;
   modalLote.textContent = selectedLot.id;
-  modalSurface.textContent = selectedLot.superficie.toLocaleString();
-  modalBasePrice.textContent = formatCurrency(selectedLot.precio);
+  modalSurface.textContent = selectedLot.superficie.toLocaleString('es-MX', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+  
+  // Actualizar todos los precios
+  modalPrecioLista.textContent = formatCurrency(selectedLot.precio);
+  modalPrecioListaFF.textContent = formatCurrency(selectedLot.precioListaFF || 0);
+  modalPrecioContadoFF.textContent = formatCurrency(selectedLot.precioContadoFF || 0);
+  modalPago50EngancheFF.textContent = formatCurrency(selectedLot.pago50EngancheFF || 0);
+  modalPrecio30Enganche.textContent = formatCurrency(selectedLot.precio30Enganche || 0);
 }
 
 // Funciones auxiliares
@@ -236,12 +249,11 @@ function getStatusText(estado) {
 }
 
 function formatCurrency(amount) {
+  if (!amount || amount === 0) return '0';
   return new Intl.NumberFormat('es-MX', {
-    style: 'currency',
-    currency: 'MXN',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-  }).format(amount).replace('MX$', '').trim();
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(amount);
 }
 
 // Función para generar lotes SVG dinámicamente (opcional)

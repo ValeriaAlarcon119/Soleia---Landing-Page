@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +14,75 @@
       font-family: 'Avocado';
       src: url('avocado.otf') format('opentype');
     }
+
     @font-face {
       font-family: 'DM Sans Regular';
       src: url('DMSans-Regular.ttf') format('truetype');
       font-weight: normal;
       font-style: normal;
     }
+
+    /* Estilos para la sección de precios en el modal */
+    .pricing-section {
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .pricing-section h4 {
+      margin: 0 0 15px 0;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .price-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px;
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
+    }
+
+    .price-item:hover {
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+
+    .price-item.highlight {
+      background-color: #e8f5e9;
+      border: 2px solid #28a745;
+    }
+
+    .price-label {
+      font-size: 14px;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .price-item.highlight .price-label {
+      color: #1b5e20;
+      font-weight: 600;
+    }
+
+    .price-item.highlight .price-value {
+      color: #28a745;
+      font-size: 1.1em;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@900&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <header>
     <div class="navbar-bg">
@@ -49,8 +109,10 @@
   <section class="cotizador-section">
     <div class="cotizador-container">
       <div class="cotizador-header">
-        <h1 class="cotizador-main-title" style="font-family: 'Avocado', sans-serif; font-weight: normal; font-size: 48px; color: #FAEACD;">Cotiza tu lote en Soleia</h1>
-        
+        <h1 class="cotizador-main-title"
+          style="font-family: 'Avocado', sans-serif; font-weight: normal; font-size: 48px; color: #FAEACD;">Cotiza tu
+          lote en Soleia</h1>
+
         <div class="status-legend">
           <div class="status-item">
             <div class="status-dot disponible"></div>
@@ -68,9 +130,11 @@
       </div>
 
       <div class="map-main-container">
-        <div style="background-image: url('WhatsApp Image 2025-04-18 at 14.48.57 1.png'); background-size: cover; background-position: center;">
+        <div
+          style="background-image: url('WhatsApp Image 2025-04-18 at 14.48.57 1.png'); background-size: cover; background-position: center;">
           <div class="container-svg">
-            <svg viewBox="0 0 1200 800" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
+            <svg viewBox="0 0 1200 800" version="1.1" xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid meet">
               <g id="orden-por-lote" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <g id="Artboard">
 
@@ -202,92 +266,93 @@
                   </a>
 
                   <a href="#" class="batch disponible" data-lot-id="31">
-                    <path class="lot-path" id="L31" d="M790,435 h14 a12,12 0 0 1 12,12 v26 a12,12 0 0 1 -12,12 h-14 v-50 z" />
+                    <path class="lot-path" id="L31"
+                      d="M790,435 h14 a12,12 0 0 1 12,12 v26 a12,12 0 0 1 -12,12 h-14 v-50 z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="32">
-                    <path class="lot-path" id="L32" d="M900,430 L850,490 L875,490 L925,430 Z"/>
+                    <path class="lot-path" id="L32" d="M900,430 L850,490 L875,490 L925,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="33">
-                    <path class="lot-path" id="L33" d="M925,430 L875,490 L900,490 L950,430 Z"/>
+                    <path class="lot-path" id="L33" d="M925,430 L875,490 L900,490 L950,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="34">
-                    <path class="lot-path" id="L34" d="M950,430 L900,490 L925,490 L975,430 Z"/>
+                    <path class="lot-path" id="L34" d="M950,430 L900,490 L925,490 L975,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="35">
-                    <path class="lot-path" id="L35" d="M975,430 L925,490 L950,490 L1000,430 Z"/>
+                    <path class="lot-path" id="L35" d="M975,430 L925,490 L950,490 L1000,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="36">
-                    <path class="lot-path" id="L36" d="M1000,430 L950,490 L975,490 L1025,430 Z"/>
+                    <path class="lot-path" id="L36" d="M1000,430 L950,490 L975,490 L1025,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="37">
-                    <path class="lot-path" id="L37" d="M1025,430 L975,490 L1000,490 L1050,430 Z"/>
+                    <path class="lot-path" id="L37" d="M1025,430 L975,490 L1000,490 L1050,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="38">
-                    <path class="lot-path" id="L38" d="M1100,430 L1050,490 L1075,490 L1125,430 Z"/>
+                    <path class="lot-path" id="L38" d="M1100,430 L1050,490 L1075,490 L1125,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="39">
-                    <path class="lot-path" id="L39" d="M1125,430 L1075,490 L1100,490 L1150,430 Z"/>
+                    <path class="lot-path" id="L39" d="M1125,430 L1075,490 L1100,490 L1150,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="40">
-                    <path class="lot-path" id="L40" d="M1150,430 L1100,490 L1125,490 L1175,430 Z"/>
+                    <path class="lot-path" id="L40" d="M1150,430 L1100,490 L1125,490 L1175,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="41">
-                    <path class="lot-path" id="L41" d="M1175,430 L1125,490 L1150,490 L1200,430 Z"/>
+                    <path class="lot-path" id="L41" d="M1175,430 L1125,490 L1150,490 L1200,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="42">
-                    <path class="lot-path" id="L42" d="M1200,430 L1150,490 L1175,490 L1225,430 Z"/>
+                    <path class="lot-path" id="L42" d="M1200,430 L1150,490 L1175,490 L1225,430 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="43">
-                    <path class="lot-path" id="L43" d="M1225,430 L1175,490 L1200,490 L1250,430 Z"/>
+                    <path class="lot-path" id="L43" d="M1225,430 L1175,490 L1200,490 L1250,430 Z" />
                   </a>
 
                   <a href="#" class="batch disponible" data-lot-id="44">
-                    <path class="lot-path" id="L44" d="M852,323 L909,380 L932,380 L875,323 Z"/>
+                    <path class="lot-path" id="L44" d="M852,323 L909,380 L932,380 L875,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="45">
-                    <path class="lot-path" id="L45" d="M875,323 L932,380 L955,380 L898,323 Z"/>
+                    <path class="lot-path" id="L45" d="M875,323 L932,380 L955,380 L898,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="46">
-                    <path class="lot-path" id="L46" d="M898,323 L955,380 L978,380 L921,323 Z"/>
+                    <path class="lot-path" id="L46" d="M898,323 L955,380 L978,380 L921,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="47">
-                    <path class="lot-path" id="L47" d="M921,323 L978,380 L1001,380 L944,323 Z"/>
+                    <path class="lot-path" id="L47" d="M921,323 L978,380 L1001,380 L944,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="48">
-                    <path class="lot-path" id="L48" d="M944,323 L1001,380 L1024,380 L967,323 Z"/>
+                    <path class="lot-path" id="L48" d="M944,323 L1001,380 L1024,380 L967,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="49">
-                    <path class="lot-path" id="L49" d="M967,323 L1024,380 L1047,380 L990,323 Z"/>
+                    <path class="lot-path" id="L49" d="M967,323 L1024,380 L1047,380 L990,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="50">
-                    <path class="lot-path" id="L50" d="M1042,323 L1099,380 L1122,380 L1065,323 Z"/>
+                    <path class="lot-path" id="L50" d="M1042,323 L1099,380 L1122,380 L1065,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="51">
-                    <path class="lot-path" id="L51" d="M1065,323 L1122,380 L1145,380 L1088,323 Z"/>
+                    <path class="lot-path" id="L51" d="M1065,323 L1122,380 L1145,380 L1088,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="52">
-                    <path class="lot-path" id="L52" d="M1088,323 L1145,380 L1168,380 L1111,323 Z"/>
+                    <path class="lot-path" id="L52" d="M1088,323 L1145,380 L1168,380 L1111,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="53">
-                    <path class="lot-path" id="L53" d="M1111,323 L1168,380 L1191,380 L1134,323 Z"/>
+                    <path class="lot-path" id="L53" d="M1111,323 L1168,380 L1191,380 L1134,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="54">
-                    <path class="lot-path" id="L54" d="M1134,323 L1191,380 L1214,380 L1157,323 Z"/>
+                    <path class="lot-path" id="L54" d="M1134,323 L1191,380 L1214,380 L1157,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="55">
-                    <path class="lot-path" id="L55" d="M1157,323 L1214,380 L1237,380 L1180,323 Z"/>
+                    <path class="lot-path" id="L55" d="M1157,323 L1214,380 L1237,380 L1180,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="56">
-                    <path class="lot-path" id="L56" d="M1180,323 L1237,380 L1260,380 L1203,323 Z"/>
+                    <path class="lot-path" id="L56" d="M1180,323 L1237,380 L1260,380 L1203,323 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="57">
-                    <path class="lot-path" id="L57" d="M1208,326 L1255,365 L1273,355 L1225,326 Z"/>
+                    <path class="lot-path" id="L57" d="M1208,326 L1270,380 L1290,370 L1225,326 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="58">
-                    <path class="lot-path" id="L58" d="M1225,326 L1273,355 L1291,340 L1242,326 Z"/>
+                    <path class="lot-path" id="L58" d="M1225,326 L1290,370 L1310,360 L1242,326 Z" />
                   </a>
                   <a href="#" class="batch disponible" data-lot-id="59">
-                    <path class="lot-path" id="L59" d="M1242,326 L1291,340 L1309,320 L1259,326 Z"/>
+                    <path class="lot-path" id="L59" d="M1242,326 L1310,360 L1330,350 L1259,326 Z" />
                   </a>
 
                 </g>
@@ -304,7 +369,7 @@
       <div class="modal-header">
         <span class="modal-close">&times;</span>
       </div>
-      
+
       <div class="modal-body">
         <div class="lot-status-display">
           <div class="status-dot-large disponible" id="modalStatus"></div>
@@ -313,9 +378,13 @@
 
         <div class="info-section">
           <h3>Información</h3>
-          
+
           <div class="lot-data">
             <h4>Datos del lote</h4>
+            <div class="data-row">
+              <span>Zona:</span>
+              <span id="modalZona">-</span>
+            </div>
             <div class="data-row">
               <span>Etapa:</span>
               <span id="modalEtapa">-</span>
@@ -325,17 +394,51 @@
               <span id="modalLote">-</span>
             </div>
             <div class="data-row">
-              <span>Superficie:</span>
+              <span>M² totales:</span>
               <div class="surface-value">
                 <span id="modalSurface">-</span>
                 <strong>m²</strong>
               </div>
             </div>
-            <div class="data-row">
-              <span>Precio base:</span>
-              <div class="price-value">
-                <strong>$</strong>
-                <span id="modalBasePrice">-</span>
+          </div>
+
+          <div class="pricing-section">
+            <h4>Precios y opciones de pago</h4>
+            <div class="price-grid">
+              <div class="price-item">
+                <span class="price-label">Precio de lista:</span>
+                <div class="price-value">
+                  <strong>$</strong>
+                  <span id="modalPrecioLista">-</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Precio de lista F&F:</span>
+                <div class="price-value">
+                  <strong>$</strong>
+                  <span id="modalPrecioListaFF">-</span>
+                </div>
+              </div>
+              <div class="price-item highlight">
+                <span class="price-label">Precio de contado F&F:</span>
+                <div class="price-value">
+                  <strong>$</strong>
+                  <span id="modalPrecioContadoFF">-</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Pago 50% enganche F&F:</span>
+                <div class="price-value">
+                  <strong>$</strong>
+                  <span id="modalPago50EngancheFF">-</span>
+                </div>
+              </div>
+              <div class="price-item">
+                <span class="price-label">Precio 30% enganche:</span>
+                <div class="price-value">
+                  <strong>$</strong>
+                  <span id="modalPrecio30Enganche">-</span>
+                </div>
               </div>
             </div>
           </div>
@@ -392,40 +495,40 @@
       </div>
       <div class="footer-links">
         <div class="footer-col">
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
         </div>
         <div style="flex:1"></div>
         <div class="footer-col">
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
         </div>
         <div style="flex:1"></div>
         <div class="footer-col">
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
-           <div class="link-pair">
-             <p class="link-title">Title</p>
-             <p class="link-subtitle">Subtitle</p>
-           </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
+          <div class="link-pair">
+            <p class="link-title">Title</p>
+            <p class="link-subtitle">Subtitle</p>
+          </div>
         </div>
       </div>
     </div>
@@ -445,4 +548,5 @@
   <script src="script.js"></script>
   <script src="navbar.js"></script>
 </body>
-</html> 
+
+</html>
