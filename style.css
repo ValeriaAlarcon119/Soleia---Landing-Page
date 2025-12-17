@@ -24996,12 +24996,17 @@ a[href="#"][class="needs-button"] {
 /* Force left alignment for consistency */
 .needs-section .needs-text {
   text-align: left !important;
-  margin-left: -50px !important;
+  margin-left: 20px !important;
   align-items: flex-start !important;
 }
 
 .needs-section .container {
   align-items: flex-start !important;
+}
+
+/* Mover solo la galería de fotos a la derecha, no el título */
+.needs-section .needs-gallery {
+  margin-left: 30px !important;
 }
 
 /* Ensure both containers in the combined section have the same horizontal padding 
