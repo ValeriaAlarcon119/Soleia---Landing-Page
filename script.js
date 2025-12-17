@@ -49,42 +49,42 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  function showImage(idx, isAuto = false) {
+  function showImage(idx, isAuto = false, allowScroll = true) {
     if (typeof idx !== 'number' || idx < 0 || idx >= imgContainersSorted.length) return;
 
     let scrollBehavior = 'smooth';
     const isWrappingForward = isAuto && idx === 0 && currentIndex === imgContainersSorted.length - 1;
     if (isWrappingForward) scrollBehavior = 'auto';
 
-    if (isMobile()) {
-      const viewportWidth = window.innerWidth;
-      const imageWidth = viewportWidth - 100;
-      const gap = 60;
-      const scrollLeft = idx * (imageWidth + gap);
+    if (allowScroll) {
+      if (isMobile()) {
+        const viewportWidth = window.innerWidth;
+        const imageWidth = viewportWidth - 100;
+        const gap = 60;
+        const scrollLeft = idx * (imageWidth + gap);
 
-      sliderImages.scrollTo({
-        left: scrollLeft,
-        behavior: scrollBehavior
-      });
-    } else if (isTablet()) {
-
-      const containerWidth = 600;
-      let pairIdx = Math.floor(idx / 2);
-      let scrollLeft = pairIdx * (containerWidth / 2 + 12);
-      sliderImages.scrollTo({
-        left: scrollLeft,
-        behavior: scrollBehavior
-      });
-      updateDots(pairIdx * 2);
-      currentIndex = pairIdx * 2;
-      return;
-    } else {
-
-      imgContainersSorted[idx].scrollIntoView({
-        behavior: scrollBehavior,
-        block: 'nearest',
-        inline: 'center'
-      });
+        sliderImages.scrollTo({
+          left: scrollLeft,
+          behavior: scrollBehavior
+        });
+      } else if (isTablet()) {
+        const containerWidth = 600;
+        let pairIdx = Math.floor(idx / 2);
+        let scrollLeft = pairIdx * (containerWidth / 2 + 12);
+        sliderImages.scrollTo({
+          left: scrollLeft,
+          behavior: scrollBehavior
+        });
+        updateDots(pairIdx * 2);
+        currentIndex = pairIdx * 2;
+        return;
+      } else {
+        imgContainersSorted[idx].scrollIntoView({
+          behavior: scrollBehavior,
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
     }
 
 
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   if (imgContainersSorted.length > 0) {
-    showImage(0, false);
+    showImage(0, false, false);
     startAutoplayIfVisible();
   }
 

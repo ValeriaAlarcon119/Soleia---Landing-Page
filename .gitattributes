@@ -1,1 +1,2 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+SOLEIA_DIC_ESP.mp4 filter=lfs diff=lfs merge=lfs -text
