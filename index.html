@@ -57,12 +57,14 @@
   </header>
 
   <section class="video-intro">
-    <div class="intro-video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/-EOJgckLru8?autoplay=1&mute=1&loop=1&playlist=-EOJgckLru8&controls=0&modestbranding=1&rel=0"
-        title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
+    <div class="container">
+      <div class="intro-video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/-EOJgckLru8?autoplay=1&mute=1&loop=1&playlist=-EOJgckLru8&controls=0&modestbranding=1&rel=0"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -83,7 +85,8 @@
         </div>
       </div>
       <div class="hero-right-content">
-        <form class="hero-form" name="hero-form" data-netlify="true" method="POST">
+        <form class="hero-form" name="hero-form" netlify method="POST">
+          <input type="hidden" name="form-name" value="hero-form" />
           <div class="row">
             <div class="field-div">
               <label for="nombre">Nombre</label>
@@ -393,7 +396,8 @@
     <div class="container">
       <div class="contact-form-block">
         <h2 class="contact-title">Ponte en contacto con nosotros</h2>
-        <form class="contact-form" name="contact-form" data-netlify="true" method="POST">
+        <form class="contact-form" name="contact-form" netlify method="POST">
+          <input type="hidden" name="form-name" value="contact-form" />
           <div class="form-row">
             <div class="form-field">
               <label for="contact-nombre">Nombre</label>

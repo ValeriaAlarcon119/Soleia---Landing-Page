@@ -29785,24 +29785,24 @@ body {
 }
 
 .video-intro {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
   padding: 60px 0 !important;
   width: 100% !important;
   height: auto !important;
   box-sizing: border-box !important;
+  background: #FAEACD !important;
 }
 
 .intro-video-wrapper {
   width: 100% !important;
-  max-width: 1200px !important;
+  max-width: 1260px !important;
   aspect-ratio: 16 / 9 !important;
   border-radius: 0 !important;
   overflow: hidden !important;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15) !important;
   position: relative !important;
   background: #000 !important;
+  margin-left: 150px !important;
+  /* Shifting significantly to the right */
 }
 
 
@@ -29819,6 +29819,7 @@ body {
   }
 
   .intro-video-wrapper {
+    margin-left: auto !important;
     border-radius: 12px !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
   }

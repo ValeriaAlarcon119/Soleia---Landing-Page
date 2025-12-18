@@ -478,7 +478,8 @@
 
           <div class="quote-section">
             <h4>Cotiza sin compromiso</h4>
-            <form class="quote-form" id="modalQuoteForm" name="quote-form" data-netlify="true" method="POST">
+            <form class="quote-form" id="modalQuoteForm" name="quote-form" netlify method="POST">
+              <input type="hidden" name="form-name" value="quote-form" />
               <input type="text" name="nombre" placeholder="Nombre" required>
               <input type="email" name="email" placeholder="Email" required>
               <input type="tel" name="telefono" placeholder="Teléfono" required>
