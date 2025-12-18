@@ -478,11 +478,11 @@
 
           <div class="quote-section">
             <h4>Cotiza sin compromiso</h4>
-            <form class="quote-form" id="modalQuoteForm">
-              <input type="text" placeholder="Nombre" required>
-              <input type="email" placeholder="Email" required>
-              <input type="tel" placeholder="Teléfono" required>
-              <textarea placeholder="Mensaje" rows="3"></textarea>
+            <form class="quote-form" id="modalQuoteForm" name="quote-form" data-netlify="true" method="POST">
+              <input type="text" name="nombre" placeholder="Nombre" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <input type="tel" name="telefono" placeholder="Teléfono" required>
+              <textarea name="mensaje" placeholder="Mensaje" rows="3"></textarea>
               <button type="submit">Enviar cotización</button>
             </form>
           </div>

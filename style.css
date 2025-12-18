@@ -29788,7 +29788,7 @@ body {
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 60px 40px !important;
+  padding: 60px 0 !important;
   width: 100% !important;
   height: auto !important;
   box-sizing: border-box !important;
@@ -29796,9 +29796,9 @@ body {
 
 .intro-video-wrapper {
   width: 100% !important;
-  max-width: 900px !important;
+  max-width: 1200px !important;
   aspect-ratio: 16 / 9 !important;
-  border-radius: 24px !important;
+  border-radius: 0 !important;
   overflow: hidden !important;
   box-shadow: 0 40px 100px rgba(0, 0, 0, 0.15) !important;
   position: relative !important;

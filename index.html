@@ -83,37 +83,37 @@
         </div>
       </div>
       <div class="hero-right-content">
-        <form class="hero-form">
+        <form class="hero-form" name="hero-form" data-netlify="true" method="POST">
           <div class="row">
             <div class="field-div">
               <label for="nombre">Nombre</label>
-              <input type="text" id="" placeholder="">
+              <input type="text" id="nombre" name="nombre" placeholder="">
             </div>
             <div class="field-div">
               <label for="apellido">Apellido</label>
-              <input type="text" id="apellido" placeholder="">
+              <input type="text" id="apellido" name="apellido" placeholder="">
             </div>
           </div>
           <div class="row">
             <div class="field-div">
               <label for="correo">Correo*</label>
-              <input type="email" id="correo" placeholder="">
+              <input type="email" id="correo" name="correo" placeholder="" required>
             </div>
           </div>
           <div class="row">
             <div class="field-div">
               <label for="telefono">Número de teléfono</label>
-              <input type="tel" id="telefono" placeholder="">
+              <input type="tel" id="telefono" name="telefono" placeholder="">
             </div>
             <div class="field-div">
               <label for="monto">Monto de inversión:</label>
-              <input type="text" id="monto" placeholder="">
+              <input type="text" id="monto" name="monto" placeholder="">
             </div>
           </div>
           <div class="row">
             <div class="field-div">
               <label for="motivo">Motivo de interés</label>
-              <input type="text" id="motivo" placeholder="">
+              <input type="text" id="motivo" name="motivo" placeholder="">
             </div>
           </div>
           <button type="submit">SEND</button>
@@ -393,27 +393,27 @@
     <div class="container">
       <div class="contact-form-block">
         <h2 class="contact-title">Ponte en contacto con nosotros</h2>
-        <form class="contact-form">
+        <form class="contact-form" name="contact-form" data-netlify="true" method="POST">
           <div class="form-row">
             <div class="form-field">
-              <label for="contact-nombre">Title</label>
-              <input type="text" id="contact-nombre">
+              <label for="contact-nombre">Nombre</label>
+              <input type="text" id="contact-nombre" name="nombre" required>
             </div>
             <div class="form-field">
-              <label for="contact-apellido">Title</label>
-              <input type="text" id="contact-apellido">
+              <label for="contact-apellido">Apellido</label>
+              <input type="text" id="contact-apellido" name="apellido">
             </div>
           </div>
           <div class="form-row">
             <div class="form-field full-width">
-              <label for="contact-email">Title</label>
-              <input type="email" id="contact-email">
+              <label for="contact-email">Correo electrónico</label>
+              <input type="email" id="contact-email" name="email" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-field full-width">
-              <label for="contact-mensaje">Title</label>
-              <input type="text" id="contact-mensaje">
+              <label for="contact-mensaje">Mensaje</label>
+              <input type="text" id="contact-mensaje" name="mensaje">
             </div>
           </div>
 
