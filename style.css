@@ -374,6 +374,8 @@ nav a:hover {
   top: 0;
   right: 0;
   z-index: 1;
+  pointer-events: none !important;
+  /* Prevents blocking clicks on forms */
 }
 
 
@@ -461,6 +463,9 @@ nav a:hover {
   flex-grow: 0;
   flex-shrink: 1;
   align-self: flex-start;
+  position: relative;
+  z-index: 10 !important;
+  /* Ensures form is always on top */
 }
 
 
@@ -564,7 +569,8 @@ nav a:hover {
   font-weight: 400;
   font-size: 16px;
   line-height: normal;
-  color: #FFFFFF;
+  color: #000000 !important;
+  /* Fixed text color for visibility */
   flex: none;
   order: 1;
   align-self: stretch;
@@ -29778,9 +29784,7 @@ body {
 /* Video Intro Section - YouTube Floating Style */
 .video-intro,
 .hero,
-.intro-section,
-.brochure-section,
-.combined-amenities-cta {
+.intro-section {
   background-color: #FAEACD !important;
 }
 

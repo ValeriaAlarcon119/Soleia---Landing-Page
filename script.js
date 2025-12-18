@@ -7,6 +7,26 @@ document.addEventListener('DOMContentLoaded', function () {
   let currentIndex = 0;
   let autoPlayInterval;
 
+  // Handle Netlify Forms via AJAX to prevent redirect to "Thank you" page
+  const handleFormSubmission = (form) => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString()
+      })
+        .then(() => {
+          alert('¡Gracias! Tu mensaje ha sido enviado con éxito.');
+          form.reset();
+        })
+        .catch((error) => alert('Error: ' + error));
+    });
+  };
+
+  document.querySelectorAll('form[netlify], form[data-netlify="true"]').forEach(handleFormSubmission);
+
   function isMobile() {
     return window.innerWidth <= 1024;
   }
