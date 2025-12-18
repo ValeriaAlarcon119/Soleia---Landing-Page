@@ -1,2 +1,4 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 SOLEIA_DIC_ESP.mp4 filter=lfs diff=lfs merge=lfs -text
+13B_BAR[[:space:]](1).jpg filter=lfs diff=lfs merge=lfs -text
+15A_UM_PRIVADO[[:space:]](1).jpg filter=lfs diff=lfs merge=lfs -text
