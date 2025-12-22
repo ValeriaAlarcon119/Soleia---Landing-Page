@@ -23,7 +23,7 @@ const lotsData = [
   { id: 18, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'disponible', zona: 'ZONA 2' },
   { id: 19, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'apartado', zona: 'ZONA 2' },
   { id: 20, etapa: 1, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'disponible', zona: 'ZONA 2' },
-  { id: 21, etapa: 2, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'vendido', zona: 'ZONA 2' },
+  { id: 21, etapa: 2, superficie: 243, precio: 1275750, precioListaFF: 1211962.50, precioContadoFF: 1090766.25, pago50EngancheFF: 1151364.38, precio30Enganche: 1211962.50, estado: 'apartado', zona: 'ZONA 2' },
 
   // ZONA 3 - Lotes 22-30
   { id: 22, etapa: 2, superficie: 243, precio: 1336500, precioListaFF: 1269675, precioContadoFF: 1142707.50, pago50EngancheFF: 1206191.25, precio30Enganche: 1269675, estado: 'disponible', zona: 'ZONA 3' },
@@ -63,18 +63,12 @@ const lotsData = [
   { id: 52, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA' },
   { id: 53, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA' },
   { id: 54, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA' },
-  { id: 55, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA' },
+  { id: 55, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, priceContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA' },
   { id: 56, etapa: 3, superficie: 292.74, precio: 2019906, precioListaFF: 1918910.70, precioContadoFF: 1727019.63, pago50EngancheFF: 1822965.17, precio30Enganche: 1918910.70, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA' },
   { id: 57, etapa: 3, superficie: 327.11, precio: 2453325, precioListaFF: 2330658.75, precioContadoFF: 2097592.88, pago50EngancheFF: 2214125.81, precio30Enganche: 2330658.75, estado: 'disponible', zona: 'LOTES HABITACIONALES PLAYA' },
   { id: 58, etapa: 3, superficie: 339.32, precio: 2884220, precioListaFF: 2740009, precioContadoFF: 2466008.10, pago50EngancheFF: 2603008.55, precio30Enganche: 2740009, estado: 'apartado', zona: 'LOTES HABITACIONALES PLAYA' },
   { id: 59, etapa: 3, superficie: 350.98, precio: 3509800, precioListaFF: 3334310, precioContadoFF: 3000879, pago50EngancheFF: 3167594.50, precio30Enganche: 3334310, estado: 'vendido', zona: 'LOTES HABITACIONALES PLAYA' }
 ];
-
-// Ajuste solicitado: todos los lotes deben estar en estado "disponible"
-// y el "precio base" mostrado en el modal será el precio total de lista (campo `precio`).
-lotsData.forEach(lot => {
-  lot.estado = 'disponible';
-});
 
 // Variable para el lote seleccionado
 let selectedLot = null;
@@ -89,7 +83,27 @@ let modal, modalStatus, modalStatusText, modalZona, modalEtapa, modalLote,
 document.addEventListener('DOMContentLoaded', function () {
   initializeElements();
   setupEventListeners();
+  updateSVGStatus(); // Actualizar colores de los lotes en el mapa
 });
+
+// Sincronizar clases de los lotes en el SVG con el estado en lotsData
+function updateSVGStatus() {
+  lotsData.forEach(lot => {
+    const batch = document.querySelector(`.batch[data-lot-id="${lot.id}"]`);
+    if (batch) {
+      // Eliminar clases previas de estado
+      batch.classList.remove('disponible', 'apartado', 'vendido');
+      // Agregar la clase de estado actual
+      batch.classList.add(lot.estado);
+
+      // También actualizar el color del lot-path si es necesario (para compatibilidad)
+      const path = batch.querySelector('.lot-path');
+      if (path) {
+        // La clase del estado en el 'a' debería ser suficiente si el CSS está bien
+      }
+    }
+  });
+}
 
 // Inicializar referencias a elementos del DOM
 function initializeElements() {
@@ -112,6 +126,20 @@ function initializeElements() {
 
 // Configurar event listeners
 function setupEventListeners() {
+  // Ajuste solicitado: dejar todos los lotes en 'disponible' excepto los indicados
+  lotsData.forEach(lot => {
+    lot.estado = 'disponible';
+  });
+
+  // Actualizar solo los lotes solicitados
+  const soldLots = [12, 32, 56];
+  const reservedLots = [21];
+
+  lotsData.forEach(lot => {
+    if (soldLots.includes(lot.id)) lot.estado = 'vendido';
+    if (reservedLots.includes(lot.id)) lot.estado = 'apartado';
+  });
+
   // Event listeners para los lotes SVG
   const batches = document.querySelectorAll('.batch');
   batches.forEach(batch => {

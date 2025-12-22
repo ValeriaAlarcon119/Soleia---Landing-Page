@@ -2012,3 +2012,73 @@ if (document.readyState === 'loading') {
   initAmenitiesDesktop();
 }
 window.addEventListener('load', initAmenitiesDesktop);
+
+/**
+ * IMAGE LOADING EXPERIENCE (SKELETON & PERCENTAGE)
+ */
+function initImageLoaders() {
+    const images = document.querySelectorAll('img:not(.logo-img):not(.footer-logo-img):not(.instagram-icon)');
+
+    images.forEach(img => {
+        // If image is already loaded, skip
+        if (img.complete) return;
+
+        // Create wrapper
+        const wrapper = document.createElement('div');
+        wrapper.className = 'skeleton-container';
+
+        // Maintain image's original positioning/size intent if possible
+        if (img.parentElement.classList.contains('gallery-item')) {
+            // Specific handling for gallery items if needed
+        }
+
+        // Insert wrapper before image
+        img.parentNode.insertBefore(wrapper, img);
+        wrapper.appendChild(img);
+
+        // Add percentage indicator
+        const percentage = document.createElement('div');
+        percentage.className = 'loading-percentage';
+        percentage.textContent = '0%';
+        wrapper.appendChild(percentage);
+
+        img.classList.add('img-hidden');
+
+        let progress = 0;
+        const interval = setInterval(() => {
+            if (progress < 90) {
+                progress += Math.random() * 10;
+                if (progress > 90) progress = 90;
+                percentage.textContent = Math.floor(progress) + '%';
+            }
+        }, 200);
+
+        const handleLoad = () => {
+            clearInterval(interval);
+            percentage.textContent = '100%';
+            setTimeout(() => {
+                img.classList.remove('img-hidden');
+                img.classList.add('img-visible');
+                percentage.style.opacity = '0';
+                wrapper.classList.remove('skeleton-container');
+                setTimeout(() => {
+                    if (percentage.parentNode) percentage.parentNode.removeChild(percentage);
+                }, 300);
+            }, 200);
+        };
+
+        img.addEventListener('load', handleLoad);
+        img.addEventListener('error', () => {
+            clearInterval(interval);
+            percentage.textContent = 'Error';
+            wrapper.classList.remove('skeleton-container');
+        });
+    });
+}
+
+// Run on load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initImageLoaders);
+} else {
+    initImageLoaders();
+}
